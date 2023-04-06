@@ -48,10 +48,9 @@ body {
 }
 .section-2 p {
   font-family: 'Lucida Console', sans-serif;
-  font-size: x-large;
-  color: gold;
   
 }
+.section-2 img {}
 
   /* Nascondi il form di login 
   #login-form-container {
