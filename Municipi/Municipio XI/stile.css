@@ -71,3 +71,7 @@ body {
     grid-column: 3; 
 }
 
+#map { 
+    height: 400px; 
+    width: 100%;
+}

@@ -70,4 +70,8 @@ body {
     grid-row: 2; 
     grid-column: 3; 
 }
+#map { 
+    height: 400px; 
+    width: 100%;
+}
 
