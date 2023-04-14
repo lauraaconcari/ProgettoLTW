@@ -68,7 +68,9 @@
     </nav>
 	<div class="container">
 		<section class="section-1">
-            <img src ="Municipio1.png">
+            <div class="map-area fix">
+                <div id="map"></div>
+            </div>
 		</section>
 		<section class="section-2">
 			<p>
@@ -100,5 +102,15 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="/js/gmaps.js"></script>
+    <script>
+        var map = new GMaps({
+          el: '#map',
+          lat: 41.902782,
+          lng: 12.496365
+        });
+      </script>
 </body>
 </html>
