@@ -48,16 +48,30 @@ var Salario = L.layerGroup([Salario1,Salario2,Salario3,Salario4,Salario5,Salario
 Salario.addTo(map);	
 
 //Trieste
-var Trieste1 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var Trieste2 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var Trieste3 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var Trieste4 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var Trieste5 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var Trieste6 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var Trieste7 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var Trieste8 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var Trieste9 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var Trieste10 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});		
+var Trieste1 = L.marker([41.93629139244353, 12.515848254324998]).bindPopup("Pequeño|Atypical Tapas Bar").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Trieste2 = L.marker([41.93162892245359, 12.515705281308533]).bindPopup("Garage 33 Food and Wine").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Trieste3 = L.marker([41.929161810287326, 12.523656810144491]).bindPopup("Misto - Mixology e Cibarie").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Trieste4 = L.marker([41.930489779762325, 12.52155342548862]).bindPopup("Cheers barEDO").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Trieste5 = L.marker([41.922603095551366, 12.511183467816073]).bindPopup("Ivy Food Music & Drink").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Trieste6 = L.marker([41.92313918716738, 12.513589838980144]).bindPopup("Enoteca Graziani").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Trieste7 = L.marker([41.922792129652066, 12.512846310144063]).bindPopup("Crash").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Trieste8 = L.marker([41.92311060815637, 12.512152538980144]).bindPopup("Numbs Le Bistro").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Trieste9 = L.marker([41.91784165915652, 12.50741719059604]).bindPopup("Caprera").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Trieste10 = L.marker([41.91793266876045, 12.507720651969667]).bindPopup("Marziali 1922").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Trieste11 = L.marker([41.92743979678122, 12.514976052472234]).bindPopup("Farina Lab").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Trieste12 = L.marker([41.92831625863092, 12.515555123636306]).bindPopup("Don Nino").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Trieste13 = L.marker([41.923264355879, 12.51522729665224]).bindPopup("White Rabbit").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Trieste14 = L.marker([41.92906291053484, 12.517914881308403]).bindPopup("Dolce").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Trieste15 = L.marker([41.92110164559433, 12.510149096693711]).bindPopup("La Cannoleria Siciliana - Trieste").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Trieste16 = L.marker([41.91938606752425, 12.512305681307872]).bindPopup("Amami").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Trieste17 = L.marker([41.92539708482942, 12.510986967857907]).bindPopup("Caffè Nemorense").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Trieste18 = L.marker([41.914532266914335, 12.505972941813273]).bindPopup("Why Not Cafe").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Trieste19 = L.marker([41.93284890860799, 12.519435811996908]).bindPopup("Gezin Pub").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Trieste20 = L.marker([41.931828677081654, 12.519334967816645]).bindPopup("Gianfornaio - Viale Libia").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Trieste21 = L.marker([41.93102499695989, 12.52271335432475]).bindPopup("&njoy").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+
+var Trieste = L.layerGroup([Trieste1,Trieste2,Trieste3,Trieste4,Trieste5,Trieste6,Trieste7,Trieste8,Trieste9,Trieste10]);
+Trieste.addTo(map);	
 
 //Nomentano	
 var Nomentano1 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
