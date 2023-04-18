@@ -70,7 +70,7 @@ var Trieste19 = L.marker([41.93284890860799, 12.519435811996908]).bindPopup("Gez
 var Trieste20 = L.marker([41.931828677081654, 12.519334967816645]).bindPopup("Gianfornaio - Viale Libia").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
 var Trieste21 = L.marker([41.93102499695989, 12.52271335432475]).bindPopup("&njoy").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
 
-var Trieste = L.layerGroup([Trieste1,Trieste2,Trieste3,Trieste4,Trieste5,Trieste6,Trieste7,Trieste8,Trieste9,Trieste10]);
+var Trieste = L.layerGroup([Trieste1,Trieste2,Trieste3,Trieste4,Trieste5,Trieste6,Trieste7,Trieste8,Trieste9,Trieste10,Trieste11,Trieste12,Trieste13,Trieste14,Trieste15,Trieste16,Trieste17,Trieste18,Trieste19,Trieste20,Trieste21]);
 Trieste.addTo(map);	
 
 //Nomentano	
