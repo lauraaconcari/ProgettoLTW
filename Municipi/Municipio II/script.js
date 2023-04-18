@@ -15,8 +15,9 @@ var Parioli7 = L.marker([41.92463053565024, 12.4912587104665]).bindPopup("Enotec
 var Parioli8 = L.marker([41.92715595218017, 12.485961537918527]).bindPopup("Bambu’s Parioli, Roma").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
 var Parioli9 = L.marker([41.922713829909256, 12.491782754078724]).bindPopup("Palmerie Parioli").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
 var Parioli10 = L.marker([41.92920754636918, 12.479956825244015]).bindPopup("Bar Villa Glori").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Parioli11 = L.marker([41.928325801796625, 12.469602298870456]).bindPopup("Brio Bistrot").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
 
-var Parioli = L.layerGroup([Parioli1,Parioli2,Parioli3,Parioli4,Parioli5,Parioli6,Parioli7,Parioli8,Parioli9,Parioli10]);
+var Parioli = L.layerGroup([Parioli1,Parioli2,Parioli3,Parioli4,Parioli5,Parioli6,Parioli7,Parioli8,Parioli9,Parioli10,Parioli11]);
 Parioli.addTo(map);
 //Flaminio
 var Flaminio1 = L.marker([41.93271604935367, 12.466448040584513]).bindPopup("Mostò").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
@@ -74,28 +75,31 @@ var Trieste = L.layerGroup([Trieste1,Trieste2,Trieste3,Trieste4,Trieste5,Trieste
 Trieste.addTo(map);	
 
 //Nomentano	
-var Nomentano1 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var Nomentano2 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var Nomentano3 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var Nomentano4 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var Nomentano5 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var Nomentano6 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var Nomentano7 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var Nomentano8 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var Nomentano9 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var Nomentano10 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Nomentano1 = L.marker([41.91989529973352, 12.519931467816015]).bindPopup("Momart").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Nomentano2 = L.marker([41.90941591301485, 12.511699565963198]).bindPopup("Fauno 3.0").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Nomentano3 = L.marker([41.91802087162327, 12.524696596651983]).bindPopup("Vesper Cafè Enoteca").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Nomentano4 = L.marker([41.91887508354566, 12.525039919405334]).bindPopup("Seltz Cocktail Bar").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Nomentano5 = L.marker([41.91239297259077, 12.517887654323793]).bindPopup("Mizzica!").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Nomentano6 = L.marker([41.91116537642962, 12.518343838979506]).bindPopup("Vinoteca Tempere").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Nomentano7 = L.marker([41.91379471318318, 12.52150209850407]).bindPopup("Meeting Place").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Nomentano8 = L.marker([41.91309074664381, 12.521262081307531]).bindPopup("Mood Cafè").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Nomentano9 = L.marker([41.90928604663056, 12.520498410143365]).bindPopup("MùMar Cafè").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Nomentano10 = L.marker([41.90816812444419, 12.518621965963153]).bindPopup("Papà Non Vuole").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Nomentano11 = L.marker([41.907973312568316, 12.518459291060713]).bindPopup("Il Baretto").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Nomentano12 = L.marker([41.90639051914056, 12.516928996651387]).bindPopup("You must bistrot").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Nomentano13 = L.marker([41.90833078297972, 12.51869739405509]).bindPopup("Mordimi").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Nomentano14 = L.marker([41.90898418002231, 12.52046231804481]).bindPopup("Tappa Fissa").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Nomentano15 = L.marker([41.90810693217555, 12.516821683159565]).bindPopup("Abitudini e Follie").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Nomentano16 = L.marker([41.909998673870945, 12.520901567815583]).bindPopup("Colette").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Nomentano17 = L.marker([41.90873509235124, 12.520125711995664]).bindPopup("Spritzzeria").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Nomentano18 = L.marker([41.920755567192785, 12.520464938980023]).bindPopup("Stappò").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Nomentano19 = L.marker([41.90685925942407, 12.516480540831703]).bindPopup("Las Tapas").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Nomentano20 = L.marker([41.91496962467531, 12.522295411995987]).bindPopup("Blend").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Nomentano21 = L.marker([41.90839592398824, 12.517992711995692]).bindPopup("Punto Drink e Pietanze").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Nomentano22 = L.marker([41.90781988206146, 12.521952106404811]).bindPopup("Bodeguita").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
 
-//Tiburtino_Policlinico
-var TiburtinoPoli1 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var TiburtinoPoli2 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var TiburtinoPoli3 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var TiburtinoPoli4 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var TiburtinoPoli5 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var TiburtinoPoli6 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var TiburtinoPoli7 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var TiburtinoPoli8 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var TiburtinoPoli9 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var TiburtinoPoli10 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Nomentano = L.layerGroup([Nomentano1,Nomentano2,Nomentano3,Nomentano4,Nomentano5,Nomentano6,Nomentano7,Nomentano8,Nomentano9,Nomentano10,Nomentano11,Nomentano12,Nomentano13,Nomentano14,Nomentano15,Nomentano16,Nomentano17,Nomentano18,Nomentano19,Nomentano20,Nomentano21,Nomentano22]);
+Nomentano.addTo(map);	
 
 //Pinciano
 var Pinciano1 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
