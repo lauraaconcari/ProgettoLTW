@@ -102,15 +102,12 @@ var Nomentano = L.layerGroup([Nomentano1,Nomentano2,Nomentano3,Nomentano4,Noment
 Nomentano.addTo(map);	
 
 //Pinciano
-var Pinciano1 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var Pinciano2 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var Pinciano3 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var Pinciano4 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var Pinciano5 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var Pinciano6 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var Pinciano7 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var Pinciano8 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var Pinciano9 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var Pinciano10 = L.marker([]).bindPopup("").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});	
+var Pinciano1 = L.marker([41.9266881342002, 12.480694025488441]).bindPopup("Carrot's cafè").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Pinciano2 = L.marker([41.917653856138045, 12.48135889479964]).bindPopup("Caffè delle Arti").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Pinciano3 = L.marker([41.923365003675, 12.471472210144071]).bindPopup("Treebar").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Pinciano4 = L.marker([41.9215376122891, 12.47366498130794]).bindPopup("Villa Balestra").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+
+var Pinciano = L.layerGroup([Pinciano1,Pinciano2,Pinciano3,Pinciano4]);
+Pinciano.addTo(map);
 
 
