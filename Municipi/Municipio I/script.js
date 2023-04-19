@@ -44,12 +44,13 @@ var Rione37 = L.marker([41.8811018306263, 12.485096709901011]).bindPopup("Casa M
 var Rione38 = L.marker([41.89896006272525, 12.472407755280765]).bindPopup("Terrazza Borromini").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
 var Rione39 = L.marker([41.89674832144241, 12.490165529769195]).bindPopup("Rooftop Spritzeria Monti").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
 var Rione40 = L.marker([41.90077871038351, 12.483129098253093]).bindPopup("L'Antico Forno di Piazza Trevi").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Rione41 = L.marker([41.90055609515522, 12.473114911995246]).bindPopup("Tagliere Toscano").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
 
 
 var Rioni = L.layerGroup([Rione1, Rione2, Rione3, Rione4, Rione5, Rione6, Rione7, Rione8, Rione9, Rione10,
 Rione11, Rione12, Rione13, Rione14, Rione15, Rione16, Rione17, Rione18, Rione19, Rione20,Rione21, Rione22,
 Rione23, Rione24, Rione25, Rione26, Rione27, Rione28, Rione29, Rione30, Rione31, Rione32, Rione33, Rione34,
-Rione35, Rione36, Rione37, Rione38, Rione39,Rione40]);
+Rione35, Rione36, Rione37, Rione38, Rione39,Rione40, Rione41]);
 Rioni.addTo(map);
 
 //Prati:
