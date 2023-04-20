@@ -4,13 +4,10 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-//Casal Bertone
-//Casal Bruciato
-//Tiburtino Nord
-//Tiburtino Sud
-//San Basilio
-//Tor Cervara
+//Tiburtino_SanLorenzo
+
 //Pietralata
-//Casal de' Pazzi
-//Sant'Alessandro
-//Settecamini
+//Collatino
+//Ponte_Mammolo
+//San_Basilio
+
