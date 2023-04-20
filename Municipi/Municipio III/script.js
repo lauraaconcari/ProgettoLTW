@@ -58,8 +58,9 @@ var CasalBoccone1 = L.marker([41.949840484701944, 12.53906469107539]).bindPopup(
 var CasalBoccone2 = L.marker([41.95130817933638, 12.53817414741184]).bindPopup("MyCaffè ").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
 var CasalBoccone3 = L.marker([41.967540451235166, 12.535274225490594]).bindPopup("Buono Come il Pane").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
 var CasalBoccone4 = L.marker([41.97569484838424, 12.53721357759258]).bindPopup("La Flaca").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var CasalBoccone5 = L.marker([41.95660194213221, 12.549106158405245]).bindPopup("Mossi Bar").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
 
-var CasalBoccone = L.layerGroup([CasalBoccone1, CasalBoccone2, CasalBoccone3]);
+var CasalBoccone = L.layerGroup([CasalBoccone1, CasalBoccone2, CasalBoccone3, CasalBoccone4, CasalBoccone5]);
 CasalBoccone.addTo(map);
 
 
