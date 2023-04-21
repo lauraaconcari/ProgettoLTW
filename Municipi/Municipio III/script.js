@@ -3,7 +3,11 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
-
+var customIcon = L.icon({
+    iconUrl:'../../placeholder.png' ,
+    iconSize: [17, 17] 
+  });
+  L.Marker.prototype.options.icon = customIcon;
 //Monte Sacro
 var MonteSacro1 = L.marker([41.94316271266202, 12.523081638344143]).bindPopup("Parsifal Wine Bar Enoteca").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
 var MonteSacro2 = L.marker([41.939204412265276, 12.527587749978249]).bindPopup("Apericena").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});

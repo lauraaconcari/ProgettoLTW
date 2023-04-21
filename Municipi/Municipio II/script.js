@@ -3,7 +3,11 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
-	
+var customIcon = L.icon({
+    iconUrl:'../../placeholder.png' ,
+    iconSize: [17, 17] 
+  });
+  L.Marker.prototype.options.icon = customIcon;	
 //Parioli
 var Parioli1 = L.marker([41.929707653871276, 12.485973613594998]).bindPopup("Duke's").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
 var Parioli2 = L.marker([41.931181050505835, 12.49133739825461]).bindPopup("Caffè Parnaso").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});

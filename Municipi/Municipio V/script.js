@@ -4,6 +4,13 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
+var customIcon = L.icon({
+    iconUrl:'../../placeholder.png' ,
+    iconSize: [17, 17] 
+  });
+  L.Marker.prototype.options.icon = customIcon;
+
+
 //Prenestino_Labicano
 var Prenestino_Labicano1 = L.marker([41.88997970881795, 12.523782085523587]).bindPopup("Bar Sciubba Roma").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
 var Prenestino_Labicano2 = L.marker([41.8897319746865, 12.523932651254176]).bindPopup("Pigneto Cafe' & Spirits").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});

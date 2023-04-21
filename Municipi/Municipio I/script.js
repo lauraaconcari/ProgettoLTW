@@ -3,6 +3,11 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
+var customIcon = L.icon({
+    iconUrl:'../../placeholder.png' ,
+    iconSize: [17, 17] 
+  });
+  L.Marker.prototype.options.icon = customIcon;
 //Rioni escluso Prati
 var Rione1 = L.marker([41.900514842702606, 12.482312309217967]).bindPopup("Baccano").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
 var Rione2 = L.marker([41.9021998743341, 12.484410096035054]).bindPopup("Prosciutteria Cantina dei Papi - Trevi").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
