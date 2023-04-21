@@ -3,7 +3,11 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
-
+var customIcon = L.icon({
+    iconUrl:'../../placeholder.png' ,
+    iconSize: [17, 17] 
+  });
+  L.Marker.prototype.options.icon = customIcon;
 //Tiburtino_SanLorenzo
 var SanLorenzo1 = L.marker([41.90019728275368, 12.513791911995213]).bindPopup("The Apartment Bar").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
 var SanLorenzo2 = L.marker([41.897759258635894, 12.51239576407329]).bindPopup("Chiosco San Lorenzo").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
