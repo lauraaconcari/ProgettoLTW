@@ -4,20 +4,9 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-//Torrespaccata
-//Tuscolano Nord
-//Tuscolano Sud
-//Tor Fiscale
-//Appio
-//Latino
+
+//Tuscolano 
 //Don Bosco
 //Appio Claudio
-//Quarto Miglio
-//Pignatelli
-//Lucrezia Romana
-//Osteria del Curato
-//Romanina
-//Gregna
-//Barcaccia
-//Morena
-//Ciampino
+//Borghesiana 
+

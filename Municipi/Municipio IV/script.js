@@ -15,6 +15,7 @@ var SanLorenzo7 = L.marker([41.898454730358516, 12.519913969667133]).bindPopup("
 var SanLorenzo8 = L.marker([41.89990196912145, 12.514377411995182]).bindPopup("Madi Drink & Food").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
 var SanLorenzo9 = L.marker([41.90059896729097, 12.518835596651066]).bindPopup("Marmo").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
 var SanLorenzo10 = L.marker([41.898352886634875, 12.516916165962604]).bindPopup("Bar Celestino").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var SanLorenzo10 = L.marker([41.899722098765196, 12.512239969667286]).bindPopup("CIACCO - Emporio").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
 
 var SanLorenzo = L.layerGroup([SanLorenzo1, SanLorenzo2, SanLorenzo3, SanLorenzo4, SanLorenzo5, SanLorenzo6, SanLorenzo7, 
     SanLorenzo8, SanLorenzo9, SanLorenzo10]);
