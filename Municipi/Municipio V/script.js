@@ -14,7 +14,7 @@ var customIcon = L.icon({
 //Prenestino_Labicano
 var Prenestino_Labicano1 = L.marker([41.88997970881795, 12.523782085523587]).bindPopup("Bar Sciubba Roma");
 var Prenestino_Labicano2 = L.marker([41.8897319746865, 12.523932651254176]).bindPopup("Pigneto Cafe' & Spirits");
-var Prenestino_Labicano3 = L.marker([41.8893975489319, 12.525010985441915]).bindPopup("Pigneto Quarantuno");
+var Prenestino_Labicano3 = L.marker([41.8893975489319, 12.525010985441915]).bindPopup("MILE PIGNETO");
 var Prenestino_Labicano4 = L.marker([41.88906218657238, 12.525414202859203]).bindPopup("Pigneto 32");
 var Prenestino_Labicano5 = L.marker([41.88930590320808, 12.524398881642739]).bindPopup("The street of crocodiles");
 var Prenestino_Labicano6 = L.marker([41.8893128917746, 12.524498123367383]).bindPopup("Cargo al Pigneto");
