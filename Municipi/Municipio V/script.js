@@ -78,6 +78,7 @@ var Prenestino_Centocelle20 = L.marker([41.88218582686394, 12.566541039823877]).
 var Prenestino_Centocelle = L.layerGroup([Prenestino_Centocelle1, Prenestino_Centocelle2, Prenestino_Centocelle3, Prenestino_Centocelle4, Prenestino_Centocelle5, Prenestino_Centocelle6, Prenestino_Centocelle7, Prenestino_Centocelle8, Prenestino_Centocelle9, Prenestino_Centocelle10, Prenestino_Centocelle11, Prenestino_Centocelle12, Prenestino_Centocelle13, Prenestino_Centocelle14, Prenestino_Centocelle15, Prenestino_Centocelle16, Prenestino_Centocelle17, Prenestino_Centocelle18, Prenestino_Centocelle19, Prenestino_Centocelle20]);
 
 
+
 //Alessandrino
 var Alessandrino1 = L.marker([41.873315735610255, 12.585415517463732]).bindPopup("Fucina Alessandrina");
 var Alessandrino2 = L.marker([41.8734435584026, 12.582411443636616]).bindPopup("Gran Caffè Alessandrino Roma");
@@ -98,3 +99,7 @@ markers.addLayer(Prenestino_Centocelle);
 markers.addLayer(Prenestino_Labicano);
 markers.addLayer(Alessandrino);
 map.addLayer(markers);
+
+markers.on('click', function(e) {
+  map.panTo(e.latlng);
+});
