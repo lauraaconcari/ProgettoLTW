@@ -3,10 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Login</title>
+	<title>AperitivoRomano</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./stile.css">
-    <link rel="icon" type="image/x-icon" href="./user (3).png"" >
+    <link rel="icon" type="image/x-icon" href="../champagne.png" >
     <script src="https://kit.fontawesome.com/1c95f9fdc7.js" crossorigin="anonymous"></script>
 
     <style>
@@ -29,13 +29,36 @@
       </style>
 
 </head>
+<script>
+    window.addEventListener("load", function(){
+            swal({
+            title: "Ci siamo quasi...",
+            text: "La registrazione è andata a buon fine, clicca sul pulsante accedi per continuare",
+            icon: "success",
+            buttons: {
+                ok: {
+                text: "Ok",
+                value: true,
+                visible: true,
+                className: "my-ok-class" // Aggiunge una classe CSS al pulsante "Ok"
+                }
+            }
+            })
+            .then((willNavigate) => {
+            // Se l'utente ha cliccato sul pulsante "Ok", apri un'altra pagina
+            if (willNavigate) {
+                window.location.href = "./Login.html";
+            }
+        });
+     });
+</script>
 <body>
 	<nav class="navbar navbar-light" style="background-color: #fc9b00;">
         <a class="navbar-brand" href="../index.html">
-            <img src="../user (1).png">
+            <img src="../champagne.png">
         </a>
         <a class="navbar-brand mr-auto" href="../index.html">
-            <h3>Login</h3>
+            <h3>AperitivoRomano</h3>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
