@@ -29,6 +29,29 @@
       </style>
 
 </head>
+<script>
+    window.addEventListener("load", function(){
+            swal({
+            title: "ERRORE",
+            text: "La registrazione non è andata a buon fine",
+            icon: "error",
+            buttons: {
+                ok: {
+                text: "Ok",
+                value: true,
+                visible: true,
+                className: "my-ok-class" // Aggiunge una classe CSS al pulsante "Ok"
+                }
+            }
+            })
+            .then((willNavigate) => {
+            // Se l'utente ha cliccato sul pulsante "Ok", apri un'altra pagina
+            if (willNavigate) {
+                window.location.href = "./Login.html";
+            }
+        });
+     });
+</script>
 <body>
 	<nav class="navbar navbar-light" style="background-color: #fc9b00;">
         <a class="navbar-brand" href="../index.html">
