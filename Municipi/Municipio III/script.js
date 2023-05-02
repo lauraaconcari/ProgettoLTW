@@ -36,10 +36,12 @@ var MonteSacro24 = L.marker([41.962416771426, 12.518821711998504]).bindPopup("AB
 var MonteSacro25 = L.marker([41.93425492287355, 12.534234296652816]).bindPopup("Bender");
 var MonteSacro26 = L.marker([41.975095466631146, 12.526540283163097]).bindPopup("CoconutBar");
 var MonteSacro27 = L.marker([41.938851265679006, 12.535042935880243]).bindPopup("IL LOCALE");
+var MonteSacro28 = L.marker([41.9457312694597, 12.514132436938423]).bindPopup("Room 1.10");
 
 var MonteSacro = L.layerGroup([MonteSacro1,MonteSacro2, MonteSacro3, MonteSacro4, MonteSacro5, MonteSacro6, MonteSacro7, MonteSacro8, 
     MonteSacro9, MonteSacro10, MonteSacro11, MonteSacro12, MonteSacro13, MonteSacro14, MonteSacro15, MonteSacro16, MonteSacro17, 
-    MonteSacro18, MonteSacro19, MonteSacro20, MonteSacro21, MonteSacro22, MonteSacro23, MonteSacro24, MonteSacro25, MonteSacro26, MonteSacro27]);
+    MonteSacro18, MonteSacro19, MonteSacro20, MonteSacro21, MonteSacro22, MonteSacro23, MonteSacro24, MonteSacro25, MonteSacro26, 
+    Montesacro28, MonteSacro27]);
 
 //Talenti
 var Talenti1 = L.marker([41.95351275420143, 12.54440713449676]).bindPopup("Talento Bar Gastronomia");
