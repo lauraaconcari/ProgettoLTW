@@ -10,7 +10,7 @@ var customIcon = L.icon({
   L.Marker.prototype.options.icon = customIcon;
 
 //Tuscolano 
-var Tuscolano1 = L.marker([]).bindPopup("Tira e molla").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var Tuscolano1 = L.marker([41.8839415852973, 12.522563025486251]).bindPopup("Tira e molla").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
 var Tuscolano2 = L.marker([]).bindPopup("Bruni Bistrot Cocktail Bar").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
 var Tuscolano3 = L.marker([]).bindPopup("Salotto Stadlin").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
 var Tuscolano4 = L.marker([]).bindPopup("BAR BRINDISI").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
