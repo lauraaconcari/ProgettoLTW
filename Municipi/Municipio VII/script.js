@@ -1,4 +1,4 @@
-var map = L.map('map').setView([41.851305901673065, 12.560511220608173], 13);
+var map = L.map('map').setView([41.87227948064865, 12.539432694193241], 13);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -41,10 +41,12 @@ var Tuscolano = L.layerGroup([Tuscolano1, Tuscolano2, Tuscolano3, Tuscolano4, Tu
     Tuscolano19, Tuscolano20, Tuscolano21, Tuscolano22, Tuscolano23, Tuscolano24, Tuscolano25, Tuscolano26]);
 Tuscolano.addTo(map);
 
+
+
 //Don Bosco
-var DonBosco1 = L.marker([]).bindPopup("Al Solito Posto").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var DonBosco2 = L.marker([]).bindPopup("Rquadro").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var DonBosco3 = L.marker([]).bindPopup("Sicilian's gourmet").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var DonBosco1 = L.marker([41.8604769820637, 12.557884754321007]).bindPopup("Al Solito Posto").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var DonBosco2 = L.marker([41.8592847850433, 12.566642611993059]).bindPopup("Rquadro").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var DonBosco3 = L.marker([41.85578385837417, 12.56501098315682]).bindPopup("Sicilian's gourmet").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
 
 var DonBosco = L.layerGroup([DonBosco1, DonBosco2, DonBosco3]);
 DonBosco.addTo(map);
@@ -64,17 +66,6 @@ var AppioClaudio = L.layerGroup([AppioClaudio1, AppioClaudio2, AppioClaudio3, Ap
     AppioClaudio7, AppioClaudio8, AppioClaudio9]);
 AppioClaudio.addTo(map);
 
-//Appio Latino
-var AppioLatino1 = L.marker([]).bindPopup("Enoteca Bonomi").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var AppioLatino2 = L.marker([]).bindPopup("QIX drink bar").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var AppioLatino3 = L.marker([]).bindPopup("Vinum Est Roma").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var AppioLatino4 = L.marker([]).bindPopup("Hopificio").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var AppioLatino5 = L.marker([]).bindPopup("Rebacco").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-var AppioLatino6 = L.marker([]).bindPopup("Ristorante Buono Enoteca e Cocktail Bar").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
-
-var AppioLatino = L.layerGroup([AppioLatino1, AppioLatino2, AppioLatino3, AppioLatino4, AppioLatino5, AppioLatino6]);
-AppioLatino.addTo(map);
-
 //Altro
 var Altro1 = L.marker([41.83209734707517, 12.599034238975383]).bindPopup("Perlage").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
 var Altro2 = L.marker([41.848558587990304, 12.597752381304176]).bindPopup("Mister TAMO").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
@@ -86,5 +77,17 @@ var Altro7 = L.marker([41.814773137880465, 12.604046275958696]).bindPopup("N°1"
 
 var Altro = L.layerGroup([Altro1, Altro2, Altro3, Altro4, Altro5, Altro6, Altro7]);
 Altro.addTo(map);
+
+//Appio Latino
+var AppioLatino1 = L.marker([41.876454270641176, 12.518999027338126]).bindPopup("Enoteca Bonomi").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var AppioLatino2 = L.marker([41.8763976965445, 12.515734810141673]).bindPopup("QIX drink bar").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var AppioLatino3 = L.marker([41.87615006569213, 12.520208352469577]).bindPopup("Vinum Est Roma").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var AppioLatino4 = L.marker([41.87314018349225, 12.520773725485634]).bindPopup("Hopificio").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var AppioLatino5 = L.marker([41.880251620718056, 12.511646352469825]).bindPopup("Rebacco").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+var AppioLatino6 = L.marker([41.87839875941948, 12.516271510141783]).bindPopup("Ristorante Buono Enoteca e Cocktail Bar").on('click', function(e) {map.setView(e.target.getLatLng(), 16);});
+
+var AppioLatino = L.layerGroup([AppioLatino1, AppioLatino2, AppioLatino3, AppioLatino4, AppioLatino5, AppioLatino6]);
+AppioLatino.addTo(map);
+
 
 

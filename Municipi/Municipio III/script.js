@@ -41,7 +41,7 @@ var MonteSacro28 = L.marker([41.9457312694597, 12.514132436938423]).bindPopup("R
 var MonteSacro = L.layerGroup([MonteSacro1,MonteSacro2, MonteSacro3, MonteSacro4, MonteSacro5, MonteSacro6, MonteSacro7, MonteSacro8, 
     MonteSacro9, MonteSacro10, MonteSacro11, MonteSacro12, MonteSacro13, MonteSacro14, MonteSacro15, MonteSacro16, MonteSacro17, 
     MonteSacro18, MonteSacro19, MonteSacro20, MonteSacro21, MonteSacro22, MonteSacro23, MonteSacro24, MonteSacro25, MonteSacro26, 
-    Montesacro28, MonteSacro27]);
+    MonteSacro28, MonteSacro27]);
 
 //Talenti
 var Talenti1 = L.marker([41.95351275420143, 12.54440713449676]).bindPopup("Talento Bar Gastronomia");
