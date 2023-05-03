@@ -22,37 +22,44 @@ body {
   
 }
 .row {
-display: flex;
-flex-wrap: wrap;
-padding: 0%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0%;
 }
 
 .container {
-display: grid;
-grid-template-columns: 1fr 1fr;
-align-items: center;
-height: 100vh;
-padding: 10px;
+  display: grid;
+  grid-template-rows: 1fr 1fr; /* Imposta 2 righe di uguale altezza */
+  grid-template-columns: 1fr 1fr 1fr; /* Imposta 2 colonne di uguale larghezza */
+  height: 100vh;
+  padding: 20px
 }
-
 .section-1 {
-background-color: transparent;
-padding: 20px;
-right: 80px;
-position: relative;
+    grid-row: 1;
+    grid-column: 1;
+    
 }
+  
+
 
 .section-2 {
-background-color: transparent;
-width: 110%;
-height: auto; /* Imposta l'altezza in base alla larghezza dell'elemento */
-left: 45px;
-position: relative;
-
+    grid-row: 1;
+    grid-column: 2;
 }
-.section-2 img {
-max-width: 100%;
-max-height: 100%;
-bottom: 20px;
-position: relative;
+.section-3 {
+    grid-row: 1;
+    grid-column: 3;
+}
+
+.section-4 {
+    grid-row: 2; 
+    grid-column: 1; 
+}
+.section-5 {
+    grid-row: 2; 
+    grid-column: 2; 
+}
+.section-6 {
+    grid-row: 2; 
+    grid-column: 3; 
 }
