@@ -47,22 +47,10 @@ var VI36 = L.marker([41.860435445568996, 12.688126370965518]).bindPopup("Due Pun
 var VI37 = L.marker([41.85928040176395, 12.689136621779939]).bindPopup("Al Solito Posto");
 var VI38 = L.marker([41.85707858370501, 12.671874143330937]).bindPopup("L'angolo del sorriso");
 var VI39 = L.marker([41.85405770957562, 12.673833005323429]).bindPopup("Il Cappuccino ristobar");
-var VI40 = L.marker([41.955713657317304, 12.716464065869767]).bindPopup("Bar Dream Coffee");
-var VI41 = L.marker([41.954938503638616, 12.715713580617967]).bindPopup("Bar Alfieri");
-var VI42 = L.marker([41.95310910357778, 12.72084189650527]).bindPopup("Terme-Caffè");
-var VI43 = L.marker([41.953853272649845, 12.721592381757068]).bindPopup("Baraonda");
-var VI44 = L.marker([41.95345018214766, 12.72275980325987]).bindPopup("Craft");
-var VI45 = L.marker([41.953543203259045, 12.72588682514237]).bindPopup("Vivian Bar");
-var VI46 = L.marker([41.95317111799899, 12.72680408489457]).bindPopup("Start Up Caffè");
-var VI47 = L.marker([41.95003931426925, 12.734642487326292]).bindPopup("Pin Up Cafe");
-var VI48 = L.marker([41.95345018210197, 12.73247441882109]).bindPopup("Midnight Caffè");
-var VI49 = L.marker([41.95289552072652, 12.770961774101922]).bindPopup("Belli");
-var VI50 = L.marker([41.919945636447466, 12.788671020245072]).bindPopup("APERIDISCO");
 
 var markers = L.markerClusterGroup();
 markers.addLayers([VI1,VI2,VI3,VI4,VI5,VI6,VI7,VI8,VI9,VI10,VI11,VI12,VI13,VI14,VI15,VI16,VI17,VI18,VI19,VI20,
-VI21,VI22,VI23,VI24,VI25,VI26,VI27,VI28,VI29,VI30,VI31,VI32,VI33,VI34,VI35,VI36,VI37,VI38,VI39,VI40,VI41,VI42,
-VI43,VI44,VI45,VI46,VI47,VI48,VI49,VI50]);
+VI21,VI22,VI23,VI24,VI25,VI26,VI27,VI28,VI29,VI30,VI31,VI32,VI33,VI34,VI35,VI36,VI37,VI38,VI39]);
 map.addLayer(markers);
 
 markers.on('click', function(e) {
