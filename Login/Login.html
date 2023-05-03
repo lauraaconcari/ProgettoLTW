@@ -29,6 +29,7 @@
       </style>
 
 </head>
+<script>document.getElementById("login-form").setAttribute("action", "registrazione.php");</script>
 <body>
 	<nav class="navbar navbar-light" style="background-color: #fc9b00;">
         <a class="navbar-brand" href="../index.html">
@@ -80,10 +81,13 @@
             </ul>
         </div>
     </nav>
+    <form id="form-recupero-password" style="display:none;" method="post" action="prova.php">
+        <input type="hidden" name="email" id="email">
+    </form>
 	<div class="container">
         <div class="formbox">
             <h1 id="title">Registrati</h1>
-            <form action="./connect.php" method="post">
+            <form method="post" id="login-form">
                 <div class="input-group">
                     <div class="input-field" id="nameField">
                         <i class="fas fa-user"></i>
@@ -97,7 +101,7 @@
                         <i class="fas fa-user"></i>
                         <input type="password" placeholder="Password" id="password" name="password">
                     </div>
-                    <p>Password dimenticata?<a href="#"> Clicca qui! </a></p>
+                    <p>Password dimenticata?<a href="#" id="reset-password-link"> Clicca qui! </a></p>
                 </div>
                 <div class="btn-field">
                     <button type="submit" id="signupBtn" >Registrati</button>
