@@ -63,3 +63,40 @@ body {
     grid-row: 2; 
     grid-column: 3; 
 }
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #ccc;
+}
+
+.box img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.box h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.box p {
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.card {
+  width: 300px;
+  height: 300px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  position: relative;
+  margin: 20px;
+}
