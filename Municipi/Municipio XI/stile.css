@@ -74,4 +74,11 @@ body {
 #map { 
     height: 400px; 
     width: 100%;
+
+}
+.navbar-nav.ml-auto .nav-link i.fa-user{
+    display: none;
+  }
+.navbar-nav:not(.ml-auto) .nav-link i.fa-user{
+    display: none;
 }
