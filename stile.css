@@ -56,7 +56,12 @@ body {
   bottom: 20px;
   position: relative;
 }
-
+.navbar-nav.ml-auto .nav-link i.fa-user{
+  display: none;
+}
+.navbar-nav:not(.ml-auto) .nav-link i.fa-user{
+  display: none;
+}
   /* Nascondi il form di login 
   #login-form-container {
     display: none;

@@ -36,7 +36,10 @@ if (pg_num_rows($result) > 0) {
   // Verifica la password utilizzando la funzione password_verify
   if (password_verify($password, $hashed_password)) {
     // La password è corretta, l'utente è autenticato
-    echo "Benvenuto!";
+    echo "<script>";
+    echo "localStorage.setItem('loggedIn', true);";
+    echo "window.location.href = '../index.html';";
+    echo "</script>";
   } else {
     // La password è errata
     echo "Password errata!";
