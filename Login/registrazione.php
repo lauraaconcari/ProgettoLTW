@@ -1,12 +1,4 @@
 <?php
-function custom_warning_handler($errno, $errstr) {
-// Reindirizzamento dell'utente su una pagina web specifica
-header("Location:./LoginScorretto.html");
-exit();
-}
-  
-// Impostazione della funzione personalizzata come gestore degli errori
-set_error_handler("custom_warning_handler", E_WARNING);
 // dati per la connessione al database
 $host = "localhost";
 $user = "postgres";
@@ -22,20 +14,35 @@ if (!$conn) {
 }
 $password = $_POST['password'];
 // Verifica se la password soddisfa i requisiti
-if (strlen($password) < 8) {
-    trigger_error("La password deve essere lunga almeno 8 caratteri",E_USER_WARNING);
-  } elseif (!preg_match('/[A-Z]/', $password)) {
-    trigger_error("La password deve contenere almeno una lettera maiuscola",E_USER_WARNING);
-  } elseif (!preg_match('/[^a-zA-Z0-9]/', $password)) {
-    trigger_error("La password deve contenere almeno un carattere speciale",E_USER_WARNING);
-  } else {
+if (strlen($password) < 8 || !preg_match('/[A-Z]/', $password) || !preg_match('/[^a-zA-Z0-9]/', $password)) {
+  echo "<script>";
+  echo "localStorage.setItem('Registered', false);";
+  echo "window.location.href = './Login.html';";
+  echo "</script>";
+  die;
+}
+else {
     // La password soddisfa tutti i requisiti, può essere messa in hash code
     $hashed_password = password_hash($password, PASSWORD_BCRYPT);
   }
 $query = "INSERT INTO Registrazioni(Nome, Email, Password) VALUES ('".$_POST['nome']."', '".$_POST['email']."', '$hashed_password')";
 $query2 = "INSERT INTO Login(Email) VALUES ('".$_POST['email']."')";
-pg_query($conn, $query);
-pg_query($conn, $query2);
-header("Location:./LoginCorretto.html");
+$result= pg_query($conn, $query);
+$result2= pg_query($conn, $query2);
 pg_close($conn);
+if($result){
+  echo "<script>";
+  echo "localStorage.setItem('Registered', true);";
+  echo "window.location.href = './Login.html';";
+  echo "</script>";
+  die;
+}
+else{
+  echo "<script>";
+  echo "localStorage.setItem('Registered', false);";
+  echo "window.location.href = './Login.html';";
+  echo "</script>";
+  die;
+}
+
 ?>
