@@ -8,11 +8,8 @@ var customIcon = L.icon({
     iconSize: [17, 17] 
   });
   L.Marker.prototype.options.icon = customIcon;
-//Medaglie d'Oro
-//Primavalle
-//Ottavia
-//Santa Maria della Pietà
+
+//Primavalle 
+
 //Trionfale
-//Pineto
-//Castelluccia
-//Santa Maria di Galeria
+var Trionfale1 = L.marker([41.90953640338526, 12.446431820849735]).bindPopup("Mama Shelter Roma");
