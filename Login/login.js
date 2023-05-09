@@ -1,3 +1,4 @@
+
 let signupBtn= document.getElementById("signupBtn")
 let signinBtn= document.getElementById("signinBtn")
 let nameField= document.getElementById("nameField")
@@ -65,4 +66,32 @@ $(document).ready(function() {
       });
     });
   });
+  document.addEventListener("DOMContentLoaded", function(event) {
+    checkRegistered();
+  });
+function checkRegistered(){
+  var Registered= localStorage.getItem("Registered");
+  if(Registered!==null){
+    if(Registered==='true'){
+      console.log("registrato");
+      swal({
+        title: 'Benvenuto!',
+        text: 'Clicca sul tasto accedi per accedere al tuo profilo',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      });
+      localStorage.removeItem("Registered");
+    }
+    else{
+      console.log("non registrato");
+      swal({
+        title: 'Errore',
+        text: 'La registrazione non è andata a buon fine',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
+      localStorage.removeItem("Registered");
+    }
+  }
 
+}
