@@ -75,7 +75,6 @@ var Prati = L.layerGroup([Prati1, Prati2, Prati3,Prati4, Prati5, Prati6, Prati7,
 
 
 //Eroi
-var Eroi1=L.marker([41.90953640338526, 12.446431820849735]).bindPopup("Mama Shelter Roma");
 var Eroi2=L.marker([41.90892453707703, 12.452025865726986]).bindPopup("Cantinero");
 var Eroi3=L.marker([41.90977338379914, 12.448700396407805]).bindPopup("Bolle Cicchetteria di Quartiere");
 var Eroi4=L.marker([41.909536128362696, 12.449852396407822]).bindPopup("TBeB");
@@ -89,7 +88,8 @@ var Eroi11=L.marker([41.910213555989934, 12.452110951667484]).bindPopup("Fábric
 var Eroi12=L.marker([41.91656839255661, 12.461206911748551]).bindPopup("Eat me box");
 var Eroi13=L.marker([41.91690964106599, 12.460941861461098]).bindPopup("Sabotino");
 var Eroi14=L.marker([41.916853156477735, 12.464820303319765]).bindPopup("Fico by Baguetteria");
-var Eroi=L.layerGroup([Eroi1,Eroi2,Eroi3,Eroi4,Eroi5,Eroi6,Eroi7,Eroi8,Eroi9,Eroi10,Eroi11,Eroi12,Eroi13,Eroi14]);
+
+var Eroi=L.layerGroup([Eroi2,Eroi3,Eroi4,Eroi5,Eroi6,Eroi7,Eroi8,Eroi9,Eroi10,Eroi11,Eroi12,Eroi13,Eroi14]);
 
 var markers = L.markerClusterGroup();
 markers.addLayer(Rioni);
