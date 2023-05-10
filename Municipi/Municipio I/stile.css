@@ -30,7 +30,7 @@ body {
 .container {
   display: grid;
   grid-template-rows: 1fr 1fr; /* Imposta 2 righe di uguale altezza */
-  grid-template-columns: 1fr 1fr 1fr; /* Imposta 2 colonne di uguale larghezza */
+  grid-template-columns: 1fr 1fr 1fr; /* Imposta 3 colonne di uguale larghezza */
   height: 100vh;
   padding: 20px
 }
