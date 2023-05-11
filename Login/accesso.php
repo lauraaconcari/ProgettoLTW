@@ -1,12 +1,4 @@
 <?php
-function custom_warning_handler($errno, $errstr) {
-// Reindirizzamento dell'utente su una pagina web specifica
-header("Location:./LoginScorretto.html");
-exit();
-}
-  
-// Impostazione della funzione personalizzata come gestore degli errori
-set_error_handler("custom_warning_handler", E_WARNING);
 // dati per la connessione al database
 $host = "localhost";
 $user = "postgres";
@@ -21,7 +13,7 @@ if (!$conn) {
     die("Connessione al database fallita.");
 }
 // Ottieni l'email e la password dalle variabili POST
-$email = $_POST['email'];
+$email = pg_escape_string($_POST['email']);
 $password = $_POST['password'];
 
 // Cerca l'email e la password nella tabella delle registrazioni
@@ -36,19 +28,37 @@ if (pg_num_rows($result) > 0) {
   // Verifica la password utilizzando la funzione password_verify
   if (password_verify($password, $hashed_password)) {
     // La password è corretta, l'utente è autenticato
-    echo "<script>";
-    echo "localStorage.setItem('loggedIn', true);";
-    echo "window.location.href = '../index.html';";
-    echo "</script>";
+    //Scarica tutta la lista dei preferiti salvati se esiste
+    $preferiti = "SELECT marker_id FROM Preferiti WHERE email = '$email'";
+    $result = pg_query($conn, $preferiti);
+    if ($result !== false) {
+      $marker_ids = array();
+      while ($row = pg_fetch_assoc($result)) {
+        $marker_ids[] = $row['marker_id'];
+      }
+      // Salva la lista di marker_id nel local storage
+      $json_marker_ids = json_encode($marker_ids);
+      // Chiudi la connessione al database
+      pg_close($conn);  
+      echo "<script>";
+      echo "localStorage.setItem('loggedIn', true);";
+      echo "localStorage.setItem('email','$email');";
+      echo "localStorage.setItem('preferiti', '$json_marker_ids');";
+      echo "window.location.href = '../index.html';";
+      echo "</script>";
+      die();
+      
+    } else {
+      die();
+    }
   } else {
     // La password è errata
     echo "Password errata!";
+    die();
   }
 } else {
   // L'email non è stata trovata
   echo "Email non trovata!";
+  die();
 }
-
-// Chiudi la connessione al database
-pg_close($conn);
 ?>

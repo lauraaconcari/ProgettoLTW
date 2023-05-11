@@ -26,9 +26,7 @@ else {
     $hashed_password = password_hash($password, PASSWORD_BCRYPT);
   }
 $query = "INSERT INTO Registrazioni(Nome, Email, Password) VALUES ('".$_POST['nome']."', '".$_POST['email']."', '$hashed_password')";
-$query2 = "INSERT INTO Login(Email) VALUES ('".$_POST['email']."')";
 $result= pg_query($conn, $query);
-$result2= pg_query($conn, $query2);
 pg_close($conn);
 if($result){
   echo "<script>";
