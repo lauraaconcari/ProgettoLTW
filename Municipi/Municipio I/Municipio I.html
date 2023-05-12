@@ -6,6 +6,8 @@
 	<title>Municipio I</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="stile.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
     <link rel="icon" type="image/x-icon" href="../../colosseum.png" >
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
@@ -84,35 +86,66 @@
         </div>
     </nav>
 	<div class="container">
-		<section class="section-1">
-            <div id="map"></div>
-		</section>
-		<section class="section-2">
-			
-		</section>
-        <section class="section-3">
-			
-		</section>
-        <section class="section-4">
-			<p>
-                sezione di prova 4
-            </p>
-		</section>
-        <section class="section-5">
-			<p>
-                sezione di prova 5
-            </p>
-		</section>
-        <section class="section-6">
-			<p>
-                sezione di prova 6
-            </p>
-		</section>
+        <div class="row">
+            <div class="col-lg-5">
+                <div id="map"></div>
+            </div>
+            <div class="col">
+                <div class="filter-container">
+                    <label for="filter">Filtra per nome:</label>
+                    <input type="text" id="filter" name="filter">
+                </div>
+                <ul class="list-container">
+                <li data-name="Luogo 1">
+                    <img src="https://picsum.photos/id/1/100/100" alt="Luogo 1">
+                    <div>
+                    <h3>Luogo 1</h3>
+                    <p>Descrizione del Luogo 1</p>
+                    </div>
+                </li>
+                <li data-name="Luogo 2">
+                    <img src="https://picsum.photos/id/2/100/100" alt="Luogo 2">
+                    <div>
+                    <h3>Luogo 2</h3>
+                    <p>Descrizione del Luogo 2</p>
+                    </div>
+                </li>
+                <li data-name="Luogo 3">
+                    <img src="https://picsum.photos/id/3/100/100" alt="Luogo 3">
+                    <div>
+                    <h3>Luogo 3</h3>
+                    <p>Descrizione del Luogo 3</p>
+                    </div>
+                </li>
+                <li data-name="Luogo 4">
+                    <img src="https://picsum.photos/id/4/100/100" alt="Luogo 4">
+                    <div>
+                    <h3>Luogo 4</h3>
+                    <p>Descrizione del Luogo 4</p>
+                    </div>
+                </li>
+                <li data-name="Luogo 5">
+                    <img src="https://picsum.photos/id/5/100/100" alt="Luogo 5">
+                    <div>
+                    <h3>Luogo 5</h3>
+                    <p>Descrizione del Luogo 5</p>
+                    </div>
+                </li>
+                <li data-name="Luogo 6">
+                    <img src="https://picsum.photos/id/6/100/100" alt="Luogo 6">
+                    <div>
+                    <h3>Luogo 6</h3>
+                    <p>Descrizione del Luogo 6</p>
+                    </div>
+                </li>
+                </ul>
+            </div>
+        </div>
 	</div>
     
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
      crossorigin=""></script>

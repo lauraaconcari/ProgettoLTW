@@ -1,0 +1,102 @@
+.navbar {
+    font-family: 'Lucida Console', sans-serif;
+    padding: 10px;
+  }
+  .nav-link {
+    font-family: 'Lucida Console', sans-serif;
+    font-size: 20px;
+  }
+  a img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  body {
+    background-image: url(/Fotoram.io.jpg);
+    background-size: cover;
+    
+  }
+  .fa-user {
+    margin-top: 7px;
+    margin-right: 30px;
+    
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0%;
+  }
+  
+  .container {
+    display: grid;
+    grid-template-rows: 1fr 1fr; /* Imposta 2 righe di uguale altezza */
+    grid-template-columns: 1fr 1fr 1fr; /* Imposta 2 colonne di uguale larghezza */
+    height: 100vh;
+    padding: 20px
+  }
+  .section-1 {
+      grid-row: 1;
+      grid-column: 1;
+      
+  }
+    
+  
+  
+  .section-2 {
+      grid-row: 1;
+      grid-column: 2;
+  }
+  .section-3 {
+      grid-row: 1;
+      grid-column: 3;
+  }
+  
+  .section-4 {
+      grid-row: 2; 
+      grid-column: 1; 
+  }
+  .section-5 {
+      grid-row: 2; 
+      grid-column: 2; 
+  }
+  .section-6 {
+      grid-row: 2; 
+      grid-column: 3; 
+  }
+  .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  .box img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .box h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .box p {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: justify;
+  }
+  
+  .card {
+    width: 300px;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    position: relative;
+    margin: 20px;
+  }
