@@ -10,6 +10,7 @@ var customIcon = L.icon({
 L.Marker.prototype.options.icon = customIcon;
 
 var markers = L.markerClusterGroup();
+const markerToPlace = {}; //Tupla per salvare id con nome corrispondente
 var data = [
   {
     "id": "I1",
@@ -348,12 +349,17 @@ var data = [
   }
   ];
   for (let i = 0; i < data.length; i++) {
+    //Aggiunta dei marker sulla mappa
     let info = data[i];
     let marker = L.marker(info.location, { id: info.id });
+    markerToPlace[info.id] = info.popupContent.toLowerCase();
     marker.bindPopup(info.popupContent);
     markers.addLayer(marker);
   }
+  const placeToMarker = _.invert(markerToPlace);
+  console.log(placeToMarker);
   map.addLayer(markers);
+  //Filtro per la mappa
   
 
 
@@ -372,8 +378,17 @@ function filterItems() {
 
     if (itemName.includes(filterValue)) {
       item.style.display = "flex";
-    } else {
+      let foundPlaceId= placeToMarker[filterValue];
+      console.log(foundPlaceId);
+      if(foundPlaceId!==undefined){
+        // Sposta la visualizzazione della mappa sul marker trovato
+        const marker = data.find(m => m.id === foundPlaceId);
+        map.flyTo(marker.location, 15);
+      }
+      
+    } 
+    else {
       item.style.display = "none";
     }
   });
-}
+}10
