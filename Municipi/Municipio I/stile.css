@@ -50,6 +50,7 @@ body {
 @media (min-width: 1200px) {
     .container {
         max-width: 1800px;
+    }
 }
 
 .left-column {
@@ -82,4 +83,3 @@ body {
 .navbar-nav:not(.ml-auto) .nav-link i.fa-user{
     display: none;
 }
-
