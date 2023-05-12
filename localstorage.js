@@ -3,6 +3,7 @@ var secondbutton=document.querySelector(".navbar-nav:not(.ml-auto) .nav-item:fir
 const Stringlist= localStorage.getItem('preferiti');
 const list = JSON.parse(Stringlist);
 console.log(list);
+localStorage.setItem('loggedIn', true);
 //Funzione per controllare il login
 function checkLoggedIn() {
     var loggedIn = localStorage.getItem("loggedIn");
@@ -12,7 +13,7 @@ function checkLoggedIn() {
       //cambio l'entita del pulsante accedi in esci:
       var exit= document.querySelector(".navbar-nav.ml-auto .nav-link i.fa-user");
       firstbutton.setAttribute("href", "#");
-      secondbutton.setAttribute("href",'https://www.example.com/');
+      secondbutton.setAttribute("href",'/Favourite/favourite.html');
       exit.innerHTML = "<i class='fas fa-user'></i><img src='/exit.png'>";
       exit.style.display="inline-block";
       //Funzione per effettura il logout
