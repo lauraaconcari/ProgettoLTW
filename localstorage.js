@@ -3,7 +3,6 @@ var secondbutton=document.querySelector(".navbar-nav:not(.ml-auto) .nav-item:fir
 const Stringlist= localStorage.getItem('preferiti');
 const list = JSON.parse(Stringlist);
 console.log(list);
-localStorage.setItem('loggedIn', true);
 //Funzione per controllare il login
 function checkLoggedIn() {
     var loggedIn = localStorage.getItem("loggedIn");

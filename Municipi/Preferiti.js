@@ -14,6 +14,13 @@ favoritesControl.onAdd = function(map) {
     const Stringlist= localStorage.getItem('preferiti');
     const list = JSON.parse(Stringlist);
     list.push(selectedMarker.options.id);
+    //Cambio titolo
+    var titoloH3 = document.getElementById(selectedMarker.options.id+"t");
+    var vecchioContenuto = titoloH3.textContent;
+    var ultimoCarattere = vecchioContenuto.charAt(vecchioContenuto.length-1);
+    var nuovoTitolo = vecchioContenuto.slice(0,-1) + "\u2605";
+
+    titoloH3.textContent = nuovoTitolo;
     localStorage.setItem('preferiti', JSON.stringify(list));
     console.log('Aggiunto ai preferiti: ' + selectedMarker.options.id);
     //Controllo se ha aggiornato
@@ -101,6 +108,12 @@ markers.on('dblclick', function(e) {
         let index= list.indexOf(markerId);
         list.splice(index,1);
         localStorage.setItem('preferiti', JSON.stringify(list));
+        //Cambio titolo
+        var titoloH3 = document.getElementById(selectedMarker.options.id+"t");
+        var vecchioContenuto = titoloH3.textContent;
+        var ultimoCarattere = vecchioContenuto.charAt(vecchioContenuto.length-1);
+        var nuovoTitolo = vecchioContenuto.slice(0,-1) + "\u2606";
+        titoloH3.textContent = nuovoTitolo;
         //Controllo di rimozione
         const newStringlist= localStorage.getItem('preferiti');
         const newlist=JSON.parse(newStringlist);
@@ -119,3 +132,83 @@ markers.on('dblclick', function(e) {
   }
   
 });
+
+// definisci una variabile che indica il numero di luoghi da generare
+var numLuoghi = data.length;
+
+// seleziona l'elemento HTML in cui inserire i luoghi
+var listaLuoghi = document.getElementById("lista-luoghi");
+
+// genera i tag HTML per i luoghi
+for (var i = 1; i <= numLuoghi; i++) {
+  //Prendo l'id e il nome del posto
+  var id="I"+i.toString();
+  var name=markerToPlace[id];
+  //Creo i luoghi
+  var li = document.createElement("li");
+  li.setAttribute("data-name", name);
+  var img = document.createElement("img");
+  img.setAttribute("src", "https://picsum.photos/id/" + i + "/100/100");
+  img.setAttribute("alt", name);
+
+  var div = document.createElement("div");
+
+  var h3 = document.createElement("h3");
+  //Controllo di login
+  var loggedIn= localStorage.getItem("loggedIn");
+  if (loggedIn !== null){
+    //Controllo preferiti
+    var Stringpreferiti=localStorage.getItem("preferiti");
+    const preferiti = JSON.parse(Stringpreferiti);
+    if(preferiti.includes(id)){
+      h3.textContent = name+" \u2605";
+    }
+    else{
+      h3.textContent = name+" \u2606";
+    }
+  }
+  else{
+    h3.textContent = name
+  }
+  h3.setAttribute("id", id+"t");
+  var p = document.createElement("p");
+  p.textContent = "Descrizione del Luogo "+id;
+
+  div.appendChild(h3);
+  div.appendChild(p);
+
+  li.appendChild(img);
+  li.appendChild(div);
+
+  listaLuoghi.appendChild(li);
+}
+
+
+//Filtro per la mappa
+const filterInput = document.querySelector("#filter");
+const listItems = document.querySelectorAll(".list-container li");
+
+filterInput.addEventListener("keyup", filterItems);
+
+function filterItems() {
+  const filterValue = filterInput.value.toLowerCase();
+
+  listItems.forEach(item => {
+    const itemName = item.getAttribute("data-name").toLowerCase();
+
+    if (itemName.includes(filterValue)) {
+      item.style.display = "flex";
+      let foundPlaceId= placeToMarker[filterValue];
+      console.log(foundPlaceId);
+      if(foundPlaceId!==undefined){
+        // Sposta la visualizzazione della mappa sul marker trovato
+        const marker = data.find(m => m.id === foundPlaceId);
+        map.flyTo(marker.location, 17);
+      }
+      
+    } 
+    else {
+      item.style.display = "none";
+    }
+  });
+}

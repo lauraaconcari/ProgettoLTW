@@ -10,7 +10,8 @@ var customIcon = L.icon({
 L.Marker.prototype.options.icon = customIcon;
 
 var markers = L.markerClusterGroup();
-const markerToPlace = {}; //Tupla per salvare id con nome corrispondente
+const markerToPlace = {}; //Tupla per salvare id con nome corrispondente con i nomi originali
+const markerToPlacelowcase = {};
 var data = [
   {
     "id": "I1",
@@ -352,43 +353,13 @@ var data = [
     //Aggiunta dei marker sulla mappa
     let info = data[i];
     let marker = L.marker(info.location, { id: info.id });
-    markerToPlace[info.id] = info.popupContent.toLowerCase();
+    markerToPlace[info.id] = info.popupContent;
+    markerToPlacelowcase[info.id] = info.popupContent.toLowerCase();
     marker.bindPopup(info.popupContent);
     markers.addLayer(marker);
   }
-  const placeToMarker = _.invert(markerToPlace);
+  const placeToMarker = _.invert(markerToPlacelowcase);
   console.log(placeToMarker);
   map.addLayer(markers);
-  //Filtro per la mappa
-  
 
 
-
-
-const filterInput = document.querySelector("#filter");
-const listItems = document.querySelectorAll(".list-container li");
-
-filterInput.addEventListener("keyup", filterItems);
-
-function filterItems() {
-  const filterValue = filterInput.value.toLowerCase();
-
-  listItems.forEach(item => {
-    const itemName = item.getAttribute("data-name").toLowerCase();
-
-    if (itemName.includes(filterValue)) {
-      item.style.display = "flex";
-      let foundPlaceId= placeToMarker[filterValue];
-      console.log(foundPlaceId);
-      if(foundPlaceId!==undefined){
-        // Sposta la visualizzazione della mappa sul marker trovato
-        const marker = data.find(m => m.id === foundPlaceId);
-        map.flyTo(marker.location, 15);
-      }
-      
-    } 
-    else {
-      item.style.display = "none";
-    }
-  });
-}10
