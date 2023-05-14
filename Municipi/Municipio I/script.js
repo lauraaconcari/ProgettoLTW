@@ -12,10 +12,11 @@ L.Marker.prototype.options.icon = customIcon;
 var markers = L.markerClusterGroup();
 const markerToPlace = {}; //Tupla per salvare id con nome corrispondente con i nomi originali
 const markerToPlacelowcase = {};
+var Municipio="I";
 var data = [
   {
     "id": "I1",
-    "location": [41.900514842702606, 12.482312309217967],
+    "location": [41.90045088695234, 12.482698534549783],
     "popupContent": "Baccano"
   },
   {

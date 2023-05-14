@@ -142,7 +142,7 @@ var listaLuoghi = document.getElementById("lista-luoghi");
 // genera i tag HTML per i luoghi
 for (var i = 1; i <= numLuoghi; i++) {
   //Prendo l'id e il nome del posto
-  var id="I"+i.toString();
+  var id=Municipio+i.toString();
   var name=markerToPlace[id];
   //Creo i luoghi
   var li = document.createElement("li");

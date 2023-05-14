@@ -6,12 +6,16 @@
 	<title>Municipio XI</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="stile.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
     <link rel="icon" type="image/x-icon" href="../../colosseum.png" >
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
     crossorigin=""/>
     <link rel="stylesheet" href="../Leaflet.markercluster-1.4.1/dist/MarkerCluster.css">
     <link rel="stylesheet" href="../Leaflet.markercluster-1.4.1/dist/MarkerCluster.Default.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
 
 
 </head>
@@ -76,7 +80,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../../elemnavbar/diconodinoi.html">Dicono di noi</a>
+                    <a class="nav-link" href="/elemnavbar/diconodinoi.html">Dicono di noi</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/elemnavbar/contattaci.html">Contattaci</a>
@@ -85,47 +89,35 @@
         </div>
     </nav>
 	<div class="container">
-		<section class="section-1">
-            <div id="map"></div>
-		</section>
-		<section class="section-2">
-			<p>
-                sezione di prova 2
-            </p>
-		</section>
-        <section class="section-3">
-			<p>
-                sezione di prova 3
-            </p>
-		</section>
-        <section class="section-4">
-			<p>
-                sezione di prova 4
-            </p>
-		</section>
-        <section class="section-5">
-			<p>
-                sezione di prova 5
-            </p>
-		</section>
-        <section class="section-6">
-			<p>
-                sezione di prova 6
-            </p>
-		</section>
+        <div class="row">
+            <div class="left-column">
+                <div id="map"></div>
+            </div>
+            <div class="right-column">
+                <div class="filter-container">
+                    <label for="filter">Filtra per nome:</label>
+                    <input type="text" id="filter" name="filter">
+                </div>
+                <ul class="list-container" id="lista-luoghi">
+                
+                </ul>
+            </div>
+        </div>
 	</div>
     
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-    crossorigin=""></script>
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../Leaflet.markercluster-1.4.1/dist/leaflet.markercluster-src.js"></script>
     <script src="../Leaflet.markercluster-1.4.1/src/MarkerCluster.js"></script>
- 
+
     <script src="/localstorage.js"></script>
     <script src="script.js"></script>
+    <script src="/Municipi/Preferiti.js"></script>
+
 </body>
 </html>
