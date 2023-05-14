@@ -10,6 +10,9 @@ var customIcon = L.icon({
   });
   L.Marker.prototype.options.icon = customIcon;
 var markers = L.markerClusterGroup();
+const markerToPlace = {}; //Tupla per salvare id con nome corrispondente con i nomi originali
+const markerToPlacelowcase = {};
+var Municipio="V";
 var data = [
   {
     "id": "V1",
@@ -343,10 +346,15 @@ var data = [
   }
 ];
 for (let i = 0; i < data.length; i++) {
+  //Aggiunta dei marker sulla mappa
   let info = data[i];
   let marker = L.marker(info.location, { id: info.id });
+  markerToPlace[info.id] = info.popupContent;
+  markerToPlacelowcase[info.id] = info.popupContent.toLowerCase();
   marker.bindPopup(info.popupContent);
   markers.addLayer(marker);
 }
+const placeToMarker = _.invert(markerToPlacelowcase);
+console.log(placeToMarker);
 map.addLayer(markers);
 
