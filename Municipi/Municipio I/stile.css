@@ -29,28 +29,35 @@ body {
 .fa-user {
     margin-top: 7px;
     margin-right: 30px;
-    
 }
-
+.fa-heart {
+    margin-top: 7px;
+    margin-right: 30px;
+}
 .row {
     display: flex;
     flex-wrap: wrap;
     padding: 0%;
+    
 }
 
 .container{
     display: flex;
     justify-content: center;
     /* grid-template-columns: repeat(2,1fr); */
-    height: 100vh;
+    height: 700px;
     padding: 20px;
     /* margin-right: 100000px; */
     margin-top: 20px;
+    margin-bottom: 0px;
+    max-width: 100%;
+    max-height: 100%;
+    width: 1000vw;    
 }
 
-@media (min-width: 1200px) {
+@media (max-width: 768px) {
     .container {
-        max-width: 1800px;
+        width: 90vw;
     }
 }
 
@@ -86,11 +93,9 @@ body {
 .navbar-nav.ml-auto .nav-link i.fa-user{
     display: none;
 }
-.navbar-nav:not(.ml-auto) .nav-link i.fa-user{
+.navbar-nav:not(.ml-auto) .nav-link i.fa-heart{
     display: none;
 }
-
-
 
 .right-column::-webkit-scrollbar {
     width: 10px;

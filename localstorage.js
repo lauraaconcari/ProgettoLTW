@@ -8,12 +8,12 @@ function checkLoggedIn() {
     var loggedIn = localStorage.getItem("loggedIn");
     if (loggedIn !== null) {
       // l'item "loggedIn" esiste nel localStorage
-      document.querySelector(".navbar-nav:not(.ml-auto) .nav-link i.fa-user").style.display = "inline-block";
+      document.querySelector(".navbar-nav:not(.ml-auto) .nav-link i.fa-heart").style.display = "inline-block";
       //cambio l'entita del pulsante accedi in esci:
-      var exit= document.querySelector(".navbar-nav.ml-auto .nav-link i.fa-user");
+      var exit= document.querySelector(".navbar-nav.ml-auto .nav-link");
       firstbutton.setAttribute("href", "#");
       secondbutton.setAttribute("href",'/Favourite/favourite.html');
-      exit.innerHTML = "<i class='fas fa-user'></i><img src='/exit.png'>";
+      exit.innerHTML = "<i class='fa-solid fa-arrow-right-from-bracket fa-xl'></i>";
       exit.style.display="inline-block";
       //Funzione per effettura il logout
         firstbutton.addEventListener("click", function() {
@@ -51,8 +51,9 @@ function checkLoggedIn() {
         })
     } else {
       // l'item "loggedIn" non esiste nel localStorage
-      document.querySelector(".navbar-nav:not(.ml-auto) .nav-link i.fa-user").style.display = "none";
-      document.querySelector(".navbar-nav.ml-auto .nav-link i.fa-user").style.display="inline-block";
+      document.querySelector(".navbar-nav:not(.ml-auto) .nav-link i.fa-heart").style.display = "none";
+      document.querySelector(".navbar-nav.ml-auto .nav-link").style.display="inline-block";
+      
     }
   }
   document.addEventListener("DOMContentLoaded", function(event) {

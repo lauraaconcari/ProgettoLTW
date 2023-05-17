@@ -61,3 +61,22 @@
     border: 1px solid #ccc;
     border-radius: 5px;
   }
+
+  footer {
+    background-color: #fc9b00;
+    color: #fff;
+    padding: 20px;
+    position: absolute;
+    bottom: auto;
+    width: 100%;
+    
+  }
+
+  .row a {
+    margin-right: 50px;
+    color: #fff;
+  }
+  
+  .row a:last-child {
+    margin-right: 0;
+  }
