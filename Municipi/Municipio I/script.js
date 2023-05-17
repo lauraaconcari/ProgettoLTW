@@ -156,7 +156,7 @@ var data = [
   {
     "id": "I28",
     "location": [41.907967346786094, 12.502070713288644],
-    "popupContent": "La Caramella"
+    "popupContent": "Caramella"
   },
   {
     "id": "I29",
