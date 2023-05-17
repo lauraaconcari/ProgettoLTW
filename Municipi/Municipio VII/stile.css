@@ -27,10 +27,16 @@ body {
 }
 .fa-user {
     margin-top: 7px;
-    margin-right: 30px;
-    
+    margin-right: 30px; 
 }
-
+.fa-arrow-right-from-bracket {
+    margin-top: 7px;
+    margin-right: 30px;
+}
+  .fa-heart {
+    margin-top: 7px;
+    margin-right: 30px;
+}
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -77,9 +83,4 @@ body {
     border: 2px solid #727272;
     position: relative;
 }
-.navbar-nav.ml-auto .nav-link i.fa-user{
-    display: none;
-}
-.navbar-nav:not(.ml-auto) .nav-link i.fa-user{
-    display: none;
-}
+

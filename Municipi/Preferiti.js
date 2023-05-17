@@ -48,7 +48,7 @@ favoritesControl.addTo(map);
 markers.on('click', function(e) {
   let markerId = e.layer.options.id;
   console.log("Hai cliccato sul marker con ID " + markerId);
-  map.setView(e.latlng, 16);
+  map.setView(e.latlng, 17);
   
   // Memorizza il marker selezionato
   selectedMarker = e.layer;
