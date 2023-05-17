@@ -44,12 +44,11 @@ favoritesControl.onAdd = function(map) {
 
 // Aggiungi il controllo personalizzato alla mappa
 favoritesControl.addTo(map);
-
 // Aggiungi un listener per il click sui marker
 markers.on('click', function(e) {
   let markerId = e.layer.options.id;
   console.log("Hai cliccato sul marker con ID " + markerId);
-  map.panTo(e.latlng);
+  map.setView(e.latlng, 16);
   
   // Memorizza il marker selezionato
   selectedMarker = e.layer;
@@ -69,8 +68,7 @@ markers.on('click', function(e) {
 });
 markers.on('dblclick', function(e) {
   let markerId = e.layer.options.id;
-  console.log("Hai cliccato sul marker con ID " + markerId);
-  map.panTo(e.latlng);
+  
   
   // Memorizza il marker selezionato
   selectedMarker = e.layer;
