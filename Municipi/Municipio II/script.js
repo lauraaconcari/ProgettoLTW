@@ -8,7 +8,10 @@ var customIcon = L.icon({
     iconSize: [17, 17] 
   });
   L.Marker.prototype.options.icon = customIcon;	
-  var markers = L.layerGroup();
+  var markers = L.markerClusterGroup({
+    disableClusteringAtZoom: 1, // disabilita clustering
+    showCoverageOnHover: false, // nasconde i cluster
+  });
   const markerToPlace = {}; //Tupla per salvare id con nome corrispondente con i nomi originali
   const markerToPlacelowcase = {};
   var Municipio="II";
