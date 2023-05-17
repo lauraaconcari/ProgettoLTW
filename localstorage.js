@@ -60,6 +60,7 @@ function checkLoggedIn() {
         })
     } else {
       // l'item "loggedIn" non esiste nel localStorage aggiungo il pulsante per loggare
+      console.log(navLinks);
       navLinks[0].insertAdjacentHTML('beforeend', "<i class='fa-regular fa-user fa-2xl'></i>");
       navLinks[0].setAttribute('href', '/Login/Login.html');
     }
