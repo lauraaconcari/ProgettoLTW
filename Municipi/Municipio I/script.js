@@ -1,4 +1,4 @@
-var map = L.map('map').setView([41.90187547065311, 12.473100381372474], 11);
+var map = L.map('map').setView([41.90187547065311, 12.473100381372474], 12);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -9,7 +9,7 @@ var customIcon = L.icon({
   });
 L.Marker.prototype.options.icon = customIcon;
 
-var markers = L.markerClusterGroup();
+var markers = L.layerGroup();
 const markerToPlace = {}; //Tupla per salvare id con nome corrispondente con i nomi originali
 const markerToPlacelowcase = {};
 var Municipio="I";
@@ -321,31 +321,26 @@ var data = [
   },
   {
     "id": "I62",
-    "location": [41.920519716796804, 12.460604725243531],
-    "popupContent": "Etilico"
-  },
-  {
-    "id": "I63",
     "location": [41.92349370726969, 12.459005273110476],
     "popupContent": "Prato Chiosco"
   },
   {
-    "id": "I64",
+    "id": "I63",
     "location": [41.910213555989934, 12.452110951667484],
     "popupContent": "Fábrica"
   },
   {
-    "id": "I65",
+    "id": "I64",
     "location": [41.91656839255661, 12.461206911748551],
     "popupContent": "Eat me box"
   },
   {
-    "id": "I66",
+    "id": "I65",
     "location": [41.91690964106599, 12.460941861461098],
     "popupContent": "Sabotino"
   },
   {
-    "id": "I67",
+    "id": "I66",
     "location": [41.916853156477735, 12.464820303319765],
     "popupContent": "Fico by Baguetteria"
   }
