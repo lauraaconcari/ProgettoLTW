@@ -204,6 +204,7 @@ function filterItems() {
         // Sposta la visualizzazione della mappa sul marker trovato
         const marker = data.find(m => m.id === foundPlaceId);
         map.flyTo(marker.location, 17);
+        
       }
       
     } 

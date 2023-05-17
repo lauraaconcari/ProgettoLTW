@@ -1,4 +1,4 @@
-var map = L.map('map').setView([41.9227557539587, 12.498165206192587], 11);
+var map = L.map('map').setView([41.9227557539587, 12.498165206192587], 12);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -8,7 +8,10 @@ var customIcon = L.icon({
     iconSize: [17, 17] 
   });
   L.Marker.prototype.options.icon = customIcon;	
-  var markers = L.markerClusterGroup();
+  var markers = L.markerClusterGroup({
+    disableClusteringAtZoom: 1, // disabilita clustering
+    showCoverageOnHover: false, // nasconde i cluster
+  });
   const markerToPlace = {}; //Tupla per salvare id con nome corrispondente con i nomi originali
   const markerToPlacelowcase = {};
   var Municipio="II";
