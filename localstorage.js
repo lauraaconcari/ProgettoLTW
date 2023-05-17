@@ -1,22 +1,25 @@
-var firstbutton=document.querySelector(".navbar-nav.ml-auto .nav-item:first-child a.nav-link");
-var secondbutton=document.querySelector(".navbar-nav:not(.ml-auto) .nav-item:first-child a.nav-link");
+var navLinks = document.querySelectorAll('.nav-link');
 const Stringlist= localStorage.getItem('preferiti');
 const list = JSON.parse(Stringlist);
 console.log(list);
+//prendo il nome della pagina
+var pathname = window.location.pathname;  
+var pageName = pathname.split('/').pop(); 
+console.log('Il nome della pagina corrente è: ' + pageName);
 //Funzione per controllare il login
 function checkLoggedIn() {
     var loggedIn = localStorage.getItem("loggedIn");
     if (loggedIn !== null) {
-      // l'item "loggedIn" esiste nel localStorage
-      document.querySelector(".navbar-nav:not(.ml-auto) .nav-link i.fa-heart").style.display = "inline-block";
-      //cambio l'entita del pulsante accedi in esci:
-      var exit= document.querySelector(".navbar-nav.ml-auto .nav-link");
-      firstbutton.setAttribute("href", "#");
-      secondbutton.setAttribute("href",'/Favourite/favourite.html');
-      exit.innerHTML = "<i class='fa-solid fa-arrow-right-from-bracket fa-xl'></i>";
-      exit.style.display="inline-block";
+      console.log(navLinks);
+      // l'item "loggedIn" esiste nel localStorage quindi aggiungo il pulsante exit e preferiti
+      navLinks[0].insertAdjacentHTML('beforeend', "<i class='fa-solid fa-arrow-right-from-bracket fa-2xl'></i>");
+      if(pageName!="favourite.html"){
+        navLinks[1].insertAdjacentHTML('beforeend', "<i class='fa-regular fa-heart fa-2xl'></i>");
+        navLinks[1].setAttribute('href', '/Favourite/favourite.html');  
+      }
+      var exit = navLinks[0].querySelector('i.fa-arrow-right-from-bracket');
       //Funzione per effettura il logout
-        firstbutton.addEventListener("click", function() {
+        exit.addEventListener("click", function() {
           const Stringlist = localStorage.getItem('preferiti');
           const list = JSON.parse(Stringlist);
           const email = localStorage.getItem('email');
@@ -40,7 +43,13 @@ function checkLoggedIn() {
               localStorage.removeItem('loggedIn');
               localStorage.removeItem('email');
               localStorage.removeItem('preferiti');
-              location.reload();
+              //controllo se sono nella pagina dei preferiti
+              if(pageName=="favourite.html"){
+                window.location.href = "../index.html";
+              }
+              else{
+                location.reload();
+              }
             } else {
               console.error('Si è verificato un errore durante l\'invio della richiesta:', response.statusText);
             }
@@ -50,10 +59,9 @@ function checkLoggedIn() {
           });
         })
     } else {
-      // l'item "loggedIn" non esiste nel localStorage
-      document.querySelector(".navbar-nav:not(.ml-auto) .nav-link i.fa-heart").style.display = "none";
-      document.querySelector(".navbar-nav.ml-auto .nav-link").style.display="inline-block";
-      
+      // l'item "loggedIn" non esiste nel localStorage aggiungo il pulsante per loggare
+      navLinks[0].insertAdjacentHTML('beforeend', "<i class='fa-regular fa-user fa-2xl'></i>");
+      navLinks[0].setAttribute('href', '/Login/Login.html');
     }
   }
   document.addEventListener("DOMContentLoaded", function(event) {

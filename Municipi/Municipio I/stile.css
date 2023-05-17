@@ -30,6 +30,10 @@ body {
     margin-top: 7px;
     margin-right: 30px;
 }
+.fa-arrow-right-from-bracket {
+    margin-top: 7px;
+    margin-right: 30px;
+}
 .fa-heart {
     margin-top: 7px;
     margin-right: 30px;
@@ -89,12 +93,6 @@ body {
     border: 2px solid #727272;
     border-radius: 10px;
     position: relative;
-}
-.navbar-nav.ml-auto .nav-link i.fa-user{
-    display: none;
-}
-.navbar-nav:not(.ml-auto) .nav-link i.fa-heart{
-    display: none;
 }
 
 .right-column::-webkit-scrollbar {
