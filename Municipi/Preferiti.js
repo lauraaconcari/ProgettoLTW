@@ -146,7 +146,7 @@ for (var i = 1; i <= numLuoghi; i++) {
   var li = document.createElement("li");
   li.setAttribute("data-name", name);
   var img = document.createElement("img");
-  img.setAttribute("src", "https://picsum.photos/id/" + i + "/100/100");
+  img.setAttribute("src", "../Foto/"+id+".jpg");
   img.setAttribute("alt", name);
 
   var div = document.createElement("div");
