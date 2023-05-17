@@ -179,6 +179,22 @@ for (var i = 1; i <= numLuoghi; i++) {
   li.appendChild(div);
 
   listaLuoghi.appendChild(li);
+  // Crea una funzione di chiusura per salvare l'attributo "data-name" corrente
+  (function(name) {
+    // Aggiungi un event listener per gestire l'evento di click sull'elemento <li>
+    li.addEventListener("click", function() {
+      // Stampa il nome corrente
+      console.log(name);
+      let foundPlaceId= placeToMarker[name.toLowerCase()];
+      console.log(foundPlaceId);
+      const marker = data.find(m => m.id === foundPlaceId);
+      map.flyTo(marker.location, 17);
+      // Seleziona l'elemento <p> all'interno dell'elemento <div>
+      var desc = this.querySelector("div p");
+      // Aggiungi la classe "show" all'elemento <p>
+      desc.classList.toggle("show");
+    });
+  })(name);
 }
 
 
@@ -193,18 +209,8 @@ function filterItems() {
 
   listItems.forEach(item => {
     const itemName = item.getAttribute("data-name").toLowerCase();
-
     if (itemName.includes(filterValue)) {
       item.style.display = "flex";
-      let foundPlaceId= placeToMarker[filterValue];
-      console.log(foundPlaceId);
-      if(foundPlaceId!==undefined){
-        // Sposta la visualizzazione della mappa sul marker trovato
-        const marker = data.find(m => m.id === foundPlaceId);
-        map.flyTo(marker.location, 17);
-        
-      }
-      
     } 
     else {
       item.style.display = "none";

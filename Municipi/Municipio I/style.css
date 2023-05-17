@@ -80,3 +80,10 @@
   .row a:last-child {
     margin-right: 0;
   }
+  #lista-luoghi li {
+    cursor: pointer;
+  }
+  
+  #lista-luoghi li:hover {
+    background-color: #f2f2f2;
+  }
