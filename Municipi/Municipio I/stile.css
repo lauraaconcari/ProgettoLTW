@@ -90,6 +90,12 @@ body {
     border-radius: 10px;
     position: relative;
 }
+
+.leaflet-touch .leaflet-bar {
+    border: 0px solid rgba(0,0,0,0.2);
+    background-clip: padding-box;
+}
+
 .navbar-nav.ml-auto .nav-link i.fa-user{
     display: none;
 }
