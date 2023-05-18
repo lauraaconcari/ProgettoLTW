@@ -6,7 +6,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 var customIcon = L.icon({
     iconUrl:'../../placeholder.png' ,
-    iconSize: [17, 17] 
+    iconSize: [17,17] 
   });
 L.Marker.prototype.options.icon = customIcon;
 
@@ -364,4 +364,16 @@ var data = [
   console.log(placeToMarker);
   map.addLayer(markers);
 
-
+// Imposta la dimensione dell'icona in base al livello di zoom corrente
+map.on('zoomend', function() {
+  var zoomLevel = map.getZoom();
+  if (zoomLevel >= 17) {
+    customIcon.options.iconSize = [25, 25];
+  } else {
+    customIcon.options.iconSize = [17, 17];
+  }
+  // Aggiorna le icone nel layer
+  markers.eachLayer(function(layer) {
+    layer.setIcon(customIcon);
+  });
+});
