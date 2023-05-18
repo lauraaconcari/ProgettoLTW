@@ -9,6 +9,7 @@ var customIcon = L.icon({
     iconSize: [17, 17] 
   });
   L.Marker.prototype.options.icon = customIcon;	
+  var markerlist= [];
   var markers = L.markerClusterGroup({
     disableClusteringAtZoom: 1, // disabilita clustering
     showCoverageOnHover: false, // nasconde i cluster
@@ -416,6 +417,7 @@ var customIcon = L.icon({
     markerToPlacelowcase[info.id] = info.popupContent.toLowerCase();
     marker.bindPopup(info.popupContent);
     markers.addLayer(marker);
+    markerlist.push(marker);
   }
   const placeToMarker = _.invert(markerToPlacelowcase);
   console.log(placeToMarker);
