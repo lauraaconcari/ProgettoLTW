@@ -10,6 +10,7 @@ var customIcon = L.icon({
   });
 L.Marker.prototype.options.icon = customIcon;
 
+var markerlist= [];
 var markers = L.markerClusterGroup({
   disableClusteringAtZoom: 1, // disabilita clustering
   showCoverageOnHover: false, // nasconde i cluster
@@ -357,21 +358,10 @@ var data = [
     markerToPlacelowcase[info.id] = info.popupContent.toLowerCase();
     marker.bindPopup(info.popupContent);
     markers.addLayer(marker);
+    markerlist.push(marker);
   }
   const placeToMarker = _.invert(markerToPlacelowcase);
   console.log(placeToMarker);
   map.addLayer(markers);
 
-// Imposta la dimensione dell'icona in base al livello di zoom corrente
-map.on('zoomend', function() {
-  var zoomLevel = map.getZoom();
-  if (zoomLevel >= 17) {
-    customIcon.options.iconSize = [25, 25];
-  } else {
-    customIcon.options.iconSize = [17, 17];
-  }
-  // Aggiorna le icone nel layer
-  markers.eachLayer(function(layer) {
-    layer.setIcon(customIcon);
-  });
-});
+

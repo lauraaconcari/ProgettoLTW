@@ -1,3 +1,36 @@
+//Icona dei preferiti
+var favIcon = L.icon({
+  iconUrl:'../../preferiti.png' ,
+  iconSize: [17, 17] 
+});
+// Imposta la dimensione dell'icona in base al livello di zoom corrente
+map.on('zoomend', function() {
+  var zoomLevel = map.getZoom();
+  if (zoomLevel >= 17) {
+    customIcon.options.iconSize = [25, 25];
+    favIcon.options.iconSize = [25, 25];
+  } else {
+    customIcon.options.iconSize = [17, 17];
+    favIcon.options.iconSize = [17, 17];
+  }
+  // Aggiorna le icone nel layer
+  markers.eachLayer(function(layer) {
+    if(layer.getIcon().options.iconUrl === customIcon.options.iconUrl){
+      layer.setIcon(customIcon);
+    }
+    else{
+      layer.setIcon(favIcon);
+    }
+  });
+});
+//Funzione per cercare il layer nel cluster
+function getMarkerLayerById(markerId) {
+  var markerLayer = markers.getLayers().find(function(layer) {
+    return layer.options.id === markerId;
+  });
+  return markerLayer;
+}
+
 // Crea il controllo personalizzato
 let favoritesControl = L.control({ position: 'topright' });
 
@@ -27,6 +60,9 @@ favoritesControl.onAdd = function(map) {
     const newStringlist= localStorage.getItem('preferiti');
     const newlist=JSON.parse(newStringlist);
     console.log('Lista dei preferiti:'+newlist);
+    var num = parseInt(selectedMarker.options.id.replace(/\D/g, ''));
+    const marker=markerlist[num-1];
+    marker.setIcon(favIcon);
     // Nascondi il pulsante "Aggiungi ai preferiti"
     button.style.display = 'none';
     
@@ -45,11 +81,10 @@ favoritesControl.onAdd = function(map) {
 // Aggiungi il controllo personalizzato alla mappa
 favoritesControl.addTo(map);
 // Aggiungi un listener per il click sui marker
-markers.on('click', function(e) {
+function handleMarkerClick(e) {
   let markerId = e.layer.options.id;
   console.log("Hai cliccato sul marker con ID " + markerId);
   map.setView(e.latlng, 17);
-  
   // Memorizza il marker selezionato
   selectedMarker = e.layer;
   const Stringlist= localStorage.getItem('preferiti');
@@ -57,15 +92,41 @@ markers.on('click', function(e) {
   var loggedIn = localStorage.getItem("loggedIn");
   let button = document.querySelector('.add-to-favorites');
   if(!(list.includes(markerId)) && loggedIn !== null ){
-  // Mostra il pulsante "Aggiungi ai preferiti"
-  button.style.display = 'block';
+    // Mostra il pulsante "Aggiungi ai preferiti"
+    button.style.display = 'block';
   }
   // Aggiungi un listener per il popupclose del marker
   selectedMarker.on('popupclose', function() {
     // Nascondi il pulsante "Aggiungi ai preferiti"
     button.style.display = 'none';
   });
-});
+}
+//Aggiungi un listener per il click sulla lista
+function handleListClick(e) {
+  let markerId = e.options.id;
+  console.log("Hai cliccato sul marker con ID " + markerId);
+  map.setView(e.getLatLng(), 17);
+  e.openPopup();
+  // Memorizza il marker selezionato
+  selectedMarker = e;
+  const Stringlist= localStorage.getItem('preferiti');
+  const list = JSON.parse(Stringlist);
+  var loggedIn = localStorage.getItem("loggedIn");
+  let button = document.querySelector('.add-to-favorites');
+  if(!(list.includes(markerId)) && loggedIn !== null ){
+    // Mostra il pulsante "Aggiungi ai preferiti"
+    button.style.display = 'block';
+  }
+  // Aggiungi un listener per il popupclose del marker
+  selectedMarker.on('popupclose', function() {
+    // Nascondi il pulsante "Aggiungi ai preferiti"
+    button.style.display = 'none';
+  });
+}
+
+// Aggiungi un listener per l'evento "click" del marker
+markers.on('click', handleMarkerClick);
+
 markers.on('dblclick', function(e) {
   let markerId = e.layer.options.id;
   
@@ -103,6 +164,9 @@ markers.on('dblclick', function(e) {
     .then((willDelete) => {
       if (willDelete) {
         // Azione da eseguire se l'utente conferma
+        var num = parseInt(selectedMarker.options.id.replace(/\D/g, ''));
+        const marker=markerlist[num-1];
+        marker.setIcon(customIcon);
         let index= list.indexOf(markerId);
         list.splice(index,1);
         localStorage.setItem('preferiti', JSON.stringify(list));
@@ -159,6 +223,8 @@ for (var i = 1; i <= numLuoghi; i++) {
     var Stringpreferiti=localStorage.getItem("preferiti");
     const preferiti = JSON.parse(Stringpreferiti);
     if(preferiti.includes(id)){
+      const marker=markerlist[i-1];
+      marker.setIcon(favIcon);
       h3.textContent = name+" \u2605";
     }
     else{
@@ -186,9 +252,9 @@ for (var i = 1; i <= numLuoghi; i++) {
       // Stampa il nome corrente
       console.log(name);
       let foundPlaceId= placeToMarker[name.toLowerCase()];
-      console.log(foundPlaceId);
-      const marker = data.find(m => m.id === foundPlaceId);
-      map.flyTo(marker.location, 17);
+      var num = parseInt(foundPlaceId.replace(/\D/g, ''));
+      const marker=markerlist[num-1];
+      handleListClick(marker);
       // Seleziona l'elemento <p> all'interno dell'elemento <div>
       var desc = this.querySelector("div p");
       // Aggiungi la classe "show" all'elemento <p>

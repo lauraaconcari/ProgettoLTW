@@ -55,3 +55,10 @@
     border: 1px solid #ccc;
     border-radius: 5px;
   }
+  #lista-luoghi li {
+    cursor: pointer;
+  }
+  
+  #lista-luoghi li:hover {
+    background-color: #f2f2f2;
+  }
