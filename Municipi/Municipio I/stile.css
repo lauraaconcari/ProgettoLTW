@@ -2,6 +2,8 @@
     font-family: 'Lucida Console', sans-serif;
     padding: 10px;
     width: 100%;
+    display: flex;
+    
 }
 
   
@@ -108,4 +110,20 @@ body {
 .right-column::-webkit-scrollbar-thumb {
     background: #fc9b00;
     border-radius: 10px;
+}
+.btn {
+    font-family: 'Lucida Console', sans-serif;
+    line-height: 2;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: .30rem;
+    color: rgba(0,0,0,.5);
+    border-color: rgba(0,0,0,.1);
+    margin-left: auto;
+}
+
+.dropdown-menu {
+    position: absolute;
+    left: 20%;
+    background-color: #fcc100;
 }
