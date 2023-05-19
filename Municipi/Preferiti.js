@@ -1,7 +1,27 @@
 //Icona dei preferiti
 var favIcon = L.icon({
-  iconUrl:'../../champagne.png' ,
+  iconUrl:'../../preferiti.png' ,
   iconSize: [17, 17] 
+});
+// Imposta la dimensione dell'icona in base al livello di zoom corrente
+map.on('zoomend', function() {
+  var zoomLevel = map.getZoom();
+  if (zoomLevel >= 17) {
+    customIcon.options.iconSize = [25, 25];
+    favIcon.options.iconSize = [25, 25];
+  } else {
+    customIcon.options.iconSize = [17, 17];
+    favIcon.options.iconSize = [17, 17];
+  }
+  // Aggiorna le icone nel layer
+  markers.eachLayer(function(layer) {
+    if(layer.getIcon().options.iconUrl === customIcon.options.iconUrl){
+      layer.setIcon(customIcon);
+    }
+    else{
+      layer.setIcon(favIcon);
+    }
+  });
 });
 //Funzione per cercare il layer nel cluster
 function getMarkerLayerById(markerId) {
