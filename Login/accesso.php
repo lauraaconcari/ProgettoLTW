@@ -36,11 +36,19 @@ if (pg_num_rows($result) > 0) {
       while ($row = pg_fetch_assoc($result)) {
         $marker_ids[] = $row['marker_id'];
       }
+      //Prende il nome dell'utente
+      $nome="SELECT nome FROM registrazioni WHERE email = '$email' ";
+      $result = pg_query($conn, $nome);
+    if ($result !== false){
+        $row = pg_fetch_assoc($result);
+        $nomeUtente = $row['nome'];
+      }
       // Salva la lista di marker_id nel local storage
       $json_marker_ids = json_encode($marker_ids);
       // Chiudi la connessione al database
       pg_close($conn);  
       echo "<script>";
+      echo "localStorage.setItem('nomeUtente','$nomeUtente');";
       echo "localStorage.setItem('loggedIn', true);";
       echo "localStorage.setItem('email','$email');";
       echo "localStorage.setItem('preferiti', '$json_marker_ids');";

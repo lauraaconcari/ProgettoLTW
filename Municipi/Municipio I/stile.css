@@ -34,11 +34,11 @@ body {
 }
 .fa-arrow-right-from-bracket {
     margin-top: 7px;
-    margin-right: 30px;
+    margin-left: 30px;
 }
 .fa-heart {
     margin-top: 7px;
-    margin-right: 30px;
+    margin-left: 30px;
 }
 .row {
     display: flex;

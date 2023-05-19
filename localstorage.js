@@ -10,15 +10,15 @@ console.log('Il nome della pagina corrente è: ' + pageName);
 function checkLoggedIn() {
     var loggedIn = localStorage.getItem("loggedIn");
     if (loggedIn !== null) {
+      //setto il nome
+      var dropdownButton = document.getElementById("dropdownMenuButton");
+      const nome= localStorage.getItem('nomeUtente');
+      dropdownButton.textContent = nome;
+      var dropdownButton = document.getElementById("dropdownMenuButton"); dropdownButton.style.display = "block";
       console.log(navLinks);
-      // l'item "loggedIn" esiste nel localStorage quindi aggiungo il pulsante exit e preferiti
-      navLinks[0].insertAdjacentHTML('beforeend', "<i class='fa-solid fa-arrow-right-from-bracket fa-2xl'></i>");
-      if(pageName!="favourite.html"){
-        navLinks[1].insertAdjacentHTML('beforeend', "<i class='fa-regular fa-heart fa-2xl'></i>");
-        navLinks[1].setAttribute('href', '/Favourite/favourite.html');  
-      }
-      var exit = navLinks[0].querySelector('i.fa-arrow-right-from-bracket');
       //Funzione per effettura il logout
+      var dropdownItems = document.querySelectorAll(".dropdown-item");
+      var exit = dropdownItems[1];
         exit.addEventListener("click", function() {
           const Stringlist = localStorage.getItem('preferiti');
           const list = JSON.parse(Stringlist);
