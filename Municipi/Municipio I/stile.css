@@ -18,6 +18,12 @@
     font-family: 'Lucida Console', sans-serif;
     font-size: 20px;
 }
+
+.navbar-light .navbar-toggler {
+    color: rgba(0,0,0,.5);
+    border-color: rgba(0,0,0,.1);
+    height: 46.6px;
+}
 a img {
     width: 40px;
     height: 40px;
@@ -119,11 +125,23 @@ body {
     border-radius: .30rem;
     color: rgba(0,0,0,.5);
     border-color: rgba(0,0,0,.1);
-    margin-left: auto;
+    margin-left: 900px;
+}
+
+.btn:active {
+    background-color: transparent;
 }
 
 .dropdown-menu {
     position: absolute;
-    left: 20%;
-    background-color: #fcc100;
+    left: 90%;
+    background-color: rgb(255, 85, 85);
+}
+
+#dropdownMenuButton:hover {
+    background-color: rgb(255, 85, 85);
+}
+
+#togglerButton:hover {
+    background-color: rgb(255, 85, 85);
 }
