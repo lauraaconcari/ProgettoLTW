@@ -43,23 +43,32 @@ favoritesControl.onAdd = function(map) {
   button.style.display = 'none';
   
   L.DomEvent.addListener(button, 'click', function() {
-    // Esegui un'azione specifica quando l'utente clicca sul pulsante
+    //Aggiunta ai preferiti
+
+    //Id del posto
     const Stringlist= localStorage.getItem('preferiti');
     const list = JSON.parse(Stringlist);
+    //Posto corrispondente all'id
+    const Stringlist2= localStorage.getItem('preferitiposti');
+    const list2 = JSON.parse(Stringlist2);
     list.push(selectedMarker.options.id);
+    list2.push(markerToPlace[selectedMarker.options.id]);
+    localStorage.setItem('preferiti', JSON.stringify(list));
+    localStorage.setItem('preferitiposti', JSON.stringify(list2));
+    console.log('Aggiunto ai preferiti: ' + selectedMarker.options.id);
     //Cambio titolo
     var titoloH3 = document.getElementById(selectedMarker.options.id+"t");
     var vecchioContenuto = titoloH3.textContent;
     var ultimoCarattere = vecchioContenuto.charAt(vecchioContenuto.length-1);
     var nuovoTitolo = vecchioContenuto.slice(0,-1) + "\u2605";
-
     titoloH3.textContent = nuovoTitolo;
-    localStorage.setItem('preferiti', JSON.stringify(list));
-    console.log('Aggiunto ai preferiti: ' + selectedMarker.options.id);
+
     //Controllo se ha aggiornato
-    const newStringlist= localStorage.getItem('preferiti');
+
+    const newStringlist= localStorage.getItem('preferitiposti');
     const newlist=JSON.parse(newStringlist);
     console.log('Lista dei preferiti:'+newlist);
+
     var num = parseInt(selectedMarker.options.id.replace(/\D/g, ''));
     const marker=markerlist[num-1];
     marker.setIcon(favIcon);

@@ -26,12 +26,13 @@ function checkLoggedIn() {
           const Stringlist = localStorage.getItem('preferiti');
           const list = JSON.parse(Stringlist);
           const email = localStorage.getItem('email');
-          console.log(list);
-          console.log(email);
+          const Stringlist2 = localStorage.getItem('preferitiposti');
+          const list2 = JSON.parse(Stringlist2);
 
           const params = new URLSearchParams();
           params.append('list', JSON.stringify(list));
           params.append('email', email);
+          params.append('list2',JSON.stringify(list2));
 
           fetch('/Login/Exit.php', {
             method: 'POST',
@@ -46,6 +47,7 @@ function checkLoggedIn() {
               localStorage.removeItem('loggedIn');
               localStorage.removeItem('email');
               localStorage.removeItem('preferiti');
+              localStorage.removeItem('preferitiposti');
               //controllo se sono nella pagina dei preferiti
               if(pageName=="favourite.html"){
                 window.location.href = "../index.html";
