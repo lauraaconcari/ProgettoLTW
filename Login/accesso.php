@@ -36,6 +36,14 @@ if (pg_num_rows($result) > 0) {
       while ($row = pg_fetch_assoc($result)) {
         $marker_ids[] = $row['marker_id'];
       }
+    $places = "SELECT places FROM Preferiti WHERE email = '$email'";
+    $result = pg_query($conn, $places);
+    if ($result !== false) {
+      $posti = array();
+      while ($row = pg_fetch_assoc($result)) {
+        $posti[] = $row['places'];
+      }
+    }
       //Prende il nome dell'utente
       $nome="SELECT nome FROM registrazioni WHERE email = '$email' ";
       $result = pg_query($conn, $nome);
@@ -45,6 +53,7 @@ if (pg_num_rows($result) > 0) {
       }
       // Salva la lista di marker_id nel local storage
       $json_marker_ids = json_encode($marker_ids);
+      $json_posti = json_encode($posti);
       // Chiudi la connessione al database
       pg_close($conn);  
       echo "<script>";
@@ -52,6 +61,7 @@ if (pg_num_rows($result) > 0) {
       echo "localStorage.setItem('loggedIn', true);";
       echo "localStorage.setItem('email','$email');";
       echo "localStorage.setItem('preferiti', '$json_marker_ids');";
+      echo "localStorage.setItem('preferitiposti', '$json_posti');";
       echo "window.location.href = '../index.html';";
       echo "</script>";
       die();
