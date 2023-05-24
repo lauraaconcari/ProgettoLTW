@@ -232,7 +232,14 @@ for (var i = 1; i <= numLuoghi; i++) {
   var li = document.createElement("li");
   li.setAttribute("data-name", name);
   var img = document.createElement("img");
-  img.setAttribute("src", "../Foto/"+id+".jpg" + "/100/100");
+  var pathname = window.location.pathname;  
+  var pageName = pathname.split('/').pop(); 
+  if(pageName!="Municipio%20I.html"){
+    img.setAttribute("src", "https://picsum.photos/id/" + i + "/100/100");
+  }
+  else{
+    img.setAttribute("src", "../Foto/"+id+".jpg" + "/100/100");
+  }
   img.setAttribute("alt", name);
 
   var div = document.createElement("div");
