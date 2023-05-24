@@ -144,6 +144,8 @@ markers.on('dblclick', function(e) {
   selectedMarker = e.layer;
   let Stringlist= localStorage.getItem('preferiti');
   let list = JSON.parse(Stringlist);
+  let Stringlist2= localStorage.getItem('preferitiposti');
+  let list2 = JSON.parse(Stringlist2);
   var loggedIn = localStorage.getItem("loggedIn");
   if(list.includes(markerId) && loggedIn !== null ){
     var nome=selectedMarker.getPopup().getContent()
@@ -172,13 +174,19 @@ markers.on('dblclick', function(e) {
     })
     .then((willDelete) => {
       if (willDelete) {
-        // Azione da eseguire se l'utente conferma
+        //Cambio icona
         var num = parseInt(selectedMarker.options.id.replace(/\D/g, ''));
         const marker=markerlist[num-1];
         marker.setIcon(customIcon);
+        //Rimozione dalle liste
         let index= list.indexOf(markerId);
         list.splice(index,1);
         localStorage.setItem('preferiti', JSON.stringify(list));
+
+        let index2=list2.indexOf(markerToPlace[markerId]);
+        list2.splice(index2,1);
+        localStorage.setItem('preferitiposti', JSON.stringify(list2));
+
         //Cambio titolo
         var titoloH3 = document.getElementById(selectedMarker.options.id+"t");
         var vecchioContenuto = titoloH3.textContent;
@@ -188,7 +196,12 @@ markers.on('dblclick', function(e) {
         //Controllo di rimozione
         const newStringlist= localStorage.getItem('preferiti');
         const newlist=JSON.parse(newStringlist);
-        console.log('Lista dei preferiti:'+newlist);
+        console.log('Lista degli id preferiti:'+newlist);
+
+        const newStringlist2= localStorage.getItem('preferitiposti');
+        const newlist2=JSON.parse(newStringlist2);
+        console.log('Lista dei nomi preferiti:'+newlist2);
+
         selectedMarker.closePopup();
 
         swal(nome+" è stato rimosso dai preferiti!", {

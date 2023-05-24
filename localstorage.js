@@ -15,7 +15,7 @@ function checkLoggedIn() {
       dropdownButton.style.display = "block";
       console.log(navLinks);
       var dropdownItems = document.querySelectorAll(".dropdown-item");
-      if(pageName=="Favourite.html"){
+      if(pageName=="favourite.html"){
         var preferiti=dropdownItems[0];
         preferiti.style.display="none";
       }
