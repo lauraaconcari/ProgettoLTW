@@ -5,20 +5,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Municipio II</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="stile.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
-
+    <link rel="stylesheet" type="text/css" href="/Municipi/stile.css">
+    <link rel="stylesheet" type="text/css" href="/Municipi/style.css">
     <link rel="icon" type="image/x-icon" href="../../colosseum.png" >
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
-    crossorigin=""/>
+    <link rel="stylesheet" href="/Municipi/leaflet.css">
     <link rel="stylesheet" href="../Leaflet.markercluster-1.4.1/dist/MarkerCluster.css">
     <link rel="stylesheet" href="../Leaflet.markercluster-1.4.1/dist/MarkerCluster.Default.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
     <script src="https://kit.fontawesome.com/a316d55189.js" crossorigin="anonymous"></script>
-
-
 </head>
 <body>
 	<nav class="navbar navbar-light" style="background-color: #fc9b00;">
@@ -28,6 +23,18 @@
         <a class="navbar-brand mr-auto" href="../../index.html">
             <h3>Municipio II</h3>
         </a>
+
+        <ul class="nav-item dropdown ml-auto" style = "margin-bottom: 0px;">
+            <button class="btn btn-secondary dropdown-toggle mr-auto" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="/Favourite/favourite.html">Preferiti</a>
+                <a class="dropdown-item" href="#">Logout</a>
+            </div>
+        </ul>
+        <script>var dropdownButton = document.getElementById("dropdownMenuButton"); dropdownButton.style.display = "none";</script>
+
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <a class="nav-link" href="#">
@@ -101,7 +108,19 @@
             </div>
         </div>
 	</div>
-    
+
+    <footer>
+        <div class="row justify-content-center">
+            <a href="#">About</a>
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+        </div>
+        <div class="row justify-content-center">
+            <a href="http://www.instagram.com/lauraaconcari/"><i class="fa-brands fa-instagram fa-lg"></i></a>
+            <a href="http://github.com/lauraaconcari/ProgettoLTW.git"><i class="fa-brands fa-github fa-lg"></i></a>
+        </div>
+    </footer>
+
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.js"></script>

@@ -62,7 +62,12 @@ body {
   position: relative;
 
 }
-
+.section-2 img {
+  max-width: 100%;
+  max-height: 100%;
+  bottom: 20px;
+  position: relative;
+}
 .btn {
   font-family: 'Lucida Console', sans-serif;
   line-height: 2;
