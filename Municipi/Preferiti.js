@@ -292,3 +292,12 @@ function filterItems() {
     }
   });
 }
+
+//Vieni dai preferiti
+var favID= localStorage.getItem('clickedID');
+if(favID!==null){
+  localStorage.removeItem('clickedID');
+  //Chiamo la funzione per trovare il marker corrispondente e zoomare su di esso
+  const markerfav=markerlist[favID-1];
+  handleListClick(markerfav);
+}
