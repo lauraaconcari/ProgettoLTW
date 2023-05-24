@@ -2,6 +2,11 @@
     font-family: 'Lucida Console', sans-serif;
     padding: 10px;
   }
+@media (max-width: 767px) {
+    .navbar {
+      width: 100%;
+    }
+}
   .nav-link {
     font-family: 'Lucida Console', sans-serif;
     font-size: 20px;
@@ -28,11 +33,14 @@
   
   .container {
     display: grid;
+    padding: relative;
     grid-template-rows: 1fr 1fr; /* Imposta 2 righe di uguale altezza */
     grid-template-columns: 1fr 1fr 1fr; /* Imposta 2 colonne di uguale larghezza */
     height: 100vh;
     padding: 20px
   }
+
+
   .section-1 {
       grid-row: 1;
       grid-column: 1;
@@ -88,7 +96,9 @@
     line-height: 1.5;
     text-align: justify;
   }
-  
+
+
+
   .card {
     width: 300px;
     height: 300px;
@@ -98,4 +108,91 @@
     overflow: hidden;
     position: relative;
     margin: 20px;
+    
   }
+  .card-link a {
+    display: inline-block;
+    margin-top: 10px;
+  }
+  @media (min-width: 768px) {
+    .col-lg-6 {
+      flex-basis: 50%;
+      max-width: 50%;
+    }
+  }
+  .btn {
+    font-family: 'Lucida Console', sans-serif;
+    line-height: 2; 
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: .30rem;
+    color: rgba(0,0,0,.5);
+    border-color: rgba(0,0,0,.1);
+    margin-left: 880px;
+}
+
+.btn:active {
+    background-color: transparent;
+}
+
+.dropdown-menu {
+    position: absolute;
+    left: 85%;
+    background-color: rgb(255, 85, 85);
+}
+
+#dropdownMenuButton:hover {
+    background-color: rgb(255, 85, 85);
+}
+
+#togglerButton:hover {
+    background-color: rgb(255, 85, 85);
+}
+
+
+footer {
+  background-color: #fc9b00;
+  color: #fff;
+  padding: 20px;
+  position: absolute;
+  bottom: auto;
+  width: 100%;
+  
+}
+.row a {
+  margin-right: 50px;
+  color: #fff;
+}
+
+.row a:last-child {
+  margin-right: 0;
+}
+
+
+#precedente {
+  font-family: 'Lucida Console', sans-serif;
+  width: 130px;
+  border-radius: .30rem;
+  border: 1px solid;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin-top: 0%;
+  margin-left: 50px;
+ 
+}
+#successivo {
+  font-family: 'Lucida Console', sans-serif;
+  width: 130px;
+  border-radius: .30rem;
+  border: 1px solid;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-top: 0%;
+  margin-right: 50px;
+}
+
+#successivo:hover {
+  background-color: rgb(255, 196, 157);
+}

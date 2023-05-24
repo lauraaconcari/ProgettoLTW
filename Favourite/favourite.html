@@ -19,6 +19,19 @@
         <a class="navbar-brand mr-auto" href="/index.html">
             <h3>Preferiti</h3>
         </a>
+
+        <ul class="nav-item dropdown ml-auto" style = "margin-bottom: 0px;">
+            <button class="btn btn-secondary dropdown-toggle mr-auto" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="/Favourite/favourite.html">Preferiti</a>
+                <a class="dropdown-item" href="#">Logout</a>
+            </div>
+        </ul>
+        <script>var dropdownButton = document.getElementById("dropdownMenuButton"); dropdownButton.style.display = "none";</script>
+
+
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <a class="nav-link" href="#">
@@ -68,21 +81,16 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./diconodinoi.html">Dicono di noi <span class="sr-only">(current)</span></a></a>
+                    <a class="nav-link" href="/elemnavbar/diconodinoi.html">Dicono di noi <span class="sr-only">(current)</span></a></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./contattaci.html">Contattaci</a>
+                    <a class="nav-link" href="/elemnavbar/contattaci.html">Contattaci</a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="/Favourite/favourite.html">Preferiti<span class="sr-only">(current)</span></a></a>
-                </li>
+                
             </ul>
         </div>
     </nav>
-	<div class="container">
-        <button id="precedente">Precedente</button>
-        <button id="successivo">Successivo</button>
-        <script> document.getElementById('precedente').style.display = 'none'; document.getElementById('successivo').style.display = 'none';</script>
+	<div class="container"> 
 		<section class="section-1">
             <div class="row">
                 <div class="col-12 col-lg-6">
@@ -203,7 +211,24 @@
                 </div>
             </div>
 		</section>
+
+        <button id="precedente">Precedente</button>
+        <button id="successivo">Successivo</button>
 	</div>
+    
+    <footer>
+        <div class="row justify-content-center">
+            <a href="#">About</a>
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+        </div>
+        <div class="row justify-content-center">
+            <a href="http://www.instagram.com/lauraaconcari/"><i class="fa-brands fa-instagram fa-lg"></i></a>
+            <a href="http://github.com/lauraaconcari/ProgettoLTW.git"><i class="fa-brands fa-github fa-lg"></i></a>
+        </div>
+    </footer>
+    
+    <script> document.getElementById('precedente').style.display = 'none'; document.getElementById('successivo').style.display = 'none';</script>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
