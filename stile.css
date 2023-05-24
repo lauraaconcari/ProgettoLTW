@@ -79,20 +79,22 @@ body {
   margin-left: 800px;
 }
 
-.btn:active {
+.btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle {
+  color: #000000;
   background-color: transparent;
+  border-color: #4e555b;
 }
-
 .dropdown-menu {
   position: absolute;
-  left: 84%;
-  background-color: rgb(255, 85, 85);
+  left: 85%;
+  background-color: rgb(255, 196, 157);
 }
 
 #dropdownMenuButton:hover {
-  background-color: rgb(255, 85, 85);
+  background-color: rgb(255, 196, 157);
 }
 
 #togglerButton:hover {
-  background-color: rgb(255, 85, 85);
+  background-color: rgb(255, 196, 157);
 }
+
