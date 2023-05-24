@@ -62,12 +62,7 @@ body {
   position: relative;
 
 }
-.section-2 img {
-  max-width: 100%;
-  max-height: 100%;
-  bottom: 20px;
-  position: relative;
-}
+
 .btn {
   font-family: 'Lucida Console', sans-serif;
   line-height: 2;
@@ -79,20 +74,41 @@ body {
   margin-left: 800px;
 }
 
-.btn:active {
+.btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle {
+  color: #000000;
   background-color: transparent;
+  border-color: #4e555b;
 }
-
 .dropdown-menu {
   position: absolute;
-  left: 84%;
-  background-color: rgb(255, 85, 85);
+  left: 85%;
+  background-color: rgb(255, 196, 157);
 }
 
 #dropdownMenuButton:hover {
-  background-color: rgb(255, 85, 85);
+  background-color: rgb(255, 196, 157);
 }
 
 #togglerButton:hover {
-  background-color: rgb(255, 85, 85);
+  background-color: rgb(255, 196, 157);
 }
+
+footer {
+  background-color: #fc9b00;
+  color: #fff;
+  padding: 20px;
+  position: absolute;
+  bottom: auto;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.row a {
+  margin-right: 50px;
+  color: #fff;
+}
+
+.row a:last-child {
+  margin-right: 0;
+}
+

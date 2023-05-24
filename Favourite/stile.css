@@ -70,36 +70,9 @@
       grid-row: 2; 
       grid-column: 3; 
   }
-  .box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 300px;
-    padding: 20px;
-    margin: 20px;
-    border: 1px solid #ccc;
-  }
-  
-  .box img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-  }
-  
-  .box h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .box p {
-    font-size: 16px;
-    line-height: 1.5;
-    text-align: justify;
-  }
-
-
 
   .card {
+    font-family: 'Lucida Console', sans-serif;
     width: 300px;
     height: 300px;
     background-color: #fff;
@@ -110,10 +83,42 @@
     margin: 20px;
     
   }
-  .card-link a {
-    display: inline-block;
-    margin-top: 10px;
+  
+  .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #ccc;
+    font-family: 'Lucida Console', sans-serif;
+    
   }
+  
+  .box img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .box h3 {
+    font-family: 'Lucida Console', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .box p {
+    font-family: 'Lucida Console', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: justify;
+  }
+
+
+
+ 
   @media (min-width: 768px) {
     .col-lg-6 {
       flex-basis: 50%;
@@ -130,29 +135,30 @@
     border-color: rgba(0,0,0,.1);
     margin-left: 880px;
 }
-
-.btn:active {
-    background-color: transparent;
+.btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle {
+  color: #000000;
+  background-color: transparent;
+  border-color: #4e555b;
 }
 
 .dropdown-menu {
-    position: absolute;
-    left: 85%;
-    background-color: rgb(255, 85, 85);
+  position: absolute;
+  left: 85%;
+  background-color: rgb(255, 196, 157);
 }
 
 #dropdownMenuButton:hover {
-    background-color: rgb(255, 85, 85);
+  background-color: rgb(255, 196, 157);
 }
 
 #togglerButton:hover {
-    background-color: rgb(255, 85, 85);
+  background-color: rgb(255, 196, 157);
 }
 
 
 footer {
   background-color: #fc9b00;
-  color: #fff;
+  color: #000000;
   padding: 20px;
   position: absolute;
   bottom: auto;
@@ -168,7 +174,13 @@ footer {
   margin-right: 0;
 }
 
-
+.card-link a {
+  font-family: 'Lucida Console', sans-serif;
+  font-size: 16px;
+  display: inline-block;
+  margin-top: 10px;
+  color: #ff9853;
+}
 #precedente {
   font-family: 'Lucida Console', sans-serif;
   width: 130px;
