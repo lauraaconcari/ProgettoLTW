@@ -125,7 +125,7 @@ body {
     border-radius: .30rem;
     color: rgba(0,0,0,.5);
     border-color: rgba(0,0,0,.1);
-    margin-left: 900px;
+    margin-left: 870px;
 }
 
 .btn:active {
@@ -134,7 +134,7 @@ body {
 
 .dropdown-menu {
     position: absolute;
-    left: 90%;
+    left: 84%;
     background-color: rgb(255, 85, 85);
 }
 
