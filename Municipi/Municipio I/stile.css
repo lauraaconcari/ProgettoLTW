@@ -119,7 +119,7 @@ body {
 }
 .btn {
     font-family: 'Lucida Console', sans-serif;
-    line-height: 2;
+    line-height: 2; 
     background-color: transparent;
     border: 1px solid transparent;
     border-radius: .30rem;
