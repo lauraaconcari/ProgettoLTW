@@ -172,3 +172,20 @@ margin-right: 0;
 .action:hover {
   color: rgb(0, 0, 0);
 }
+#form{
+  display: none;
+}
+#submitButton{
+  align-self: flex-end;
+  color:#fff;
+  background-color:  #fc9b00;
+  border: #fc9b00;
+}
+#submitButton:hover {
+  background-color: rgb(255, 196, 157);
+  cursor: pointer;
+}
+#place{
+  margin-top: 20px;
+  margin-right: 75px;
+}

@@ -1,4 +1,4 @@
-pulsante=document.getElementById('clicca');
+pulsante=document.getElementById('findOutMore');
 form=document.getElementById('form');
 pulsante.addEventListener('click',function(){
     let loggedIn= localStorage.getItem('loggedIn');
@@ -12,7 +12,7 @@ pulsante.addEventListener('click',function(){
     }
     else{         
         form.style.display="block";
-        pulsante.style.display="none";
+        document.getElementById('content').style.display='none';
         email=localStorage.getItem('email');
         const emailInput=document.getElementById('email');
         emailInput.value=email;

@@ -99,24 +99,22 @@
     </p>
     <div class="row justify-content-center">
         <button class="button" id="clicca">Clicca qui</button>
-        <form method="post" action="contattaci.php" id="form">
-        <fieldset>
-            <legend>Conosci qualche posto che non è presente sul nostro sito? Che aspetti ad invarcelo!?</legend>
-            <label for="place">Nome del luogo:</label>
-            <input type="text" id="place" name="place"><br><br>
-            <label for="zone">Zona:</label>
-            <input type="text" id="zone" name="zone"><br><br>
-            <input type="hidden" id="email" name="email" value="valore_fisso">
-            <input type="submit" value="Invia">
-        </fieldset>
-        </form>
+        
         <script>document.getElementById('form').style.display="none";</script>
     </div>
 -->
     
     <div class="card">
-        <div class="image"> </div>
-            <div class="content">
+        <div class="image"></div>
+        <form method="post" action="contattaci.php" id="form">
+            <label for="place">Nome del luogo:</label>
+            <input type="text" id="place" name="place"><br><br>
+            <label for="zone">Zona:</label>
+            <input type="text" id="zone" name="zone"><br><br>
+            <input type="hidden" id="email" name="email" value="valore_fisso">          
+            <input type="submit" value="Invia" id="submitButton">
+        </form>
+        <div class="content" id="content">
             <a href="#">
                 <span class="title">
                 Il tuo aiuto per noi è importante!
@@ -126,19 +124,18 @@
             <p class="desc">
                 Nel nostro sito abiamo voluto inserire tutti i posti che conoscevamo insieme 
                 ad un arduo lavoro di ricerca per arricchiere la nostra lista. Se pensi ci sia qualche locale che ci è sfuggito
-                non esitare a farcelo sapere! Clicca il bottone qua sotto e compila il form, il tuo suggerimento verà poi valutato 
+                non esitare a farcelo sapere! Clicca il pulsante qua sotto e compila il form, il tuo suggerimento verà poi valutato 
                 dal nostro staff e se ritenuto idoneo verrà inserito nel nostro sito.
             </p>
 
-            <a href="#" class="action">
-                Vai al form
+            <a href="#" class="action" id="findOutMore">
+                Find out more
                 <span aria-hidden="true">
                 →
                 </span>
             </a>
         </div>
    </div>
-
     <footer>
         <div class="row justify-content-center">
             <a href="#">About</a>
