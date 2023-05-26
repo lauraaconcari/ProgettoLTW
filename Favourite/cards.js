@@ -55,7 +55,7 @@ function setCards(page,MaxPage,n) {
             titoloCard.textContent = posti[i];
             linkTextCard.textContent = "Accedi al luogo";
             linkTextCard2.textContent="Elimina dai preferiti"
-            textCard.textContent = "Prova ";
+            textCard.textContent = "Locale nel Municipio "+id[i].replace(/\d+/g, '')+" di Roma";
             //Prendo il municipio in cui si trova il posto
             var thisid=id[i]
             linkTextCard.href=thisid;

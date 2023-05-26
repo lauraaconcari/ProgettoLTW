@@ -181,6 +181,14 @@ footer {
   margin-top: 10px;
   color: #ff9853;
 }
+.card-link a:nth-child(1){
+  position:absolute;
+  bottom: 45px;
+}
+.card-link a:nth-child(2){
+  position:absolute;
+  bottom:20px;
+}
 #precedente {
   font-family: 'Lucida Console', sans-serif;
   width: 130px;
