@@ -13,7 +13,6 @@ function checkLoggedIn() {
       dropdownButton.textContent = nome;
       var dropdownButton = document.getElementById("dropdownMenuButton");
       dropdownButton.style.display = "block";
-      console.log(navLinks);
       var dropdownItems = document.querySelectorAll(".dropdown-item");
       if(pageName=="favourite.html"){
         var preferiti=dropdownItems[0];
