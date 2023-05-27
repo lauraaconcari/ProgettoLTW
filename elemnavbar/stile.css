@@ -377,3 +377,24 @@ margin-right: 0;
   right: 0;
   width: 0;
 }
+
+#form{
+  display: none;
+}
+#submitButton{
+  background-color: #fc9b00;
+  color: #000000;
+  border: none;
+}
+
+#submitButton:hover{
+  background-color: rgb(255, 196, 157);
+  cursor: pointer;
+}
+
+#place{
+  margin-top: 25px;
+}
+#bottle{
+  margin-right: 90px;
+}

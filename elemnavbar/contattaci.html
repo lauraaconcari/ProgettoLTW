@@ -106,7 +106,23 @@
     
     <div class="card">
         <div class="image"> </div>
-            <div class="content">
+        <form method="post" action="contattaci.php" id="form">
+            <div class="input-field">
+                <label for="place">Nome del luogo:</label>
+                <input type="text" id="place" name="place">
+                <i class="fa-solid fa-wine-glass-empty fa-shake fa-xl" style="color: #fc9b00;" id="bottle"></i>
+                <br><br>
+            </div>
+            <div class="input-field">
+                <label for="zone">Zona:</label>
+                <input type="text" id="zone" name="zone">
+                <i class="fa-regular fa-map fa-bounce fa-xl" style="color: #fc9b00;"></i>
+                <br><br>
+            </div>
+                <input type="hidden" id="email" name="email" value="valore_fisso">
+                <input type="submit" value="Invia" id="submitButton">
+        </form>
+            <div class="content" id="content">
             
                 <span class="title">
                 Il tuo aiuto per noi è importante!
