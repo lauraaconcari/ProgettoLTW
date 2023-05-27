@@ -1,5 +1,7 @@
 pulsante=document.getElementById('findOutMore');
 form=document.getElementById('form');
+backbutton=document.getElementById('backbutton');
+content=document.getElementById('content');
 pulsante.addEventListener('click',function(){
     let loggedIn= localStorage.getItem('loggedIn');
     if(loggedIn===null){
@@ -12,11 +14,17 @@ pulsante.addEventListener('click',function(){
     }
     else{         
         form.style.display="block";
-        document.getElementById('content').style.display='none';
+        content.style.display='none';
+        backbutton.style.display='flex';
         email=localStorage.getItem('email');
         const emailInput=document.getElementById('email');
         emailInput.value=email;
     }
+});
+backbutton.addEventListener('click',function(){
+    backbutton.style.display='none';
+    form.style.display="none";
+    content.style.display='block';
 });
 
 form.addEventListener('submit', (event) => {
