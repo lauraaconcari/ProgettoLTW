@@ -31,7 +31,6 @@
       </style>
 
 </head>
-<script>document.getElementById("login-form").setAttribute("action", "registrazione.php");</script>
 <body>
 	<nav class="navbar navbar-light" style="background-color: #fc9b00;">
         <a class="navbar-brand" href="../index.html">
@@ -84,7 +83,7 @@
         </div>
     </nav>
     <form id="form-recupero-password" style="display:none;" method="post" action="prova.php">
-        <input type="hidden" name="email" id="email">
+        <input type="hidden" name="email" id="email2">
     </form>
 	<div class="container">
         <div class="formbox">
@@ -106,12 +105,14 @@
                     <p>Password dimenticata?<a href="#" id="reset-password-link"> Clicca qui! </a></p>
                 </div>
                 <div class="btn-field">
+                    <input type="hidden" id="page" name="page" value="/index.html">
                     <button type="submit" id="signupBtn" >Registrati</button>
                     <button type="button" id="signinBtn" class="disable">Accedi</button>
                 </div>
             </form>
         </div>
 	</div>
+    <script>document.getElementById("login-form").setAttribute("action", "registrazione.php");</script>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

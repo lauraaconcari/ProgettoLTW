@@ -1,8 +1,14 @@
-
 let signupBtn= document.getElementById("signupBtn")
 let signinBtn= document.getElementById("signinBtn")
 let nameField= document.getElementById("nameField")
 let title= document.getElementById("title")
+
+const pagina_di_riferimento = document.referrer.replace(/^.*?\/\/[^\/]+(\/.*)$/, "$1");
+if(pagina_di_riferimento){
+  console.log(pagina_di_riferimento);
+  var page=document.getElementById('page')
+  page.value=pagina_di_riferimento;
+}
 
 signinBtn.onclick = function(){
     if(!(signinBtn.classList.contains("disable"))){
@@ -68,30 +74,72 @@ $(document).ready(function() {
   });
   document.addEventListener("DOMContentLoaded", function(event) {
     checkRegistered();
+    checkBadLogIn();
   });
 function checkRegistered(){
   var Registered= localStorage.getItem("Registered");
-  if(Registered!==null){
-    if(Registered==='true'){
-      console.log("registrato");
-      swal({
-        title: 'Benvenuto!',
-        text: 'Clicca sul tasto accedi per accedere al tuo profilo',
-        icon: 'success',
-        confirmButtonText: 'OK'
-      });
-      localStorage.removeItem("Registered");
+    switch(Registered){
+      case 'true':
+        swal({
+          title: 'Benvenuto!',
+          text: 'Clicca sul tasto accedi per accedere al tuo profilo',
+          icon: 'success',
+          ButtonText: 'OK'
+        });
+        localStorage.removeItem("Registered");
+        break;
+      case 'false':
+        swal({
+          title: 'Errore',
+          text: 'La registrazione non è andata a buon fine',
+          icon: 'error',
+          ButtonText: 'OK'
+        });
+        localStorage.removeItem("Registered");
+        break;
+      case 'primary':
+        swal({
+          title: 'Errore',
+          text: 'Esiste già un account registrato con la mail che hai inserito',
+          icon: 'error',
+          ButtonText: 'OK'
+        });
+        localStorage.removeItem("Registered");
+        break;
+      case 'badpass':
+        swal({
+          title: 'Errore',
+          text: 'La password deve essere lunga almeno 8 caratteri e deve includere almeno un carattere maiuscolo e speciale',
+          icon: 'error',
+          ButtonText: 'OK'
+        });
+        localStorage.removeItem("Registered");
+        break;
+      default:
+        console.log("utente non registrato");
+        break;
     }
-    else{
-      console.log("non registrato");
+}
+function checkBadLogIn(){
+  var badLogin= localStorage.getItem('badLogin');
+  switch(badLogin){
+    case 'pass':
       swal({
         title: 'Errore',
-        text: 'La registrazione non è andata a buon fine',
+        text: 'Password non corretta',
         icon: 'error',
-        confirmButtonText: 'OK'
+        ButtonText: 'OK'
       });
-      localStorage.removeItem("Registered");
-    }
+      localStorage.removeItem('badLogin');
+      break;
+    case 'email':
+      swal({
+        title: 'Errore',
+        text: 'Email non trovata',
+        icon: 'error',
+        ButtonText: 'OK'
+      });
+      localStorage.removeItem('badLogin');
+      break;
   }
-
 }

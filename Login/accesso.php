@@ -55,14 +55,15 @@ if (pg_num_rows($result) > 0) {
       $json_marker_ids = json_encode($marker_ids);
       $json_posti = json_encode($posti);
       // Chiudi la connessione al database
-      pg_close($conn);  
+      pg_close($conn); 
+      $page=$_POST['page'];
       echo "<script>";
       echo "localStorage.setItem('nomeUtente','$nomeUtente');";
-      echo "localStorage.setItem('loggedIn', true);";
+      echo "localStorage.setItem('loggedIn', 'firstTime');";
       echo "localStorage.setItem('email','$email');";
       echo "localStorage.setItem('preferiti', '$json_marker_ids');";
       echo "localStorage.setItem('preferitiposti', '$json_posti');";
-      echo "window.location.href = '../index.html';";
+      echo "window.location.href = '$page';";
       echo "</script>";
       die();
       
@@ -70,13 +71,17 @@ if (pg_num_rows($result) > 0) {
       die();
     }
   } else {
-    // La password è errata
-    echo "Password errata!";
+    echo "<script>";
+    echo "localStorage.setItem('badLogin','pass');";
+    echo "window.location.href = '/Login/Login.html';";
+    echo "</script>";
     die();
   }
 } else {
-  // L'email non è stata trovata
-  echo "Email non trovata!";
+  echo "<script>";
+  echo "localStorage.setItem('badLogin','email');";
+  echo "window.location.href = '/Login/Login.html';";
+  echo "</script>";
   die();
 }
 ?>

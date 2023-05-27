@@ -12,13 +12,13 @@ $conn = pg_connect("host=$host dbname=$dbname user=$user password=$password");
 if (!$conn) {
     die("Connessione al database fallita.");
 }
-$place = $_POST["place"];
-$zone = $_POST["zone"];
+$place =  strtolower($_POST["place"]);
+$zone =  strtolower($_POST["zone"]);
 $email = $_POST["email"];
 $query = "INSERT INTO Consigliati(nome, zona, email) VALUES ('$place', '$zone', '$email')";
 $result= pg_query($conn, $query);
-pg_close($conn);
 if($result){
+    pg_close($conn);
     echo "<script>";
     echo "localStorage.setItem('Sent',true);";
     echo "window.location.href = './contattaci.html';";
@@ -26,6 +26,18 @@ if($result){
     die;
 }
 else{
+    // Verifica se ci è stata una violazione della primary key
+    $error=pg_last_error($conn);
+    if(strpos(pg_last_error($conn),"consigliati_pkey")!==false){
+        pg_close($conn);
+        echo "<script>";
+        echo "localStorage.setItem('Sent','primary');";
+        echo "window.location.href = './contattaci.html';";
+        echo "</script>";
+        die;
+    }
+    //Errore generico non lo specifico
+    pg_close($conn);
     echo "<script>";
     echo "localStorage.setItem('Sent',false);";
     echo "window.location.href = './contattaci.html';";

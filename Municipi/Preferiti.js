@@ -100,9 +100,11 @@ function handleMarkerClick(e) {
   const list = JSON.parse(Stringlist);
   var loggedIn = localStorage.getItem("loggedIn");
   let button = document.querySelector('.add-to-favorites');
-  if(!(list.includes(markerId)) && loggedIn !== null ){
-    // Mostra il pulsante "Aggiungi ai preferiti"
-    button.style.display = 'block';
+  if(loggedIn!==null){
+    if( !(list.includes(markerId))){
+      // Mostra il pulsante "Aggiungi ai preferiti"
+      button.style.display = 'block';
+    }
   }
   // Aggiungi un listener per il popupclose del marker
   selectedMarker.on('popupclose', function() {
@@ -122,9 +124,11 @@ function handleListClick(e) {
   const list = JSON.parse(Stringlist);
   var loggedIn = localStorage.getItem("loggedIn");
   let button = document.querySelector('.add-to-favorites');
-  if(!(list.includes(markerId)) && loggedIn !== null ){
-    // Mostra il pulsante "Aggiungi ai preferiti"
-    button.style.display = 'block';
+  if(loggedIn!==null){
+    if( !(list.includes(markerId))){
+      // Mostra il pulsante "Aggiungi ai preferiti"
+      button.style.display = 'block';
+    }
   }
   // Aggiungi un listener per il popupclose del marker
   selectedMarker.on('popupclose', function() {

@@ -61,6 +61,15 @@ form.addEventListener('submit', (event) => {
           });
         localStorage.removeItem('Sent');
         break;
+    case 'primary':
+        swal({
+            title: 'Errore',
+            text: 'Hai già consigliato questo luogo!',
+            icon: 'error',
+            ButtonText: 'OK'
+          });
+        localStorage.removeItem('Sent');
+        break;
     default:
         console.log("L'utente non ha ancora inviato nulla");
         break;
