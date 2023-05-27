@@ -413,6 +413,8 @@ margin-right: 0;
   cursor: pointer;
   border: none;
   background: #ffeaac;
+  color: #fc9b00;
+  margin-bottom: 10px;
  }
  
  #backbutton > svg {
