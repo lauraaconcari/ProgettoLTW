@@ -33,6 +33,17 @@ body {
   max-width: 800px;
   align-items: center;
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-left: 45px;
+  align-items: center;
+}
 @media screen and (max-width: 768px) {
   .container {
     max-width: 100%; /* imposta la larghezza massima del contenitore al 100% */
@@ -72,7 +83,9 @@ background-color: rgb(255, 196, 157);
 #togglerButton:hover {
 background-color: rgb(255, 196, 157);
 }
-
+.item {
+  color: transparent;
+}
 #clicca {
   font-family: 'Lucida Console', sans-serif;
   text-align: center;
@@ -88,7 +101,25 @@ background-color: rgb(255, 196, 157);
   border-color: rgba(0,0,0,.1);
   margin-top: 50px;
 }
+#btnrev {
+  font-size: 1rem;
+  padding: 0.8em 2em;
+  background-color:  #fc9b00;
+  border: 3px solid yellow;
+  border-radius: 1em;
+  color: #000000;
+  font-weight: bolder;
+  transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.4s;
+  box-shadow: -5px 5px 0px 0px yellow;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  margin-left: 80px;
+  margin-right: 80px;
+}
 
+#btnrev:hover {
+  transform: translate(5px, -5px);
+}
 #clicca:hover {
   background-color: rgb(255, 196, 157);
 }
@@ -110,7 +141,10 @@ color: #fff;
 margin-right: 0;
 }
 
-.card {
+#review {
+  height: 250px;
+}
+#post {
   max-width: 600px;
   height: 590.8;
   border-radius: 0.5rem;
