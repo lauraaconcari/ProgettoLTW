@@ -273,7 +273,46 @@ for (var i = 1; i <= numLuoghi; i++) {
 
   div.appendChild(h3);
   div.appendChild(p);
+  if(Municipio=='I'){
+    //Aggiunta di insta o sito personale (se esistono) e numero telefonico per ora solo per il primo municipio
+    var instalink=dataInsta[i-1].link;
+    if(instalink!='')
+    {
+      var a = document.createElement("a");
+      a.href = instalink;
+      a.target = "_blank";
+      a.id = "instagram-link"; // assegna un ID all'elemento a
+    
+      // crea l'icona di Instagram
+      var icon = document.createElement("i");
+      icon.classList.add("fa-brands", "fa-instagram", "fa-lg");
+      
+      // aggiungi l'icona all'elemento a
+      a.appendChild(icon);
+    
+      // aggiungi l'elemento a al div
+      div.appendChild(a);
+    }
+    
+    var phone ="3481445910";
+    if (phone != '') {
+      var phoneLink = document.createElement("a");
+      phoneLink.href = "tel:" + phone;
+      phoneLink.id = "phone-link";
+      
+      var icon = document.createElement("i");
+      icon.classList.add("fa-solid", "fa-phone","fa-lg");
+      
+      var phoneNumber = document.createTextNode(phone);
+      
+      phoneLink.appendChild(icon);
+      phoneLink.appendChild(phoneNumber);
+      div.appendChild(phoneLink);
+    }
 
+
+  }
+  
   li.appendChild(img);
   li.appendChild(div);
 

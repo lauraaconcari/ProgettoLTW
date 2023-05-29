@@ -363,5 +363,337 @@ var data = [
   const placeToMarker = _.invert(markerToPlacelowcase);
   console.log(placeToMarker);
   map.addLayer(markers);
-
+//Stringa Json per gli Instagram:
+var dataInsta = [
+  {
+    "phone": "I1",
+    "link":"https://www.instagram.com/baccanoroma/",
+    "popupContent": "Baccano"
+  },
+  {
+    "phone": "I2",
+    "link":"https://www.instagram.com/cantinadeipapiroma/",
+    "popupContent": "Prosciutteria Cantina dei Papi - Trevi"
+  },
+  {
+    "phone": "I3",
+    "link":"https://www.instagram.com/humusbistrot/",
+    "popupContent": "Humus Bistrot"
+  },
+  {
+    "phone": "I4",
+    "link":"https://www.instagram.com/blackmarkethall/",
+    "popupContent": "Blackmarket Hall"
+  },
+  {
+    "phone": "I5",
+    "link":"",
+    "popupContent": "Up Sunset Bar"
+  },
+  {
+    "phone": "I6",
+    "link":"https://www.instagram.com/salotto42/",
+    "popupContent": "Salotto42"
+  },
+  {
+    "phone": "I7",
+    "link":"https://www.instagram.com/enoteca_culdesac/",
+    "popupContent": "Cul de Sac"
+  },
+  {
+    "phone": "I8",
+    "link":"https://www.instagram.com/enoteca_il_piccolo/",
+    "popupContent": "Enoteca Il Piccolo"
+  },
+  {
+    "phone": "I9",
+    "link":"https://www.instagram.com/tabacafecampo/",
+    "popupContent": "Taba Café Campo de' Fiori"
+  },
+  {
+    "phone": "I10",
+    "link":"https://www.instagram.com/eretico_bistrot/",
+    "popupContent": "Eretico bistrot"
+  },
+  {
+    "phone": "I11",
+    "link":"https://www.instagram.com/mater_pantheon/",
+    "popupContent": "Mater Pantheon"
+  },
+  {
+    "phone": "I12",
+    "link":"",
+    "popupContent": "Pigna Enoteca di Sardegna"
+  },
+  {
+    "phone": "I13",
+    "link":"",
+    "popupContent": "Martin Bistrò"
+  },
+  {
+    "phone": "I14",
+    "link":"",
+    "popupContent": "Bar MART.in."
+  },
+  {
+    "phone": "I15",
+    "link":"https://www.instagram.com/borgoriparoma/",
+    "popupContent": "Borgo Ripa"
+  },
+  {
+    "phone": "I16",
+    "link":"",
+    "popupContent": "L'Oasi della Birra"
+  },
+  {
+      "phone": "I17",
+      "link":"https://www.meccanismoroma.com/",
+      "popupContent": "Bar Meccanismo"
+  },
+  {
+      "phone": "I18",
+      "link":"https://www.instagram.com/polpettaroma_official/",
+      "popupContent": "Polpetta Trastevere"
+  },
+  {
+      "phone": "I19",
+      "link":"https://www.instagram.com/vinallegro_roma/",
+      "popupContent": "VinAllegro"
+  },
+  {
+      "phone": "I20",
+      "link":"https://www.instagram.com/freniefrizioni/",
+      "popupContent": "Freni e Frizioni"
+  },
+  {
+    "phone": "I21",
+    "link":"https://il-petruccino.business.site/",
+    "popupContent": "Il Petruccino"
+  },
+  {
+    "phone": "I22",
+    "link":"https://www.instagram.com/makasarbistrot/",
+    "popupContent": "Makasar Bistròt"
+  },
+  {
+    "phone": "I23",
+    "link":"https://www.instagram.com/gatsbycafe/",
+    "popupContent": "Gatsby Cafè"
+  },
+  {
+    "phone": "I24",
+    "link":"https://www.instagram.com/apothekecocktailbar/",
+    "popupContent": "Apotheke Cocktail Bar"
+  },
+  {
+    "phone": "I25",
+    "link":"https://www.instagram.com/hoppiness_bistrot/",
+    "popupContent": "Hoppiness"
+  },
+  {
+    "phone": "I26",
+    "link":"https://www.instagram.com/downingsquare/",
+    "popupContent": "Downing Square Tartare Bar"
+  },
+  {
+    "phone": "I27",
+    "link":"https://www.lumencocktailsandcuisine.com/it/",
+    "popupContent": "Lumen Cocktails & Cuisine"
+  },
+  {
+    "phone": "I28",
+    "link":"https://www.instagram.com/lacaramellaroma/",
+    "popupContent": "Caramella"
+  },
+  {
+    "phone": "I29",
+    "link":"https://www.instagram.com/comingoutroma/",
+    "popupContent": "Coming Out"
+  },
+  {
+    "phone": "I30",
+    "link":"https://www.instagram.com/colosseum_bar_/",
+    "popupContent": "Colosseum Bar"
+  },
+  {
+    "phone": "I31",
+    "link":"https://www.instagram.com/giuliaesistoroma/",
+    "popupContent": "Giulia&Sisto Roma"
+  },
+  {
+    "phone": "I32",
+    "link":"https://www.instagram.com/thecourtrome/",
+    "popupContent": "The Court"
+  },
+  {
+    "phone": "I33",
+    "link":"https://www.instagram.com/tramdepot_/",
+    "popupContent": "Tram Depot Testaccio"
+  },
+  {
+    "phone": "I34",
+    "link":"https://www.instagram.com/testaccinobar/",
+    "popupContent": "Il Testaccino"
+  },
+  {
+    "phone": "I35",
+    "link":"https://www.instagram.com/ilgianfornaio/",
+    "popupContent": "Il Gianfornaio - Testaccio"
+  },
+  {
+    "phone": "I36",
+    "link":"https://www.instagram.com/rossoeatdrinkstay/",
+    "popupContent": "Rosso Eat Drink Stay"
+  },
+  {
+    "phone": "I37",
+    "link":"https://www.instagram.com/casamanfredi/",
+    "popupContent": "Casa Manfredi"
+  },
+  {
+    "phone": "I38",
+    "link":"https://www.instagram.com/terrazzaborromini/",
+    "popupContent": "Terrazza Borromini"
+  },
+  {
+    "phone": "I39",
+    "link":"https://www.instagram.com/spritzeria.monti/",
+    "popupContent": "Rooftop Spritzeria Monti"
+  },
+  {
+    "phone": "I40",
+    "link":"https://www.instagram.com/anticofornotrevi/",
+    "popupContent": "L'Antico Forno di Piazza Trevi"
+  },
+  {
+    "phone": "I41",
+    "link":"https://www.instagram.com/iltaglieretoscano/",
+    "popupContent": "Tagliere Toscano"
+  },
+  {
+    "phone": "I42",
+    "link":"https://www.instagram.com/ficoroma/",
+    "popupContent": "Baguetteria del Fico"
+  },
+  {
+    "phone": "I43",
+    "link":"https://www.instagram.com/vinoefocacciabistrot/",
+    "popupContent": "Vino e Focaccia"
+  },
+  {
+    "phone": "I44",
+    "link":"https://www.instagram.com/fischioroma/" ,
+    "popupContent": "Fischio"
+  },
+  {
+    "phone": "I45",
+    "link":"https://www.instagram.com/duecentogradi/",
+    "popupContent": "200 Gradi"
+  },
+  {
+    "phone": "I46",
+    "link":"https://www.instagram.com/freedaromabistrot/",
+    "popupContent": "Freeda Roma"
+  },
+  {
+    "phone": "I47",
+    "link":"https://www.instagram.com/dafnegardenprati/",
+    "popupContent": "Dafne Garden Cafè"
+  },
+  {
+    "phone": "I48",
+    "link":"https://www.instagram.com/ilgianfornaio/",
+    "popupContent": "Il Gianfornaio - Prati"
+  },
+  {
+    "phone": "I49",
+    "link":"https://www.instagram.com/il_maritozzo_rosso/",
+    "popupContent": "Il Maritozzo Rosso - Prati"
+  },
+  {
+    "phone": "I50",
+    "link":"https://www.instagram.com/vinotecatempere/",
+    "popupContent": "Vinoteca Tempere Prati"
+  },
+  {
+    "phone": "I51",
+    "link":"https://www.instagram.com/ozio_restaurant_/",
+    "popupContent": "Ozio Restaurant"
+  },
+  {
+    "phone": "I52",
+    "link":"https://www.instagram.com/lazanzararoma/",
+    "popupContent": "La Zanzara"
+  },
+  {
+    "phone": "I53",
+    "link":"https://www.instagram.com/bukowskis_bar/",
+    "popupContent": "Bukowski's Bar"
+  },
+  {
+    "phone": "I54",
+    "link":"https://www.instagram.com/piccolodiavolobar/",
+    "popupContent": "Il Piccolo Diavolo"
+  },
+  {
+    "phone": "I55",
+    "link":"https://www.instagram.com/cantineroroma/",
+    "popupContent": "Cantinero"
+  },
+  {
+    "phone": "I56",
+    "link":"https://www.instagram.com/bolle_cicchetteria/",
+    "popupContent": "Bolle Cicchetteria di Quartiere"
+  },
+  {
+    "phone": "I57",
+    "link":"https://www.tbeb.it/",
+    "popupContent": "TBeB"
+  },
+  {
+    "phone": "I58",
+    "link":"https://www.instagram.com/caffemazzini/",
+    "popupContent": "Mazzini Caffetteria - Fergui S.r.l.s."
+  },
+  {
+    "phone": "I59",
+    "link":"https://www.instagram.com/grancaffemazzini/?hl=it",
+    "popupContent": "Gran Caffè Mazzini"
+  },
+  {
+    "phone": "I60",
+    "link":"https://tonicocaferoma.it/",
+    "popupContent": "Tonico Café"
+  },
+  {
+    "phone": "I61",
+    "link":"",
+    "popupContent": "Quintessenza"
+  },
+  {
+    "phone": "I62",
+    "link":"https://www.instagram.com/prato_roma/",
+    "popupContent": "Prato Chiosco"
+  },
+  {
+    "phone": "I63",
+    "link":"",
+    "popupContent": "Fábrica"
+  },
+  {
+    "phone": "I64",
+    "link":"",
+    "popupContent": "Eat me box"
+  },
+  {
+    "phone": "I65",
+    "link":"https://www.instagram.com/sabotino.roma/",
+    "popupContent": "Sabotino"
+  },
+  {
+    "phone": "I66",
+    "link":"https://www.instagram.com/ficoroma/",
+    "popupContent": "Fico by Baguetteria"
+  }
+  ];
 
