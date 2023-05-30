@@ -127,9 +127,11 @@ footer {
 background-color: #fc9b00;
 color: #000000;
 padding: 20px;
-position: absolute;
+position: fixed;
+left: 0;
 bottom: 0;
 width: 100%;
+clear: both;
 
 }
 .row a {
