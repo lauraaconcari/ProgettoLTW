@@ -213,7 +213,7 @@ margin-right: 0;
 
 
 .form {
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 10px;
   max-width: 350px;
@@ -221,7 +221,6 @@ margin-right: 0;
   padding: 20px;
   border-radius: 10px;
   position: relative;
-  display: flex;
   margin: 0 auto;
   margin-top: 80px;
   text-align: center;
