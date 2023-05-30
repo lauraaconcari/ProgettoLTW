@@ -53,7 +53,7 @@ function setCards(page,MaxPage,n) {
             var linkTextCard = sezioni[x].querySelector('.card-link a:nth-child(1)');
             var linkTextCard2 = sezioni[x].querySelector('.card-link a:nth-child(2)');
             titoloCard.textContent = posti[i];
-            linkTextCard.textContent = "Accedi al luogo";
+            linkTextCard.textContent = "Dove si trova";
             linkTextCard2.textContent="Elimina dai preferiti"
             textCard.textContent = "Locale nel Municipio "+id[i].replace(/\d+/g, '')+" di Roma";
             //Prendo il municipio in cui si trova il posto
