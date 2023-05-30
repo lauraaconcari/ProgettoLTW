@@ -22,9 +22,10 @@
   }
   
   .list-container img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 200px;
     object-fit: cover;
+    float: left;
   }
   
   .list-container div {
@@ -35,12 +36,14 @@
   .list-container h3 {
     font-size: 1.2rem;
     font-weight: bold;
-    margin: 0;
+    margin-left: 10px;
   }
   
   .list-container p {
     font-size: 1rem;
-    margin: 0;
+    margin-left: 10px;
+    max-width: 500px;
+    overflow: hidden;
   }
   
   .filter-container {
@@ -92,10 +95,14 @@
     margin-right: 20px;
     display: inline-block;
   }
+  .fa-brands, .fab {
+    font-weight: 400;
+    margin-left: 10px;
+  }
   #phone-link {
     color:black;
     display: inline-block;
-    margin: 0;
+    margin-left: 10px;
     font-size: 0.89em;
 
   }

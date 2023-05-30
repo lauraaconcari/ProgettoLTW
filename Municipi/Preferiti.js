@@ -242,7 +242,7 @@ for (var i = 1; i <= numLuoghi; i++) {
     img.setAttribute("src", "https://picsum.photos/id/" + i + "/100/100");
   }
   else{
-    img.setAttribute("src", "../Foto/"+id+".jpg" + "/100/100");
+    img.setAttribute("src", "../Foto/"+id+".jpg" + "/150/150");
   }
   img.setAttribute("alt", name);
 
