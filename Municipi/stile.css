@@ -13,9 +13,9 @@
 }
 
 /* Schermi con larghezza superiore a 1200px (ad esempio, monitor desktop) */
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
     .container {
-      width: 1200px;
+      width: 768px;
     }
 }
   
