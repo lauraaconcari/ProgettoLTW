@@ -269,7 +269,13 @@ for (var i = 1; i <= numLuoghi; i++) {
   }
   h3.setAttribute("id", id+"t");
   var p = document.createElement("p");
-  p.textContent = "Descrizione del Luogo "+id;
+  if(pageName!="Municipio%20I.html"){
+    p.textContent = "Descrizione del Luogo "+id;
+  }
+  else{
+    p.textContent = Descrizioni[id];
+  }
+
 
   div.appendChild(h3);
   div.appendChild(p);
