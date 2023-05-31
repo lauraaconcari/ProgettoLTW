@@ -100,6 +100,7 @@ function handleMarkerClick(e) {
   const list = JSON.parse(Stringlist);
   var loggedIn = localStorage.getItem("loggedIn");
   let button = document.querySelector('.add-to-favorites');
+  flexList(parseInt(markerId.replace(/\D/g, ''))-1);
   if(loggedIn!==null){
     if( !(list.includes(markerId))){
       // Mostra il pulsante "Aggiungi ai preferiti"
@@ -110,6 +111,7 @@ function handleMarkerClick(e) {
   selectedMarker.on('popupclose', function() {
     // Nascondi il pulsante "Aggiungi ai preferiti"
     button.style.display = 'none';
+    unflexList();
   });
 }
 //Aggiungi un listener per il click sulla lista
@@ -124,6 +126,7 @@ function handleListClick(e) {
   const list = JSON.parse(Stringlist);
   var loggedIn = localStorage.getItem("loggedIn");
   let button = document.querySelector('.add-to-favorites');
+  flexList(parseInt(markerId.replace(/\D/g, ''))-1);
   if(loggedIn!==null){
     if( !(list.includes(markerId))){
       // Mostra il pulsante "Aggiungi ai preferiti"
@@ -134,6 +137,7 @@ function handleListClick(e) {
   selectedMarker.on('popupclose', function() {
     // Nascondi il pulsante "Aggiungi ai preferiti"
     button.style.display = 'none';
+    unflexList();
   });
 }
 
@@ -368,5 +372,19 @@ if(favID!==null){
   localStorage.removeItem('clickedID');
   //Chiamo la funzione per trovare il marker corrispondente e zoomare su di esso
   const markerfav=markerlist[favID-1];
+  flexList(favID-1);
   handleListClick(markerfav);
+}
+
+//Funzione per mostrare il posto selezionato e resettare la lista
+function flexList(num){
+  for(j=0;j<listItems.length;j++){
+    listItems[j].style.display = "none";
+  }
+  listItems[num].style.display="flex";
+}
+function unflexList(){
+  for(j=0;j<listItems.length;j++){
+    listItems[j].style.display = "flex";
+  }
 }
