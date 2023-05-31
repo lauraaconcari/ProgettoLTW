@@ -282,6 +282,7 @@ for (var i = 1; i <= numLuoghi; i++) {
   if(Municipio=='I'){
     //Aggiunta di insta o sito personale (se esistono) e numero telefonico per ora solo per il primo municipio
     var instalink=dataInsta[i-1].link;
+    var phone=dataInsta[i-1].phone;
     if(instalink!='')
     {
       var a = document.createElement("a");
@@ -300,7 +301,6 @@ for (var i = 1; i <= numLuoghi; i++) {
       div.appendChild(a);
     }
     
-    var phone ="3481445910";
     if (phone != '') {
       var phoneLink = document.createElement("a");
       phoneLink.href = "tel:" + phone;
