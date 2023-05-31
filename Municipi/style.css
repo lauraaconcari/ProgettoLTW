@@ -95,10 +95,10 @@
     margin-right: 20px;
     display: inline-block;
   }
-  .fa-brands, .fab {
-    font-weight: 400;
-    margin-left: 10px;
-  }
+.fa-brands, .fab {
+  font-weight: 400;
+  margin-left: 10px;
+}
   #phone-link {
     color:black;
     display: inline-block;
