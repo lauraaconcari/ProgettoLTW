@@ -21,18 +21,7 @@ body {
   background-size: cover;
   
 }
-.container {
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-  /* grid-template-columns: repeat(2,1fr); */
-  padding: 20px;
-  margin: 0 auto;
-  margin-top: 20px;
-  margin-bottom: 0px;
-  max-width: 800px;
-  align-items: center;
-}
+
 
 .grid-container {
   display: grid;
@@ -43,9 +32,10 @@ body {
   margin-right: 20px;
   margin-left: 45px;
   align-items: center;
+  max-width: calc(100vw - 40px); /* subtract total horizontal padding/margins */
 }
 @media screen and (max-width: 768px) {
-  .container {
+  .grid-container {
     max-width: 100%; /* imposta la larghezza massima del contenitore al 100% */
   }
 }
@@ -112,7 +102,7 @@ background-color: rgb(255, 196, 157);
   transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.4s;
   box-shadow: -5px 5px 0px 0px yellow;
   margin-top: 80px;
-  margin-bottom: 80px;
+  margin-bottom: 90px;
   margin-left: 80px;
   margin-right: 80px;
 }
