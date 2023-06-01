@@ -32,7 +32,7 @@ if($result){
   pg_close($conn);
   echo "<script>";
   echo "localStorage.setItem('Registered', true);";
-  echo "window.location.href = './Login.html';";
+  echo "window.location.href = '/index.html';";
   echo "</script>";
   die;
 }
