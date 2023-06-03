@@ -1,8 +1,9 @@
+//Variabili che servono per cambiare la pagina da registrati ad accedi e viceversa
 let signupBtn= document.getElementById("signupBtn")
 let signinBtn= document.getElementById("signinBtn")
 let nameField= document.getElementById("nameField")
 let title= document.getElementById("title")
-
+//Variabile che mi serve per ricordare in quale pagina ci si tovasse prima di effettuare il login
 const pagina_di_riferimento = document.referrer.replace(/^.*?\/\/[^\/]+(\/.*)$/, "$1");
 if(pagina_di_riferimento){
   console.log(pagina_di_riferimento);
@@ -12,6 +13,7 @@ if(pagina_di_riferimento){
   console.log(page.value);
 }
 
+//funzioni per cambiare da registrazione ad accesso e viceversa
 signinBtn.onclick = function(){
     if(!(signinBtn.classList.contains("disable"))){
         console.log("Effettui l'accesso");
@@ -40,40 +42,7 @@ signupBtn.onclick = function(){
         signinBtn.setAttribute("type", "button");
     }
 }
-$(document).ready(function() {
-    $('#reset-password-link').click(function(event) {
-      event.preventDefault(); // previene il comportamento predefinito del link
-      swal({
-        title: 'Recupero password',
-        text: 'Inserisci il tuo indirizzo email e ti invieremo un link per reimpostare la password',
-        content: {
-          element: 'input',
-          attributes: {
-            type: 'email',
-            placeholder: 'Indirizzo email',
-          },
-        },
-        buttons: {
-          cancel: 'Annulla',
-          confirm: {
-            text: 'Invia',
-            closeModal: false,
-          },
-        },
-      })
-      .then(function(email) {
-        if (email === '') {
-          swal('Errore', 'Devi inserire un indirizzo email', 'error');
-          return;
-        }
-        // Imposta il valore dell'email nel campo email del form
-        $('#email').val(email);
-      
-        // Invia il form al server
-        $('#form-recupero-password').submit();
-      });
-    });
-  });
+//Al caricamento della pagina controlla se vi è stata una registrazione scorretta o un login scorretto
   document.addEventListener("DOMContentLoaded", function(event) {
     var Registered=localStorage.getItem('Registered');
     var badLogin=localStorage.getItem('badLogin');
@@ -84,6 +53,7 @@ $(document).ready(function() {
       checkBadLogIn();
     }
   });
+//Funzione chiamata se esiste una registrazione non andata a buon fine, mostra una serie di popup e ricarica la pagina in cui si trova l'utente
 function checkRegistered(){
   var Registered= localStorage.getItem("Registered");
   console.log(Registered);
@@ -133,6 +103,7 @@ function checkRegistered(){
         break;
     }
 }
+//Funzione chiamata se esiste un login non andato a buon fine, mostra una serie di popup e ricarica la pagina in cui si trova l'utente
 function checkBadLogIn(){
   var badLogin= localStorage.getItem('badLogin');
   switch(badLogin){
@@ -159,6 +130,7 @@ function checkBadLogIn(){
   }
 }
 
+//Funzioni utilizzate dopo la chiusura dei sweetalert
 function removeR(){
   {
     localStorage.removeItem("Registered");

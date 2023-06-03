@@ -1,7 +1,11 @@
+//Acquisisco i contenuti della pagina per modificarli a piacimento
 pulsante=document.getElementById('findOutMore');
 form=document.getElementById('form');
 backbutton=document.getElementById('backbutton');
 content=document.getElementById('content');
+
+/*Aggiungo un listener al pulsante: controlla che sei loggato e manda un messaggio di errore in caso contrario, se invece si è loggati
+nasconde la card con le informazioni e mostra il form da compilare e prende la mail dal localstorage e la setta nel campo nascosto del form*/
 pulsante.addEventListener('click',function(){
     let loggedIn= localStorage.getItem('loggedIn');
     if(loggedIn===null){
@@ -21,12 +25,13 @@ pulsante.addEventListener('click',function(){
         emailInput.value=email;
     }
 });
+//Pulsante per tornare indietro
 backbutton.addEventListener('click',function(){
     backbutton.style.display='none';
     form.style.display="none";
     content.style.display='block';
 });
-
+//Controlla che non vengano inviate informazioni vuote dal form con eventuale messaggio d'errore per l'utente
 form.addEventListener('submit', (event) => {
     const placeInput = document.querySelector('#place');
     const zoneInput = document.querySelector('#zone');
@@ -40,7 +45,8 @@ form.addEventListener('submit', (event) => {
       });
     }
   });
-  // Quando ritorna sulla pagina fa un controllo se è andato tutto a buon fine
+
+  // Quando ritorna sulla pagina fa un controllo se è andato tutto a buon fine attraverso i localstorage settati da contattaci.php
   var Sent = localStorage.getItem('Sent');
   switch(Sent){
     case 'true':

@@ -17,7 +17,7 @@ $cognome = strtolower($_POST["cognome"]);
 $email =  ($_POST["email"]);
 $numero =  ($_POST["numero"]);
 $recensione =  ($_POST["recensione"]);
-
+//Query per inserire la recensione
 $query = "INSERT INTO recensioni(nome, cognome, email ,telefono ,recensione) VALUES ('$nome', '$cognome', '$email' ,'$numero' ,'$recensione')";
 $result= pg_query($conn, $query);
 if($result){
@@ -39,7 +39,7 @@ else{
         echo "</script>";
         die;
     }
-    //Errore generico non lo specifico
+    //Errore generico non specifico
     pg_close($conn);
     echo "<script>";
     echo "localStorage.setItem('Sent',false);";

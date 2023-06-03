@@ -11,13 +11,16 @@ var customIcon = L.icon({
 L.Marker.prototype.options.icon = customIcon;
 
 var markerlist= [];
+//Usiamo un markercluster per ragruppare i marker anche se non usiamo la funzione estetica del clustering
 var markers = L.markerClusterGroup({
-  disableClusteringAtZoom: 1, // disabilita clustering
-  showCoverageOnHover: false, // nasconde i cluster
+  disableClusteringAtZoom: 1,
+  showCoverageOnHover: false, 
 });
 const markerToPlace = {}; //Tupla per salvare id con nome corrispondente con i nomi originali
 const markerToPlacelowcase = {};
-var Municipio="I";
+var Municipio="I";//Variabile per indicare il municipio di tale script perchè viene utilizzata in preferiti.js
+
+//Dati riguardanti i posti, in particolare la loro posizione geografica il loro nome e il loro id univoco
 var data = [
   {
     "id": "I1",
@@ -350,8 +353,9 @@ var data = [
     "popupContent": "Fico by Baguetteria"
   }
   ];
+
+  //Aggiunta dei marker sulla mappa e nei vari dizionari utilizzati in altre funzioni
   for (let i = 0; i < data.length; i++) {
-    //Aggiunta dei marker sulla mappa
     let info = data[i];
     let marker = L.marker(info.location, { id: info.id });
     markerToPlace[info.id] = info.popupContent;
@@ -363,7 +367,7 @@ var data = [
   const placeToMarker = _.invert(markerToPlacelowcase);
   console.log(placeToMarker);
   map.addLayer(markers);
-//Stringa Json per gli Instagram:
+//Raggruppamento degli stessi posti ma stavolta abbiamo il numero di telefono e il sito web:
 var dataInsta = [
   {
     "phone": "0663617038",
@@ -697,7 +701,7 @@ var dataInsta = [
   }
 ];
 
-//Descrizioni
+//Dizionario con le descrizioni dei luoghi
 var Descrizioni = {
   "I1": "Brasserie e cocktail bar con soffitto a volta che propone un menù tradizionale mediterraneo e contemporaneo. €€€",
   "I2": "Panini e taglieri di salumi in un locale rustico dagli arredi di legno con prosciutti appesi al soffitto. Taglieri con porzioni abbondandi, quasi da cena più che da aperitivo. Locale piccolo ma accogliente. €€",

@@ -1,6 +1,6 @@
 var pulsante=document.getElementById('btnrev');
 pulsante.addEventListener('click',change);
-
+//Quando si clicca sul pulsante per lasciare una recensione prima cosa interrompe l'intervallo per far scorrere la carte e poi le fa scomparire per far comparire il form
 function change(){
     clearInterval(interval);
     var griglie=document.getElementsByClassName('grid-container');
@@ -10,6 +10,7 @@ function change(){
     forms[0].style.display='flex';
   
 }
+//Quando viene caricata la pagina vengono settate per la prima volta le 3 carte e poi fa un controllo veloce se è stato inviato un form con le informazioni
 document.addEventListener("DOMContentLoaded", function(event) {
     changeReviews();
     var Sent=localStorage.getItem('Sent');
@@ -43,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             break;
     }
   });
-  //Cambio delle recensioni
+  //Dati con tutte le recensioni del sito verificate
   var reviews = [
     {
       title: "@Francesca",
@@ -66,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       text: "AperitivoRomano mi ha permesso di scoprire posti fantastici per fare l'aperitivo a Roma. La funzione di ricerca è stata molto precisa e mi ha permesso di trovare posti che non conoscevo. E la funzione di mappa è stata molto comoda per trovare il posto giusto anche quando non conoscevo bene la zona."
     },
     {
-      title: "@Davide",
+      title: "@DavideTony",
       text: "AperitivoRomano è stato un vero toccasana per le mie serate fuori con gli amici. La funzione di ricerca mi ha permesso di trovare facilmente il posto giusto dove fare l'aperitivo a Roma, e la funzione di salvataggio dei posti preferiti mi consente di tenere traccia dei posti che mi sono piaciuti di più."
     },
     {
@@ -92,7 +93,7 @@ var index = 0;
 var review1 = document.getElementById("review1");
 var review2 = document.getElementById("review2");
 var review3 = document.getElementById("review3");
-
+//Funzione per cambiare la carte
 function changeReviews() {
     console.log("cambio");
     // Cambia il contenuto delle tre carte

@@ -27,8 +27,10 @@ if (pg_num_rows($result) > 0) {
 
   // Verifica la password utilizzando la funzione password_verify
   if (password_verify($password, $hashed_password)) {
-    // La password è corretta, l'utente è autenticato
-    //Scarica tutta la lista dei preferiti salvati se esiste
+    /*La password è corretta, l'utente è autenticato
+    e scarica tutta la lista dei preferiti salvati se esiste*/
+
+    //Query per prendere gli id dei posti
     $preferiti = "SELECT marker_id FROM Preferiti WHERE email = '$email'";
     $result = pg_query($conn, $preferiti);
     if ($result !== false) {
@@ -36,6 +38,7 @@ if (pg_num_rows($result) > 0) {
       while ($row = pg_fetch_assoc($result)) {
         $marker_ids[] = $row['marker_id'];
       }
+    //Query per prendere i nomi dei posti
     $places = "SELECT places FROM Preferiti WHERE email = '$email'";
     $result = pg_query($conn, $places);
     if ($result !== false) {
@@ -44,14 +47,14 @@ if (pg_num_rows($result) > 0) {
         $posti[] = $row['places'];
       }
     }
-      //Prende il nome dell'utente
+    //Query per prendere il nome dell'utente che sta loggando
       $nome="SELECT nome FROM registrazioni WHERE email = '$email' ";
       $result = pg_query($conn, $nome);
     if ($result !== false){
         $row = pg_fetch_assoc($result);
         $nomeUtente = $row['nome'];
       }
-      // Salva la lista di marker_id nel local storage
+      // Salva la lista di marker_id e dei posti in variabili che poi verranno aggiunte nei loro rispettivi local storage
       $json_marker_ids = json_encode($marker_ids);
       $json_posti = json_encode($posti);
       // Chiudi la connessione al database
@@ -70,14 +73,16 @@ if (pg_num_rows($result) > 0) {
     } else {
       die();
     }
-  } else {
+  } //Password sbagliata, setta l'errore badpass
+  else {
     echo "<script>";
     echo "localStorage.setItem('badLogin','pass');";
     echo "window.location.href = '/Login/Login.html';";
     echo "</script>";
     die();
   }
-} else {
+} 
+else { //Se la mail non è stata trovata setta l'errore di mail
   echo "<script>";
   echo "localStorage.setItem('badLogin','email');";
   echo "window.location.href = '/Login/Login.html';";

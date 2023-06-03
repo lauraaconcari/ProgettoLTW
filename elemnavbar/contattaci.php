@@ -15,8 +15,10 @@ if (!$conn) {
 $place =  strtolower($_POST["place"]);
 $zone =  strtolower($_POST["zone"]);
 $email = $_POST["email"];
+//Query per inserire il posto nei consigliati
 $query = "INSERT INTO Consigliati(nome, zona, email) VALUES ('$place', '$zone', '$email')";
 $result= pg_query($conn, $query);
+//Controllo di eventuali errori (o non) segnalati poi all'utente attraverso il localstorage analizzato nel javascript della pagina
 if($result){
     pg_close($conn);
     echo "<script>";

@@ -17,7 +17,7 @@ if (!$conn) {
 //Azzeriamo la memoria dei precedenti preferiti
 $query1="DELETE FROM Preferiti WHERE email = '$email';";
 pg_query($conn, $query1);
-
+//Aggiungiamo i preferiti dell'ultima sessione dell'utente
 for ($i = 0; $i < count($list); $i++) {
   $marker= $list[$i];
   $place= $list2[$i];

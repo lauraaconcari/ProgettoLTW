@@ -4,6 +4,7 @@ var thispage=1;
 var precedente= document.getElementById('precedente');
 var successivo= document.getElementById('successivo');
 init();
+//La funzione init viene chiamata a inizio a pagina, quando si cambia pagina e quando viene eliminato un elemento e il numero di pagine diminuisce
 function init(){
 precedente.style.display= 'none';
 successivo.style.display= 'none';
@@ -17,13 +18,14 @@ if(n>0){
     //Per prima cosa calcolo quante pagine ci saranno
     var MaxPage=Math.ceil(n/6);
 
-    //Chiamo la funzione per settare la prima pagina e i pulsanti se num pagine>1
+    //Chiamo la funzione per settare la prima pagina e i pulsanti
     setCards(thispage,MaxPage,n);
     }
 }
+//Funzione per settare le cards
 function setCards(page,MaxPage,n) {
     if(MaxPage>1){
-        switch(page){
+        switch(page){ //Lo switch controlla la pagina in cui ci troviamo perchè se è l'ultima mostra solo il tasto precedente, se è la prima solo il tasto successivo o di default mostra entrambi i pulsanti
             case 1:
                 precedente.style.display= 'none';
                 successivo.style.display= 'block';
@@ -43,7 +45,7 @@ function setCards(page,MaxPage,n) {
     const posti = JSON.parse(Stringlist);
     const Stringlist2 = localStorage.getItem('preferiti');
     const id = JSON.parse(Stringlist2);
-
+    //X indica le 6 sezioni delle cards mentre con i calcoliamo l'indice delle liste da cui prendiamo i dati
     var x=0;
     var sezioni = document.querySelectorAll('.container section');
     for(i=6*(page-1);i<6*page;i++){
@@ -72,7 +74,7 @@ function setCards(page,MaxPage,n) {
   }
 
 
-
+//Funzione e listener per i pulsanti successivo e precedente
 successivo.addEventListener("click", function(){
     azzeraCards();
     thispage++;
@@ -83,6 +85,7 @@ precedente.addEventListener("click", function(){
     thispage--;
     init();
 });
+//Funzione che rende le carte 'vuote' prima di essere popolate
 function azzeraCards(){
     var y=0;
     while (y<6) {
@@ -96,6 +99,7 @@ function azzeraCards(){
         y++;
     }
 }
+//Funzione per portare l'utente alla pagina del luogo, non solo al municipio preciso ma aprirà anche tale luogo nella mappa
 function redirect(event) {
     event.preventDefault(); // impedisce il comportamento predefinito del link
     const ID = this.href.replace(/^.*\//, ''); // ottiene l'id del link
@@ -104,6 +108,9 @@ function redirect(event) {
     var m = ID.replace(/\d+/g, '');
     window.location.href="/Municipi/Municipio "+m+"/Municipio "+m+".html";
   }
+/*Funzione per eliminare il luogo dalle cards, prima ovviamente lo elimina dai localstorage e poi chiama init, facendo però un controllo 
+se bisogna diminuire il numero della pagina corrente
+*/
 function getRidof(event) {
     event.preventDefault();
     const pos = this.href.replace(/^.*\//, ''); //Pos sarebbe la posizione esatta del luogo nei due localstorage
@@ -118,7 +125,8 @@ function getRidof(event) {
     const n=id.length-1;
     id.splice(pos,1);
     localStorage.setItem('preferiti',JSON.stringify(id));
+
     let MaxPage=Math.ceil(n/6);
-    if (thispage>MaxPage)thispage--;
+    if (thispage>MaxPage)thispage--;//se è vera bisogna diminuire la pagina
     init();
   }

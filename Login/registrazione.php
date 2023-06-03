@@ -28,6 +28,7 @@ else {
 $query = "INSERT INTO Registrazioni(Nome, Email, Password) VALUES ('".$_POST['nome']."', '".$_POST['email']."', '$hashed_password')";
 $result= pg_query($conn, $query);
 
+//Controllo di errori nella query, violazione della primary key o qualsiasi altro errore 
 if($result){
   pg_close($conn);
   echo "<script>";
@@ -37,7 +38,7 @@ if($result){
   die;
 }
 else{
-  // Verifica se ci è stata una violazione della primary key
+  // C'è stato un errore quindi verifica se si tratta di una violazione della primary key 
   $error=pg_last_error($conn);
   if(strpos(pg_last_error($conn),"registrazioni_pkey")!==false){
       pg_close($conn);
@@ -47,6 +48,7 @@ else{
       echo "</script>";
       die;
   }
+  //Errore generico di registrazione
   echo "<script>";
   echo "localStorage.setItem('Registered', false);";
   echo "window.location.href = './Login.html';";
