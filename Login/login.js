@@ -7,7 +7,7 @@ const pagina_di_riferimento = document.referrer.replace(/^.*?\/\/[^\/]+(\/.*)$/,
 if(pagina_di_riferimento){
   console.log(pagina_di_riferimento);
   var page=document.getElementById('page');
-  if(pagina_di_riferimento!="/Login/registrazione.php") page.value=pagina_di_riferimento;
+  if(pagina_di_riferimento!="/Login/registrazione.php"&&pagina_di_riferimento!="/Login/Login.html") page.value=pagina_di_riferimento;
   else page.value="/index.html";
   console.log(page.value);
 }
@@ -86,6 +86,7 @@ $(document).ready(function() {
   });
 function checkRegistered(){
   var Registered= localStorage.getItem("Registered");
+  console.log(Registered);
     switch(Registered){
       case 'true':
         swal({
@@ -93,10 +94,8 @@ function checkRegistered(){
           text: 'Clicca sul tasto accedi per accedere al tuo profilo',
           icon: 'success',
           ButtonText: 'OK',
-          onClose: function() {
-            localStorage.removeItem("Registered");
-            window.location.href="/Login/Login.html";
-          }
+        }).then(() => {
+          removeR();
         });
         break;
       case 'false':
@@ -105,10 +104,8 @@ function checkRegistered(){
           text: 'La registrazione non è andata a buon fine',
           icon: 'error',
           ButtonText: 'OK',
-          onClose: function() {
-            localStorage.removeItem("Registered");
-            window.location.href="/Login/Login.html";
-          }
+        }).then(() => {
+          removeR();
         });
         break;
       case 'primary':
@@ -117,10 +114,8 @@ function checkRegistered(){
           text: 'Esiste già un account registrato con la mail che hai inserito',
           icon: 'error',
           ButtonText: 'OK',
-          onClose: function() {
-            localStorage.removeItem("Registered");
-            window.location.href="/Login/Login.html";
-          }
+        }).then(() => {
+          removeR();
         });
         break;
       case 'badpass':
@@ -129,10 +124,8 @@ function checkRegistered(){
           text: 'La password deve essere lunga almeno 8 caratteri e deve includere almeno un carattere maiuscolo e speciale',
           icon: 'error',
           ButtonText: 'OK',
-          onClose: function() {
-            localStorage.removeItem("Registered");
-            window.location.href="/Login/Login.html";
-          }
+        }).then(() => {
+          removeR();
         });
         break;
       default:
@@ -149,11 +142,9 @@ function checkBadLogIn(){
         text: 'Password non corretta',
         icon: 'error',
         ButtonText: 'OK',
-        onClose: function() {
-          localStorage.removeItem('badLogin');
-          window.location.href="/Login/Login.html";
-        }
-      });
+        }).then(() => {
+          removeL();
+        });
       break;
     case 'email':
       swal({
@@ -161,11 +152,22 @@ function checkBadLogIn(){
         text: 'Email non trovata',
         icon: 'error',
         ButtonText: 'OK',
-        onClose: function() {
-          localStorage.removeItem('badLogin');
-          window.location.href="/Login/Login.html";
-        }
-      });
+        }).then(() => {
+          removeL();
+        });
       break;
+  }
+}
+
+function removeR(){
+  {
+    localStorage.removeItem("Registered");
+    window.location.href="/Login/Login.html";
+  }
+}
+function removeL(){
+  {
+    localStorage.removeItem("badLogin");
+    window.location.href="/Login/Login.html";
   }
 }
