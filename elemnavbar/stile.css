@@ -1,81 +1,91 @@
 .navbar {
-  font-family: 'Lucida Console', sans-serif;
-  padding: 10px;
+  font-family: 'Lucida Console', sans-serif; /* Imposta il font della barra di navigazione */
+  padding: 10px; /* Aggiunge un padding interno alla barra di navigazione */
 }
+
 @media (max-width: 767px) {
   .navbar {
-    width: 100%;
+    width: 100%; /* Imposta la larghezza al 100% quando la larghezza dello schermo è inferiore a 767px */
   }
 }
+
 .nav-link {
-  font-family: 'Lucida Console', sans-serif;
-  font-size: 20px;
+  font-family: 'Lucida Console', sans-serif; /* Imposta il font dei link nella barra di navigazione */
+  font-size: 20px; /* Imposta la dimensione del font dei link nella barra di navigazione */
 }
+
 a img {
-  width: 40px;
-  height: 40px;
+  width: 40px; /* Imposta la larghezza delle immagini all'interno dei link */
+  height: 40px; /* Imposta l'altezza delle immagini all'interno dei link */
 }
 
 body {
-  background-image: url(/Fotoram.io.jpg);
-  background-size: cover;
-  
+  background-image: url(/Fotoram.io.jpg); /* Imposta un'immagine di sfondo per il corpo della pagina */
+  background-size: cover; /* Adatta l'immagine di sfondo per coprire l'intero corpo della pagina */
 }
-
 
 .grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 10px;
-  margin-top: 20px;
-  margin-right: 20px;
-  margin-left: 45px;
-  align-items: center;
-  max-width: calc(100vw - 40px); /* subtract total horizontal padding/margins */
+  display: grid; /* Imposta il layout come griglia per il contenitore */
+  grid-template-columns: repeat(3, 1fr); /* Imposta tre colonne nella griglia con dimensioni uguali */
+  grid-template-rows: repeat(2, 1fr); /* Imposta due righe nella griglia con dimensioni uguali */
+  gap: 10px; /* Imposta lo spazio tra le celle della griglia */
+  margin-top: 20px; /* Aggiunge un margine superiore al contenitore */
+  margin-right: 20px; /* Aggiunge un margine destro al contenitore */
+  margin-left: 45px; /* Aggiunge un margine sinistro al contenitore */
+  align-items: center; /* Allinea gli elementi della griglia verticalmente al centro */
+  max-width: calc(100vw - 40px); /* Imposta la larghezza massima del contenitore sottraendo il padding e i margini orizzontali totali */
 }
+
 @media screen and (max-width: 768px) {
   .grid-container {
-    max-width: 100%; /* imposta la larghezza massima del contenitore al 100% */
+    max-width: 100%; /* Imposta la larghezza massima del contenitore al 100% quando la larghezza dello schermo è inferiore a 768px */
   }
 }
+
 .fa-user {
-  font-size: 20px;
-  margin-right: 20px;
+  font-size: 20px; /* Imposta la dimensione del font dell'icona utente */
+  margin-right: 20px; /* Aggiunge un margine destro all'icona utente */
 }
-#dropdownMenuButton{
-  font-family: 'Lucida Console', sans-serif;
-  line-height: 2; 
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: .30rem;
-  color: rgba(0,0,0,.5);
-  border-color: rgba(0,0,0,.1);
+
+#dropdownMenuButton {
+  font-family: 'Lucida Console', sans-serif; /* Imposta il font del pulsante di menu a discesa */
+  line-height: 2; /* Imposta l'altezza della riga del pulsante di menu a discesa */
+  background-color: transparent; /* Imposta il colore di sfondo del pulsante di menu a discesa come trasparente */
+  border: 1px solid transparent; /* Imposta il bordo del pulsante di menu a discesa come trasparente */
+  border-radius: .30rem; /* Imposta il bordo arrotondato del pulsante di menu a discesa */
+  color: rgba(0, 0, 0,.1);
   margin-left: 880px;
 }
 
+/* Stile per i pulsanti secondari attivi che non sono disabilitati e non hanno la classe 'disabled' */
 .btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle {
 color: #000000;
 background-color: transparent;
 border-color: #4e555b;
 }
 
+/* Stile per il menu a tendina */
 .dropdown-menu {
 position: absolute;
 left: 85%;
 background-color: rgb(255, 196, 157);
 }
 
+/* Stile per il dropdownMenuButton quando il cursore si trova sopra di esso */
 #dropdownMenuButton:hover {
 background-color: rgb(255, 196, 157);
 }
 
+/* Stile per il togglerButton quando il cursore si trova sopra di esso */
 #togglerButton:hover {
 background-color: rgb(255, 196, 157);
 }
+/* Classe 'item' */
 .item {
   color: transparent;
 }
+
+/* Stile per l'elemento con ID 'clicca' */
 #clicca {
   font-family: 'Lucida Console', sans-serif;
   text-align: center;
@@ -91,6 +101,8 @@ background-color: rgb(255, 196, 157);
   border-color: rgba(0,0,0,.1);
   margin-top: 50px;
 }
+
+/* Stile per il pulsante con ID 'btnrev', è il pulasante per aprire il form e lasciare la recensione*/
 #btnrev {
   font-size: 1rem;
   padding: 0.8em 2em;
@@ -107,10 +119,13 @@ background-color: rgb(255, 196, 157);
   margin-right: 80px;
 }
 
+/* Stile per il pulsante con ID 'btnrev' quando il cursore si trova sopra di esso */
 #btnrev:hover {
   transform: translate(5px, -5px);
 }
-#clicca:hover {
+  
+/* Stile per l'elemento con ID 'clicca' quando il cursore si trova sopra di esso */
+  #clicca:hover {
   background-color: rgb(255, 196, 157);
 }
 footer {
