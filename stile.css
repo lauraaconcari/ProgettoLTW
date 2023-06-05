@@ -1,3 +1,5 @@
+/*CSS PAGINA INDEX*/
+
 @media (min-width: 769px) {
   /* stili per desktop */
   body {
@@ -5,6 +7,7 @@
   }
 }
 
+/* Elementi Navbar*/
 .navbar {
     font-family: 'Lucida Console', sans-serif;
     padding: 10px;
@@ -23,11 +26,14 @@ a img {
     height: 40px;
 }
 
+/*Imposta sfondo pagina*/
 body {
     background-image: url(./Fotoram.io.jpg);
     background-size: cover;
     
 }
+
+/*Icone font awesome*/
 .fa-user {
   margin-top: 7px;
   margin-right: 30px;
@@ -40,12 +46,8 @@ body {
   margin-top: 7px;
   margin-right: 30px;
 }
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0%;
-}
 
+/*Pagina divisa con un container formato da una riga divisa in due sezioni*/
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -53,21 +55,23 @@ body {
 	height: 100vh;
   padding: 10px;
 }
-
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0%;
+}
 .section-1 {
   background-color: transparent;
   padding: 20px;
   right: 80px;
   position: relative;
 }
-
 .section-2 {
   background-color: transparent;
   width: 110%;
   height: auto; /* Imposta l'altezza in base alla larghezza dell'elemento */
   left: 45px;
   position: relative;
-
 }
 .section-2 img {
   max-width: 100%;
@@ -75,6 +79,8 @@ body {
   bottom: 20px;
   position: relative;
 }
+
+/*Bottone sulla navbar con nome user*/
 .btn {
   font-family: 'Lucida Console', sans-serif;
   line-height: 2;
@@ -85,26 +91,29 @@ body {
   border-color: rgba(0,0,0,.1);
   margin-left: 800px;
 }
-
+/*Azione bottone dopo il click*/
 .btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle {
   color: #000000;
   background-color: transparent;
   border-color: #4e555b;
 }
+
+/*Bottone per menù a discesa della navbar*/
 .dropdown-menu {
   position: absolute;
   left: 84%;
   background-color: rgb(255, 196, 157);
 }
 
+/*Azione entrambi i bottoni se ci passi sopra con il cursore*/
 #dropdownMenuButton:hover {
   background-color: rgb(255, 196, 157);
 }
-
 #togglerButton:hover {
   background-color: rgb(255, 196, 157);
 }
 
+/*Stile footer e elementi del footer*/
 footer {
   background-color: #fc9b00;
   color: #fff;
@@ -114,13 +123,72 @@ footer {
   width: 100%;
   margin-top: 30px;
 }
-
 .row a {
   margin-right: 50px;
   color: #fff;
 }
-
 .row a:last-child {
   margin-right: 0;
 }
 
+/* MEDIA QUERY PER RENDERE LA PAGINA RESPONSIVE*/
+/* Per schermi di larghezza massima di 767px */
+@media (max-width: 767px) {
+  .nav-link {
+    font-size: 16px;
+  }
+  .navbar-light .navbar-toggler {
+    height: auto;
+  }
+  .fa-user, .fa-arrow-right-from-bracket, .fa-heart {
+    margin-right: 10px;
+  }
+  .container {
+    display: block;
+    height: auto;
+  }
+  .section-1, .section-2 {
+    position: static;
+    width: 100%;
+  }
+  .section-2 img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  .btn {
+    margin-left: 0;
+  }
+}
+
+/* Per schermi di larghezza compresa tra 768px e 991px */
+@media (min-width: 768px) and (max-width: 991px) {
+  .nav-link {
+    font-size: 18px;
+  }
+}
+
+/* Per schermi di larghezza maggiore di 991px */
+@media (min-width: 992px) {
+  .nav-link {
+    font-size: 20px;
+  }
+  .container {
+    height: 100vh;
+  }
+  .section-1 {
+    right: 0;
+  }
+  .section-2 {
+    width: 110%;
+    left: 45px;
+  }
+  .section-2 img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  .btn {
+    margin-left: 800px;
+  }
+}

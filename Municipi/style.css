@@ -1,3 +1,4 @@
+/*contenitore per raggruppare i locali*/
 .list-container {
     list-style: none;
     padding: 20px;
@@ -10,7 +11,8 @@
     border-radius: 10px;
     overflow: auto;
   }
-  
+
+  /*elementi del conteniotre*/
   .list-container li {
     display: flex;
     align-items: center;
@@ -21,6 +23,7 @@
     overflow: hidden;
   }
   
+  /*ogni elemento ha immagini e paragrafi*/
   .list-container img {
     width: 150px;
     height: 200px;
@@ -28,28 +31,33 @@
     float: left;
   }
   
+  /*tutti gli elementi div contenuti all'interno di un elemento con classe .list-container*/
   .list-container div {
-    flex-grow: 1;
-    padding: 10px;
+    flex-grow: 1; /*massima flessibilità all'interno del contenitore*/
+    padding: 10px; /*spazio vuoto lasciato tra il contenuto dell'elemento e il suo bordo*/
   }
-  
+
+  /*Header dell'elemento nel list-container*/
   .list-container h3 {
     font-size: 1.2rem;
     font-weight: bold;
     margin-left: 10px;
   }
-  
+
+  /*Paragrafo del list-container*/
   .list-container p {
     font-size: 1rem;
     margin-left: 10px;
     max-width: 500px;
     overflow: hidden;
   }
-  
+
+  /*Contenitore nel contenitore per creare uno spazio sopra per il filtro per nome*/
   .filter-container {
     margin-bottom: 20px;
   }
-  
+
+  /*Etichetta al filtro*/
   .filter-container label {
     font-size: 1.2rem;
     font-weight: bold;
@@ -57,7 +65,8 @@
     margin-left: 30px;
     margin-top: 20px;
   }
-  
+
+  /*Casella per scrivere nel filtro*/
   .filter-container input {
     font-size: 1rem;
     padding: 5px;
@@ -65,44 +74,46 @@
     border-radius: 5px;
   }
 
+  /*Stile footer e elementi del footer*/
   footer {
     background-color: #fc9b00;
     color: #fff;
     padding: 20px;
     position: absolute;
     bottom: auto;
-    width: 100%;
-    
+    width: 100%; 
   }
-
   .row a {
     margin-right: 50px;
     color: #fff;
   }
-  
   .row a:last-child {
     margin-right: 0;
-  }
-  #lista-luoghi li {
-    cursor: pointer;
-  }
-  
-  #lista-luoghi li:hover {
-    background-color: #f2f2f2;
-  }
-  #instagram-link {
-    color: purple;
-    margin-right: 20px;
-    display: inline-block;
   }
   .fa-brands, .fab {
     font-weight: 400;
     margin-left: 10px;
+  }
+
+  /*Elementi aggiunti in modo dinamico al list-container*/
+  #lista-luoghi li {
+    cursor: pointer;
+  }
+
+  /*Diventa grigio se passi sopra la casella del list-container con il cursore*/
+  #lista-luoghi li:hover {
+    background-color: #f2f2f2;
+  }
+
+  /*Icone font awesome aggiunte sotto i paragrafi*/
+  #instagram-link {
+    color: purple;
+    margin-right: 20px;
+    display: inline-block;
   }
   #phone-link {
     color:black;
     display: inline-block;
     margin-left: 10px;
     font-size: 0.89em;
-
   }
