@@ -87,46 +87,54 @@
       max-width: 50%;
     }
   }
-  .btn {
-    font-family: 'Lucida Console', sans-serif;
-    line-height: 2; 
-    background-color: transparent;
-    border: 1px solid transparent;
-    border-radius: .30rem;
-    color: rgba(0,0,0,.5);
-    border-color: rgba(0,0,0,.1);
-    margin-left: 880px;
-}
-.btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle {
-  color: #000000;
-  background-color: transparent;
-  border-color: #4e555b;
+  /* Stile dei pulsanti */
+.btn {
+  font-family: 'Lucida Console', sans-serif; /* Imposta il font per il testo dei pulsanti come Lucida Console o un sans-serif alternativo */
+  line-height: 2; /* Imposta l'altezza della riga per il testo del pulsante a 2 volte l'altezza del carattere */
+  background-color: transparent; /* Imposta il colore di sfondo del pulsante come trasparente */
+  border: 1px solid transparent; /* Imposta un bordo di 1px per il pulsante come trasparente */
+  border-radius: .30rem; /* Aggiunge un bordo arrotondato al pulsante con un raggio di 0.30 rem */
+  color: rgba(0,0,0,.5); /* Imposta il colore del testo del pulsante su un nero leggermente trasparente */
+  border-color: rgba(0,0,0,.1); /* Imposta il colore del bordo del pulsante su un grigio chiaro trasparente */
+  margin-left: 880px; /* Imposta un margine sinistro di 880px per spostare il pulsante a destra */
 }
 
+/* Stile dei pulsanti di tipo btn-secondary quando attivi o selezionati */
+.btn-secondary:not(:disabled):not(.disabled).active,
+.btn-secondary:not(:disabled):not(.disabled):active,
+.show>.btn-secondary.dropdown-toggle {
+  color: #000000; /* Imposta il colore del testo del pulsante quando è attivo o selezionato su nero */
+  background-color: transparent; /* Imposta il colore di sfondo del pulsante attivo o selezionato come trasparente */
+  border-color: #4e555b; /* Imposta il colore del bordo del pulsante attivo o selezionato su un grigio scuro */
+}
+
+/* Stile del menu a tendina */
 .dropdown-menu {
-  position: absolute;
-  left: 85%;
-  background-color: rgb(255, 196, 157);
+  position: absolute; /* Imposta la posizione del menu a tendina come assoluta rispetto al suo contenitore */
+  left: 85%; /* Sposta il menu a tendina verso sinistra del 85% rispetto al suo contenitore */
+  background-color: rgb(255, 196, 157); /* Imposta il colore di sfondo del menu a tendina come un arancione chiaro */
 }
 
+/* Stile del pulsante dropdown al passaggio del mouse */
 #dropdownMenuButton:hover {
-  background-color: rgb(255, 196, 157);
+  background-color: rgb(255, 196, 157); /* Imposta il colore di sfondo del pulsante dropdown al passaggio del mouse come un arancione chiaro */
 }
 
+/* Stile del pulsante "togglerButton" al passaggio del mouse */
 #togglerButton:hover {
-  background-color: rgb(255, 196, 157);
+  background-color: rgb(255, 196, 157); /* Imposta il colore di sfondo del pulsante "togglerButton" al passaggio del mouse come un arancione chiaro */
 }
 
-
+/* Stile del footer */
 footer {
-  background-color: #fc9b00;
-  color: #000000;
-  padding: 20px;
-  position: absolute;
-  bottom: auto;
-  width: 100%;
-  
+  background-color: #fc9b00; /* Imposta il colore di sfondo del footer come un arancione scuro */
+  color: #000000; /* Imposta il colore del testo del footer su nero */
+  padding: 20px; /* Aggiunge uno spazio di riempimento di 20px del footer */
+  position: absolute; /* Imposta la posizione del footer come assoluta rispetto al suo contenitore */
+  bottom: auto; /* Imposta la posizione del foooter rispetto al bordo inferiore del suo contenitore */
+  width: 100%; /* Imposta la larghezza del footer al 100% del suo contenitore */
 }
+
 .row a {
   margin-right: 50px;
   color: #fff;
@@ -136,6 +144,7 @@ footer {
   margin-right: 0;
 }
 
+/*Gestione stile delle scritte nella card*/
 .card-link a {
   font-family: 'Lucida Console', sans-serif;
   font-size: 16px;
@@ -143,38 +152,45 @@ footer {
   margin-top: 10px;
   color: #ff9853;
 }
+/* Stile del primo link all'interno di .card-link */
 .card-link a:nth-child(1){
-  position:absolute;
-  bottom: 45px;
-}
-.card-link a:nth-child(2){
-  position:absolute;
-  bottom:20px;
-}
-#precedente {
-  font-family: 'Lucida Console', sans-serif;
-  width: 130px;
-  border-radius: .30rem;
-  border: 1px solid;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  margin-top: 0%;
-  margin-left: 50px;
- 
-}
-#successivo {
-  font-family: 'Lucida Console', sans-serif;
-  width: 130px;
-  border-radius: .30rem;
-  border: 1px solid;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  margin-top: 0%;
-  margin-right: 50px;
+  position:absolute; /* Imposta la posizione del primo link come assoluta */
+  bottom: 45px; /* Posiziona il primo link a 45px dal basso */
 }
 
+/* Stile del secondo link all'interno di .card-link */
+.card-link a:nth-child(2){
+  position:absolute; /* Imposta la posizione del secondo link come assoluta */
+  bottom:20px; /* Posiziona il secondo link a 20px dal basso */
+}
+
+/* Stile del pulsante con id "precedente" */
+#precedente {
+  font-family: 'Lucida Console', sans-serif; /* Imposta il font del testo del pulsante come Lucida Console o un sans-serif alternativo */
+  width: 130px; /* Imposta la larghezza del pulsante a 130px */
+  border-radius: .30rem; /* Aggiunge un bordo arrotondato al pulsante con un raggio di 0.30 rem */
+  border: 1px solid; /* Imposta un bordo di 1px per il pulsante */
+  position: absolute; /* Imposta la posizione del pulsante come assoluta */
+  left: 0; /* Posiziona il pulsante all'estremità sinistra */
+  bottom: 0; /* Posiziona il pulsante all'estremità inferiore */
+  margin-top: 0%; /* Imposta il margine superiore del pulsante a 0% */
+  margin-left: 50px; /* Aggiunge un margine sinistro di 50px al pulsante */
+}
+
+/* Stile del pulsante con id "successivo" */
+#successivo {
+  font-family: 'Lucida Console', sans-serif; /* Imposta il font del testo del pulsante come Lucida Console o un sans-serif alternativo */
+  width: 130px; /* Imposta la larghezza del pulsante a 130px */
+  border-radius: .30rem; /* Aggiunge un bordo arrotondato al pulsante con un raggio di 0.30 rem */
+  border: 1px solid; /* Imposta un bordo di 1px per il pulsante */
+  position: absolute; /* Imposta la posizione del pulsante come assoluta */
+  right: 0; /* Posiziona il pulsante all'estremità destra */
+  bottom: 0; /* Posiziona il pulsante all'estremità inferiore */
+  margin-top: 0%; /* Imposta il margine superiore del pulsante a 0% */
+  margin-right: 50px; /* Aggiunge un margine destro di 50px al pulsante */
+}
+
+/* Stile del pulsante "successivo" al passaggio del mouse */
 #successivo:hover {
-  background-color: rgb(255, 196, 157);
+  background-color: rgb(255, 196, 157); /* Imposta il colore di sfondo del pulsante "successivo" al passaggio del mouse come un arancione chiaro */
 }
