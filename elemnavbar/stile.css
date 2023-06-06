@@ -87,23 +87,6 @@ background-color: rgb(255, 196, 157);
   color: transparent;
 }
 
-/* Stile per l'elemento con ID 'clicca' */
-#clicca {
-  font-family: 'Lucida Console', sans-serif;
-  text-align: center;
-  line-height: 50px;
-  position: absolute;
-  font-size: 40px;
-  height: 60px;
-  width: 600px;
-  background-color: #fc9b00;
-  border: 1px solid transparent;
-  border-radius: .50rem;
-  color: rgba(0,0,0,.5);
-  border-color: rgba(0,0,0,.1);
-  margin-top: 50px;
-}
-
 /* Stile per il pulsante con ID 'btnrev', è il pulasante per aprire il form e lasciare la recensione*/
 #btnrev {
   font-size: 1rem; /* Imposta la dimensione del carattere del pulsante a 1 rem */
