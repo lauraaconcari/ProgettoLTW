@@ -47,13 +47,15 @@ body {
   margin-right: 20px; /* Aggiunge un margine destro all'icona utente */
 }
 
+
 #dropdownMenuButton {
   font-family: 'Lucida Console', sans-serif; /* Imposta il font del pulsante di menu a discesa */
   line-height: 2; /* Imposta l'altezza della riga del pulsante di menu a discesa */
   background-color: transparent; /* Imposta il colore di sfondo del pulsante di menu a discesa come trasparente */
-  border: 1px solid transparent; /* Imposta il bordo del pulsante di menu a discesa come trasparente */
+  border: 1px solid; /* Imposta il bordo del pulsante di menu a discesa come trasparente */
+  border-color: rgba(0,0,0,.1);
   border-radius: .30rem; /* Imposta il bordo arrotondato del pulsante di menu a discesa */
-  color: rgba(0, 0, 0,.1);
+  color: rgba(0,0,0,.5);
   margin-left: 880px;
 }
 
@@ -104,30 +106,32 @@ background-color: rgb(255, 196, 157);
 
 /* Stile per il pulsante con ID 'btnrev', è il pulasante per aprire il form e lasciare la recensione*/
 #btnrev {
-  font-size: 1rem;
-  padding: 0.8em 2em;
-  background-color:  #fc9b00;
-  border: 3px solid yellow;
-  border-radius: 1em;
-  color: #000000;
-  font-weight: bolder;
-  transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.4s;
-  box-shadow: -5px 5px 0px 0px yellow;
-  margin-top: 80px;
-  margin-bottom: 90px;
-  margin-left: 80px;
-  margin-right: 80px;
+  font-size: 1rem; /* Imposta la dimensione del carattere del pulsante a 1 rem */
+  padding: 0.8em 2em; /* Aggiunge spaziatura interna (padding) di 0.8em nella parte superiore e inferiore e 2em nella parte sinistra e destra del pulsante */
+  background-color:  #fc9b00; /* Imposta il colore di sfondo del pulsante a un arancione chiaro */
+  border: 3px solid yellow; /* Aggiunge un bordo solido di 3px di colore giallo al pulsante */
+  border-radius: 1em; /* Applica un bordo arrotondato con un raggio di 1em al pulsante */
+  color: #000000; /* Imposta il colore del testo del pulsante a nero */
+  font-weight: bolder; /* Imposta lo spessore del testo del pulsante a "bolder" (più spesso rispetto al normale) */
+  transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.4s; /* Applica un'animazione di transizione al pulsante con una funzione di cubic-bezier personalizzata e una durata di 0.4s */
+  box-shadow: -5px 5px 0px 0px yellow; /* Aggiunge un'ombra al pulsante che crea un effetto di sollevamento nella parte inferiore destra, con uno spostamento di -5px rispetto all'asse x, 5px rispetto all'asse y, e un colore di ombra giallo */
+  margin-top: 80px; /* Aggiunge una spaziatura esterna (margin) di 80px nella parte superiore del pulsante */
+  margin-bottom: 90px; /* Aggiunge una spaziatura esterna (margin) di 90px nella parte inferiore del pulsante */
+  margin-left: 80px; /* Aggiunge una spaziatura esterna (margin) di 80px nella parte sinistra del pulsante */
+  margin-right: 80px; /* Aggiunge una spaziatura esterna (margin) di 80px nella parte destra del pulsante */
 }
 
 /* Stile per il pulsante con ID 'btnrev' quando il cursore si trova sopra di esso */
 #btnrev:hover {
-  transform: translate(5px, -5px);
+  transform: translate(5px, -5px); /* Applica una trasformazione al pulsante quando si posiziona il cursore sopra di esso. Sposta il pulsante di 5px verso destra e di 5px verso l'alto rispetto alla sua posizione originale */
 }
   
-/* Stile per l'elemento con ID 'clicca' quando il cursore si trova sopra di esso */
+/* Stile per l'elemento con ID 'clicca' quando il cursore si trova sopra di esso, cambia colore*/
   #clicca:hover {
   background-color: rgb(255, 196, 157);
 }
+
+/*Stile footer e elementi del footer*/
 footer {
 background-color: #fc9b00;
 color: #000000;
@@ -142,32 +146,32 @@ clear: both;
 margin-right: 50px;
 color: #fff;
 }
-
 .row a:last-child {
 margin-right: 0;
 }
 
+/* Gestisce altezza della card con ID review*/
 #review {
   height: 250px;
 }
+
+/* Stile per la card da dove compare il form*/
 #post {
-  max-width: 600px;
-  height: 590.8;
-  border-radius: 0.5rem;
-  background-color: #ffeaac;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  border: 1px solid transparent;
-  display: flex;
-  margin: 0 auto;
-  margin-top: 80px;
-  text-align: center;
-
+  max-width: 600px; /* Imposta la larghezza massima del post a 600px */
+  height: 590.8; /* Imposta l'altezza del post a 590.8 */
+  border-radius: 0.5rem; /* Applica un bordo arrotondato al post con un raggio di 0.5rem, rem = creare dimensioni scalabili in base alla dimensione del carattere dell'elemento radice. */
+  background-color: #ffeaac; /* Imposta il colore di sfondo del post a un giallo chiaro */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* Aggiunge un'ombra al post che crea un effetto di sollevamento, con uno spostamento di 0px sull'asse x, 1px sull'asse y, uno sfocatura di 2px e un colore dell'ombra leggermente trasparente */
+  border: 1px solid transparent; /* Aggiunge un bordo di 1px che è inizialmente trasparente */
+  display: flex; /* Imposta il tipo di visualizzazione del post come flessibile */
+  margin: 0 auto; /* Imposta i margini a 0 su tutti i lati e centra il post orizzontalmente nella sua area genitore */
+  margin-top: 80px; /* Aggiunge una spaziatura superiore di 80px al post */
+  text-align: center; /* Imposta l'allineamento del testo all'interno del post al centro */
 }
-
 .content {
-  padding: 1.1rem;
+  padding: 1.1rem; /* Aggiunge uno spazio interno (padding) di 1.1rem a tutti i lati del contenuto del post */
 }
-
+/* STile immagine della card post*/
 .image {
   object-fit: cover;
   width: 100%;
@@ -177,268 +181,277 @@ margin-right: 0;
 }
 
 .title {
-  color: #271111;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  font-weight: 600;
+  color: #271111; /* Imposta il colore del testo del titolo a un tono scuro di rosso */
+  font-size: 1.125rem; /* Imposta la dimensione del carattere del titolo a 1.125 rem */
+  line-height: 1.75rem; /* Imposta l'altezza della linea del titolo a 1.75 rem */
+  font-weight: 600; /* Imposta il peso del carattere del titolo a 600 (in grassetto) */
 }
 
 .desc {
-  margin-top: 0.5rem;
-  color: #6B7280;
-  line-height: 1.25rem;
+  margin-top: 0.5rem; /* Aggiunge una spaziatura superiore di 0.5 rem alla descrizione */
+  color: #6B7280; /* Imposta il colore del testo della descrizione a un tono di grigio */
+  line-height: 1.25rem; /* Imposta l'altezza della linea della descrizione a 1.25 rem */
 }
 
 .action {
-  display: inline-flex;
-  margin-top: 1rem;
-  color: #ffffff;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: 500;
-  align-items: center;
-  gap: 0.25rem;
-  background-color: #ffa200;
-  padding: 4px 8px;
-  border-radius: 4px;
+  display: inline-flex; /* Imposta il tipo di visualizzazione dell'azione come flessibile in linea */
+  margin-top: 1rem; /* Aggiunge una spaziatura superiore di 1 rem all'azione */
+  color: #ffffff; /* Imposta il colore del testo dell'azione a bianco */
+  font-size: 0.875rem; /* Imposta la dimensione del carattere dell'azione a 0.875 rem */
+  line-height: 1.25rem; /* Imposta l'altezza della linea dell'azione a 1.25 rem */
+  font-weight: 500; /* Imposta il peso del carattere dell'azione a 500 */
+  align-items: center; /* Allinea verticalmente gli elementi dell'azione al centro */
+  gap: 0.25rem; /* Aggiunge un margine orizzontale di 0.25 rem tra gli elementi dell'azione */
+  background-color: #ffa200; /* Imposta il colore di sfondo dell'azione a un arancione chiaro */
+  padding: 4px 8px; /* Aggiunge uno spazio interno di 4px nella parte superiore e inferiore e 8px nella parte sinistra e destra dell'azione */
+  border-radius: 4px; /* Applica un bordo arrotondato all'azione con un raggio di 4px */
 }
 
 .action span {
-  transition: .3s ease;
+  transition: .3s ease; /* Applica una transizione di 0.3 secondi con una funzione di easing a tutti gli elementi span all'interno dell'azione */
 }
 
 .action:hover span {
-  transform: translateX(4px);
+  transform: translateX(4px); /* Applica una trasformazione agli elementi span all'interno dell'azione quando si verifica l'evento di "hover". Sposta gli elementi di 4px verso destra rispetto alla loro posizione originale */
   
 }
+
 .action:hover {
-  color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0); /* Imposta il colore del testo dell'azione a nero quando si verifica l'evento di "hover" */
 }
 
-
 .form {
-  display: none;
-  flex-direction: column;
-  gap: 10px;
-  max-width: 350px;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  position: relative;
-  margin: 0 auto;
-  margin-top: 80px;
-  text-align: center;
+  display: none; /* Imposta la visualizzazione del modulo come nascosta */
+  flex-direction: column; /* Imposta la direzione flessibile del modulo come colonna */
+  gap: 10px; /* Aggiunge uno spazio tra i figli del modulo di 10px */
+  max-width: 350px; /* Imposta la larghezza massima del modulo a 350px */
+  background-color: #fff; /* Imposta il colore di sfondo del modulo a bianco */
+  padding: 20px; /* Aggiunge uno spazio interno di 20px al modulo su tutti i lati */
+  border-radius: 10px; /* Applica un bordo arrotondato al modulo con un raggio di 10px */
+  position: relative; /* Imposta la posizione del modulo come relativa rispetto al suo posizionamento normale */
+  margin: 0 auto; /* Imposta i margini a 0 su tutti i lati del modulo e lo centra orizzontalmente nella sua area genitore */
+  margin-top: 80px; /* Aggiunge una spaziatura superiore di 80px al modulo */
+  text-align: center; /* Imposta l'allineamento del testo all'interno del modulo al centro */
 }
 
 .message {
-  color: rgba(88, 87, 87, 0.822);
-  font-size: 14px;
+  color: rgba(88, 87, 87, 0.822); /* Imposta il colore del testo del messaggio a un tono di grigio con un'opacità di 0.822 */
+  font-size: 14px; /* Imposta la dimensione del carattere del messaggio a 14px */
 }
 
+/*classe di flessibilità per un contenitore flessibile.*/
 .flex {
-  display: flex;
-  width: 100%;
-  gap: 6px;
+  display: flex; /* Imposta il tipo di visualizzazione del contenitore come flessibile */
+  width: 100%; /* Imposta la larghezza del contenitore al 100% della larghezza disponibile */
+  gap: 6px; /* Aggiunge uno spazio tra i figli del contenitore di 6px */
 }
 
+/* Stili per l'etichetta e l'input all'interno del modulo */
 .form label {
-  position: relative;
+  position: relative; /* Imposta la posizione relativa dell'etichetta all'interno del modulo */
 }
-
 .form label .input {
-  width: 100%;
-  padding: 10px 10px 20px 10px;
-  outline: 0;
-  border: 1px solid rgba(105, 105, 105, 0.397);
-  border-radius: 5px;
+  width: 100%; /* Imposta la larghezza dell'elemento di input al 100% del contenitore genitore */
+  padding: 10px 10px 20px 10px; /* Aggiunge uno spazio interno di 10px nella parte superiore, inferiore, sinistra e destra dell'elemento di input */
+  outline: 0; /* Rimuove l'outline predefinito dell'elemento di input */
+  border: 1px solid rgba(105, 105, 105, 0.397); /* Aggiunge un bordo di 1px con un colore grigio chiaro all'elemento di input */
+  border-radius: 5px; /* Applica un bordo arrotondato all'elemento di input con un raggio di 5px */
 }
-
 .form label .input + span {
-  position: absolute;
-  left: 10px;
-  top: 15px;
-  color: grey;
-  font-size: 0.9em;
-  cursor: text;
-  transition: 0.3s ease;
+  position: absolute; /* Imposta la posizione assoluta dello span relativo all'elemento di input */
+  left: 10px; /* Imposta la posizione a sinistra dello span a 10px rispetto al suo contenitore */
+  top: 15px; /* Imposta la posizione superiore dello span a 15px rispetto al suo contenitore */
+  color: grey; /* Imposta il colore del testo dello span a grigio */
+  font-size: 0.9em; /* Imposta la dimensione del carattere dello span a 0.9em */
+  cursor: text; /* Imposta il cursore dello span come "text" (cursore di testo) */
+  transition: 0.3s ease; /* Applica una transizione di 0.3 secondi con una funzione di easing allo span */
 }
 
+/* Stili per lo span relativo all'input all'interno del modulo */
+/*Lo span si posiziona in diverse posizioni e ha diverse dimensioni del carattere e pesi del carattere in base allo stato dell'input.*/
 .form label .input:placeholder-shown + span {
-  top: 15px;
-  font-size: 0.9em;
+  top: 15px; /* Imposta la posizione superiore dello span a 15px quando il placeholder dell'input è mostrato */
+  font-size: 0.9em; /* Imposta la dimensione del carattere dello span a 0.9em quando il placeholder dell'input è mostrato */
 }
-
-.form label .input:focus + span,.form label .input:valid + span {
-  top: 30px;
-  font-size: 0.7em;
-  font-weight: 600;
+.form label .input:focus + span, .form label .input:valid + span {
+  top: 30px; /* Imposta la posizione superiore dello span a 30px quando l'input ha il focus o è valido */
+  font-size: 0.7em; /* Imposta la dimensione del carattere dello span a 0.7em quando l'input ha il focus o è valido */
+  font-weight: 600; /* Imposta lo spessore del carattere dello span a 600 quando l'input ha il focus o è valido */
 }
-
 .form label .input:valid + span {
-  color: green;
+  color: green; /* Imposta il colore del testo dello span a verde quando l'input è valido */
 }
 
+/* Stili per l'elemento di input con classe .input01 e lo span relativo */
 .input01 {
-  width: 100%;
-  padding: 10px 10px 20px 10px;
-  outline: 0;
-  border: 1px solid rgba(105, 105, 105, 0.397);
-  border-radius: 5px;
+  width: 100%; /* Imposta la larghezza dell'elemento di input al 100% del contenitore genitore */
+  padding: 10px 10px 20px 10px; /* Aggiunge uno spazio interno di 10px nella parte superiore, inferiore, sinistra e destra dell'elemento di input */
+  outline: 0; /* Rimuove l'outline predefinito dell'elemento di input */
+  border: 1px solid rgba(105, 105, 105, 0.397); /* Aggiunge un bordo di 1px con un colore grigio chiaro all'elemento di input */
+  border-radius: 5px; /* Applica un bordo arrotondato all'elemento di input con un raggio di 5px */
 }
-
 .form label .input01 + span {
-  position: absolute;
-  left: 10px;
-  top: 50px;
-  color: grey;
-  font-size: 0.9em;
-  cursor: text;
-  transition: 0.3s ease;
+  position: absolute; /* Imposta la posizione assoluta dello span relativo all'elemento di input */
+  left: 10px; /* Imposta la posizione a sinistra dello span a 10px rispetto al suo contenitore */
+  top: 50px; /* Imposta la posizione superiore dello span a 50px rispetto al suo contenitore */
+  color: grey; /* Imposta il colore del testo dello span a grigio */
+  font-size: 0.9em; /* Imposta la dimensione del carattere dello span a 0.9em */
+  cursor: text; /* Imposta il cursore dello span come "text" (cursore di testo) */
+  transition: 0.3s ease; /* Applica una transizione di 0.3 secondi con una funzione di easing allo span */
 }
-
 .form label .input01:placeholder-shown + span {
-  top: 40px;
-  font-size: 0.9em;
+  top: 40px; /* Imposta la posizione superiore dello span a 40px quando il placeholder dell'input è mostrato */
+  font-size: 0.9em; /* Imposta la dimensione del carattere dello span a 0.9em quando il placeholder dell'input è mostrato */
 }
-
-.form label .input01:focus + span,.form label .input01:valid + span {
-  top: 50px;
-  font-size: 0.7em;
-  font-weight: 600;
+.form label .input01:focus + span, .form label .input01:valid + span {
+  top: 50px; /* Imposta la posizione superiore dello span a 50px quando l'input ha il focus o è valido */
+  font-size: 0.7em; /* Imposta la dimensione del carattere dello span a 0.7em quando l'input ha il focus o è valido */
+  font-weight: 600; /* Imposta lo spessore del carattere dello span a 600 quando l'input ha il focus o è valido */
 }
-
 .form label .input01:valid + span {
-  color: green;
+  color: green; /* Imposta il colore del testo dello span a verde quando l'input è valido */
 }
+
+/* Stili per l'elemento con classe .fancy */
 
 .fancy {
-  background-color: transparent;
-  border: 2px solid #cacaca;
-  border-radius: 0px;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-weight: 390;
-  letter-spacing: 2px;
-  margin: 0;
-  outline: none;
-  overflow: visible;
-  padding: 8px 30px;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  text-transform: none;
-  transition: all 0.3s ease-in-out;
-  user-select: none;
-  font-size: 13px;
+  background-color: transparent; /* Imposta il colore di sfondo dell'elemento a trasparente */
+  border: 2px solid #cacaca; /* Aggiunge un bordo di 2px con colore #cacaca all'elemento */
+  border-radius: 0px; /* Imposta il bordo dell'elemento a zero pixel, senza arrotondamento */
+  box-sizing: border-box; /* Imposta il box-sizing dell'elemento a border-box */
+  color: #fff; /* Imposta il colore del testo dell'elemento a bianco */
+  cursor: pointer; /* Imposta il cursore dell'elemento come "pointer" (cursore a forma di mano) */
+  display: inline-block; /* Imposta l'elemento come blocco inline */
+  font-weight: 390; /* Imposta lo spessore del carattere dell'elemento a 390 */
+  letter-spacing: 2px; /* Imposta la spaziatura tra le lettere dell'elemento a 2px */
+  margin: 0; /* Imposta il margine dell'elemento a zero */
+  outline: none; /* Rimuove l'outline predefinito dell'elemento */
+  overflow: visible; /* Imposta l'overflow dell'elemento come visibile */
+  padding: 8px 30px; /* Aggiunge uno spazio interno di 8px nella parte superiore e inferiore e di 30px nella parte sinistra e destra dell'elemento */
+  position: relative; /* Imposta la posizione dell'elemento come relativa */
+  text-align: center; /* Imposta l'allineamento del testo dell'elemento al centro */
+  text-decoration: none; /* Rimuove la decorazione del testo predefinita dell'elemento */
+  text-transform: none; /* Imposta la trasformazione del testo dell'elemento come nessuna trasformazione */
+  transition: all 0.3s ease-in-out; /* Applica una transizione a tutti gli attributi con una durata di 0.3 secondi e una funzione di easing in-out */
+  user-select: none; /* Impedisce la selezione dell'elemento da parte dell'utente */
+  font-size: 13px; /* Imposta la dimensione del carattere dell'elemento a 13px */
 }
 
+/*Gli pseudoelementi ::before e ::after permettono di inserire contenuto aggiuntivo prima e dopo l'elemento selezionato tramite CSS*/
+/*L'elemento ::before è posizionato come un'etichetta prima del contenuto dell'elemento .fancy e viene utilizzato per aggiungere una linea orizzontale di sfondo colorata*/
 .fancy::before {
-  content: " ";
-  width: 1.7rem;
-  height: 2px;
-  background: #cacaca;
-  top: 50%;
-  left: 1.5em;
-  position: absolute;
-  transform: translateY(-50%);
-  transform: translateX(230%);
-  transform-origin: center;
-  transition: background 0.3s linear, width 0.3s linear;
+  content: " "; /* Aggiunge un contenuto vuoto all'elemento ::before */
+  width: 1.7rem; /* Imposta la larghezza dell'elemento ::before a 1.7rem */
+  height: 2px; /* Imposta l'altezza dell'elemento ::before a 2px */
+  background: #cacaca; /* Imposta il colore di sfondo dell'elemento ::before a #cacaca */
+  top: 50%; /* Imposta la posizione superiore dell'elemento ::before al 50% rispetto al suo contenitore */
+  left: 1.5em; /* Imposta la posizione sinistra dell'elemento ::before a 1.5em rispetto al suo contenitore */
+  position: absolute; /* Imposta la posizione dell'elemento ::before come assoluta */
+  transform: translateY(-50%); /* Applica una trasformazione di spostamento verso l'alto del 50% rispetto a se stesso all'elemento ::before */
+  transform: translateX(230%); /* Applica una trasformazione di spostamento verso destra del 230% rispetto a se stesso all'elemento ::before */
+  transform-origin: center; /* Imposta l'origine della trasformazione dell'elemento ::before al centro */
+  transition: background 0.3s linear, width 0.3s linear; /* Applica una transizione al colore di sfondo e alla larghezza dell'elemento ::before con una durata di 0.3 secondi e una funzione di easing lineare */
 }
 
 .fancy .text {
-  font-size: 1.125em;
-  line-height: 1.33333em;
-  padding-left: 2em;
-  display: block;
-  text-align: left;
-  transition: all 0.3s ease-in-out;
-  text-transform: lowercase;
-  text-decoration: none;
-  color: #818181;
-  transform: translateX(30%);
+  font-size: 1.125em; /* Imposta la dimensione del carattere a 1.125em */
+  line-height: 1.33333em; /* Imposta l'altezza della linea a 1.33333em */
+  padding-left: 2em; /* Aggiunge un padding sinistro di 2em */
+  display: block; /* Imposta l'elemento come blocco */
+  text-align: left; /* Allinea il testo a sinistra */
+  transition: all 0.3s ease-in-out; /* Applica una transizione a tutte le proprietà con una durata di 0.3 secondi e una funzione di easing in-out */
+  text-transform: lowercase; /* Trasforma il testo in lettere minuscole */
+  text-decoration: none; /* Rimuove la decorazione del testo */
+  color: #818181; /* Imposta il colore del testo a #818181 */
+  transform: translateX(30%); /* Applica una trasformazione di spostamento orizzontale del 30% rispetto a se stesso */
 }
 
 .fancy .top-key {
-  height: 2px;
-  width: 1.5625rem;
-  top: -2px;
-  left: 0.625rem;
-  position: absolute;
-  background: white;
-  transition: width 0.5s ease-out, left 0.3s ease-out;
+  height: 2px; /* Imposta l'altezza a 2px */
+  width: 1.5625rem; /* Imposta la larghezza a 1.5625rem */
+  top: -2px; /* Sposta l'elemento verso l'alto di 2px rispetto al suo elemento genitore */
+  left: 0.625rem; /* Sposta l'elemento verso sinistra di 0.625rem rispetto al suo elemento genitore */
+  position: absolute; /* Imposta la posizione assoluta */
+  background: white; /* Imposta il colore di sfondo a bianco */
+  transition: width 0.5s ease-out, left 0.3s ease-out; /* Applica una transizione alla larghezza e alla posizione sinistra con una durata di 0.5 secondi per la larghezza e 0.3 secondi per la posizione sinistra, utilizzando una funzione di easing out */
 }
 
 .fancy .bottom-key-1 {
-  height: 2px;
-  width: 1.5625rem;
-  right: 1.875rem;
-  bottom: -2px;
-  position: absolute;
-  background: white;
-  transition: width 0.5s ease-out, right 0.3s ease-out;
+  height: 2px; /* Imposta l'altezza a 2px */
+  width: 1.5625rem; /* Imposta la larghezza a 1.5625rem */
+  right: 1.875rem; /* Sposta l'elemento verso destra di 1.875rem rispetto al suo elemento genitore */
+  bottom: -2px; /* Sposta l'elemento verso il basso di 2px rispetto al suo elemento genitore */
+  position: absolute; /* Imposta la posizione assoluta */
+  background: white; /* Imposta il colore di sfondo a bianco */
+  transition: width 0.5s ease-out, right 0.3s ease-out; /* Applica una transizione alla larghezza e alla posizione destra con una durata di 0.5 secondi per la larghezza e 0.3 secondi per la posizione destra, utilizzando una funzione di easing out */
 }
 
 .fancy .bottom-key-2 {
-  height: 2px;
-  width: 0.625rem;
-  right: 0.625rem;
-  bottom: -2px;
-  position: absolute;
-  background: white;
-  transition: width 0.5s ease-out, right 0.3s ease-out;
+  height: 2px; /* Imposta l'altezza a 2px */
+  width: 0.625rem; /* Imposta la larghezza a 0.625rem */
+  right: 0.625rem; /* Sposta l'elemento verso destra di 0.625rem rispetto al suo elemento genitore */
+  bottom: -2px; /* Sposta l'elemento verso il basso di 2px rispetto al suo elemento genitore */
+  position: absolute; /* Imposta la posizione assoluta */
+  background: white; /* Imposta il colore di sfondo a bianco */
+  transition: width 0.5s ease-out, right 0.3s ease-out; /* Applica una transizione alla larghezza e alla posizione destra con una durata di 0.5 secondi per la larghezza e 0.3 secondi per la posizione destra, utilizzando una funzione di easing out */
 }
 
 .fancy:hover {
-  color: white;
-  background: #cacaca;
+  color: white; /* Cambia il colore del testo a bianco al passaggio del mouse */
+  background: #cacaca; /* Cambia il colore di sfondo a #cacaca al passaggio del mouse */
 }
 
 .fancy:hover::before {
-  width: 1.5rem;
-  background: white;
+  width: 1.5rem; /* Cambia la larghezza a 1.5rem al passaggio del mouse */
+  background: white; /* Cambia il colore di sfondo a bianco al passaggio del mouse */
 }
 
 .fancy:hover .text {
-  color: white;
-  padding-left: 1.5em;
+  color: white; /* Cambia il colore del testo a bianco al passaggio del mouse */
+  padding-left: 1.5em; /* Riduce il padding sinistro a 1.5em al passaggio del mouse */
 }
 
 .fancy:hover .top-key {
-  left: -2px;
-  width: 0px;
+  left: -2px; /* Sposta l'elemento verso sinistra di 2px al passaggio del mouse */
+  width: 0px; /* Riduce la larghezza a 0px al passaggio del mouse */
 }
 
 .fancy:hover .bottom-key-1,
- .fancy:hover .bottom-key-2 {
-  right: 0;
-  width: 0;
+.fancy:hover .bottom-key-2 {
+  right: 0; /* Sposta l'elemento verso destra di 0 al passaggio del mouse */
+  width: 0; /* Riduce la larghezza a 0 al passaggio del mouse */
 }
 
-#form{
+/* Nasconde l'elemento con l'id "form" */
+#form {
   display: none;
 }
-#submitButton{
+
+/* Imposta lo sfondo del pulsante su #fc9b00 e il colore del testo su #000000 */
+#submitButton {
   background-color: #fc9b00;
   color: #000000;
-  border: none;
-  margin-bottom: 15px;
+  border: none; /* Rimuove il bordo */
+  margin-bottom: 15px; /* Aggiunge un margine inferiore di 15px */
 }
 
-#submitButton:hover{
+/* Cambia il colore di sfondo del pulsante a rgb(255, 196, 157) al passaggio del mouse e imposta il cursore del mouse a "pointer" */
+#submitButton:hover {
   background-color: rgb(255, 196, 157);
   cursor: pointer;
 }
 
-#place{
+/* Aggiunge un margine superiore di 25px */
+#place {
   margin-top: 25px;
 }
-#bottle{
+
+/* Aggiunge un margine destro di 90px */
+#bottle {
   margin-right: 90px;
 }
 
+/* Nasconde l'elemento con l'id "backbutton" */
 #backbutton {
   display: none;
   height: 2em;
@@ -454,25 +467,30 @@ margin-right: 0;
   background: #ffeaac;
   color: #fc9b00;
   margin-bottom: 10px;
- }
- 
- #backbutton > svg {
+}
+
+/* Aggiunge un margine destro di 5px e un margine sinistro di 5px all'elemento figlio di #backbutton che sia un elemento <svg> */
+#backbutton > svg {
   margin-right: 5px;
   margin-left: 5px;
   font-size: 20px;
   transition: all 0.4s ease-in;
- }
- 
- #backbutton:hover > svg {
+}
+
+/* Cambia la dimensione del font dell'elemento figlio di #backbutton che sia un elemento <svg> al passaggio del mouse e applica una traslazione sull'asse X */
+#backbutton:hover > svg {
   font-size: 1.2em;
   transform: translateX(-5px);
- }
- 
- #backbutton:hover {
+}
+
+/* Applica una ombra e una traslazione verso l'alto all'elemento #backbutton al passaggio del mouse */
+#backbutton:hover {
   box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
   transform: translateY(-2px);
- }
- #review1 {
+}
+
+/*gestione stile per le card delle recensioni*/
+#review1 {
   width: 300px;
   height: 300px;
   background-color: #fff;
