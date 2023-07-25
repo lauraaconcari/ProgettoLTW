@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Registrazione/Login</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./stile.css">
+    <link rel="icon" type="image/x-icon" href="./user (3).png" >
+    <script src="https://kit.fontawesome.com/1c95f9fdc7.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+    <style>
+        #mapsection {
+          width: 50%;
+          height: auto;
+          fill: #ccc;
+          stroke: #333;
+          stroke-width: 2;
+        }
+        path {
+          fill: #fff6c4;
+        }
+        path:hover {
+          fill: purple;
+          stroke: red;
+          stroke-width: 3px;
+          transition: fill 0.4s;
+        }
+      </style>
+
+</head>
+<body>
+	<nav class="navbar navbar-light" style="background-color: #fc9b00;">
+        <a class="navbar-brand" href="../index.html">
+            <img src="./user (1).png">
+        </a>
+        <a class="navbar-brand mr-auto" href="../index.html">
+            <h3>Registrazione/Login</h3>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">Home</a>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Municipi
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #fcc100">
+                        <a class="dropdown-item" href="../Municipi/Municipio I/Municipio I.html">I Municipio</a>
+                        <a class="dropdown-item" href="../Municipi/Municipio II/Municipio II.html">II Municipio</a>
+                        <a class="dropdown-item" href="../Municipi/Municipio III/Municipio III.html">III Municipio</a>
+                        <a class="dropdown-item" href="../Municipi/Municipio IV/Municipio IV.html">IV Municipio</a>
+                        <a class="dropdown-item" href="../Municipi/Municipio V/Municipio V.html">V Municipio</a>
+                        <a class="dropdown-item" href="../Municipi/Municipio VI/Municipio VI.html">VI Municipio</a>
+                        <a class="dropdown-item" href="../Municipi/Municipio VII/Municipio VII.html">VII Municipio</a>
+                        <a class="dropdown-item" href="../Municipi/Municipio VIII/Municipio VIII.html">VIII Municipio</a>
+                        <a class="dropdown-item" href="../Municipi/Municipio IX/Municipio IX.html">IX Municipio</a>
+                        <a class="dropdown-item" href="../Municipi/Municipio X/Municipio X.html">X Municipio</a>
+                        <a class="dropdown-item" href="../Municipi/Municipio XI/Municipio XI.html">XI Municipio</a>
+                        <a class="dropdown-item" href="../Municipi/Municipio XII/Municipio XII.html">XII Municipio</a>
+                        <a class="dropdown-item" href="../Municipi/Municipio XIII/Municipio XIII.html">XIII Municipio</a>
+                        <a class="dropdown-item" href="../Municipi/Municipio XIV/Municipio XIV.html">XIV Municipio</a>
+                        <a class="dropdown-item" href="../Municipi/Municipio XV/Municipio XV.html">XV Municipio</a>
+    
+                                <!--<div class="dropdown-divider"></div>-->
+                                <!--<a class="dropdown-item" href="#">Something else here</a>-->
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../elemnavbar/diconodinoi.html">Dicono di noi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../elemnavbar/contattaci.html">Contattaci</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <form id="form-recupero-password" style="display:none;" method="post" action="prova.php">
+        <input type="hidden" name="email" id="email2">
+    </form>
+	<div class="container">
+        <div class="formbox">
+            <h1 id="title">Registrati</h1>
+            <form method="post" id="login-form">
+                <div class="input-group">
+                    <div class="input-field" id="nameField">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Nome" id="nome" name="nome">
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-at"></i>
+                        <input type="Email" placeholder="Email" id="email" name="email">
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="password" placeholder="Password" id="password" name="password">
+                    </div>
+                    <p>Password dimenticata?<a href="#" id="reset-password-link"> Clicca qui! </a></p>
+                </div>
+                <div class="btn-field">
+                    <input type="hidden" id="page" name="page" value="/index.html">
+                    <button type="submit" id="signupBtn" >Registrati</button>
+                    <button type="button" id="signinBtn" class="disable">Accedi</button>
+                </div>
+            </form>
+        </div>
+	</div>
+    <script>document.getElementById("login-form").setAttribute("action", "/esempio");</script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>
